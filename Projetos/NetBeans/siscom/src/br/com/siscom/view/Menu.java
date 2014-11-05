@@ -28,6 +28,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator6 = new javax.swing.JSeparator();
+        jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         btnCadastroCliente = new javax.swing.JButton();
@@ -84,6 +85,8 @@ public class Menu extends javax.swing.JFrame {
         menuSobre = new javax.swing.JMenuItem();
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SisCom - Sistema Comercial");
@@ -196,6 +199,11 @@ public class Menu extends javax.swing.JFrame {
         menuCadastroContaBancaria.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\banco.png")); // NOI18N
         menuCadastroContaBancaria.setMnemonic('B');
         menuCadastroContaBancaria.setText("Contas Bancaria");
+        menuCadastroContaBancaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroContaBancariaActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuCadastroContaBancaria);
         menuCadastro.add(jSeparator1);
 
@@ -229,6 +237,11 @@ public class Menu extends javax.swing.JFrame {
         menuCadastroCartao.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cartao.png")); // NOI18N
         menuCadastroCartao.setMnemonic('a');
         menuCadastroCartao.setText("Cartões");
+        menuCadastroCartao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroCartaoActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuCadastroCartao);
 
         menuCadastroPlanoConta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
@@ -418,6 +431,14 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
+    private void menuCadastroContaBancariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroContaBancariaActionPerformed
+        ContaBancariaView.main(new String[]{"Cadastro das Contas Bancárias"});
+    }//GEN-LAST:event_menuCadastroContaBancariaActionPerformed
+
+    private void menuCadastroCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroCartaoActionPerformed
+        CartaoCreditoView.main(new String[]{"Cadastro de Cartões"});
+    }//GEN-LAST:event_menuCadastroCartaoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastroCliente;
@@ -427,6 +448,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnContasReceber;
     private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

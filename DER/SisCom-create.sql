@@ -1,4 +1,4 @@
--- ------------------------------------------------------------
+﻿-- ------------------------------------------------------------
 -- Plano de Conta
 -- Obs.: Toda vez que for cadastrar uma despesa, a depesa estara vinculada ao codigo do plano conta
 -- ------------------------------------------------------------
@@ -7,41 +7,6 @@ CREATE TABLE plano_conta (
   cod_plano_conta SERIAL NOT NULL,
   descricao_plano_conta VARCHAR(20) NOT NULL,
   PRIMARY KEY(cod_plano_conta)
-);
-
--- ------------------------------------------------------------
--- Cabecario de Cotacao
--- ------------------------------------------------------------
-
-CREATE TABLE cot_cab (
-  cod_cot_cab SERIAL NOT NULL,
-  data_cot_cab DATE NULL,
-  forn1 INTEGER NULL,
-  forn2 INTEGER NULL,
-  forn3 INTEGER NULL,
-  forn4 INTEGER NULL,
-  forn5 INTEGER NULL,
-  condicoes1 VARCHAR(30) NULL,
-  condicoes2 VARCHAR(30) NULL,
-  condicoes3 VARCHAR(30) NULL,
-  condicoes4 VARCHAR(30) NULL,
-  condicoes5 VARCHAR(30) NULL,
-  desconto1 FLOAT8 NULL,
-  desconto2 FLOAT8 NULL,
-  desconto3 FLOAT8 NULL,
-  desconto4 FLOAT8 NULL,
-  desconto5 FLOAT8 NULL,
-  entrega1 VARCHAR(30) NULL,
-  entrega2 VARCHAR(30) NULL,
-  entrega3 VARCHAR(30) NULL,
-  entrega4 VARCHAR(30) NULL,
-  entrega5 VARCHAR(30) NULL,
-  total1 FLOAT8 NULL,
-  total2 FLOAT8 NULL,
-  total3 FLOAT8 NULL,
-  total4 FLOAT8 NULL,
-  total5 FLOAT8 NULL,
-  PRIMARY KEY(cod_cot_cab)
 );
 
 CREATE TABLE conciliacao (
@@ -81,6 +46,16 @@ CREATE TABLE fornecedor (
 );
 
 -- ------------------------------------------------------------
+-- Departamento
+-- ------------------------------------------------------------
+
+CREATE TABLE departamento (
+  cod_departamento SERIAL NOT NULL,
+  nome_departamento VARCHAR(50) NOT NULL,
+  PRIMARY KEY(cod_departamento)
+);
+
+-- ------------------------------------------------------------
 -- Fechamento
 -- ------------------------------------------------------------
 
@@ -97,13 +72,38 @@ CREATE TABLE fechamento (
 );
 
 -- ------------------------------------------------------------
--- Departamento
+-- Cabecario de Cotacao
 -- ------------------------------------------------------------
 
-CREATE TABLE departamento (
-  cod_departamento SERIAL NOT NULL,
-  nome_departamento VARCHAR(50) NOT NULL,
-  PRIMARY KEY(cod_departamento)
+CREATE TABLE cot_cab (
+  cod_cot_cab SERIAL NOT NULL,
+  data_cot_cab DATE NULL,
+  forn1 INTEGER NULL,
+  forn2 INTEGER NULL,
+  forn3 INTEGER NULL,
+  forn4 INTEGER NULL,
+  forn5 INTEGER NULL,
+  condicoes1 VARCHAR(30) NULL,
+  condicoes2 VARCHAR(30) NULL,
+  condicoes3 VARCHAR(30) NULL,
+  condicoes4 VARCHAR(30) NULL,
+  condicoes5 VARCHAR(30) NULL,
+  desconto1 FLOAT8 NULL,
+  desconto2 FLOAT8 NULL,
+  desconto3 FLOAT8 NULL,
+  desconto4 FLOAT8 NULL,
+  desconto5 FLOAT8 NULL,
+  entrega1 VARCHAR(30) NULL,
+  entrega2 VARCHAR(30) NULL,
+  entrega3 VARCHAR(30) NULL,
+  entrega4 VARCHAR(30) NULL,
+  entrega5 VARCHAR(30) NULL,
+  total1 FLOAT8 NULL,
+  total2 FLOAT8 NULL,
+  total3 FLOAT8 NULL,
+  total4 FLOAT8 NULL,
+  total5 FLOAT8 NULL,
+  PRIMARY KEY(cod_cot_cab)
 );
 
 -- ------------------------------------------------------------
@@ -124,41 +124,33 @@ CREATE TABLE cfop (
 
 -- ------------------------------------------------------------
 -- Cartao de Credito
+-- Campos:
+-- Empresas, 
+-- Juros rotativos %,  
+-- Pagto minimo %,
+-- Juros parcelados %,
+-- Multa %,
+-- Multa sem minimo ou total %,
+-- Multa cobrada a partir do dia
 -- ------------------------------------------------------------
 
-CREATE TABLE cartao (
-  cod_cartao SERIAL NOT NULL,
-  nome_cartao VARCHAR(20) NOT NULL,
-  taxa_cartao FLOAT8 NOT NULL,
-  PRIMARY KEY(cod_cartao)
+CREATE TABLE cartao_credito (
+  id_cartao_credito SERIAL NOT NULL,
+  empresa VARCHAR(50) NOT NULL,
+  juros_rotativo VARCHAR(20) NOT NULL,
+  pagto_minimo FLOAT NOT NULL,
+  juros_parcelado FLOAT NOT NULL,
+  multa FLOAT NULL,
+  multa_sem_minimo_total CHAR(6) NULL,
+  multa_cobrada_dia INTEGER NULL,
+  PRIMARY KEY(id_cartao_credito)
 );
-
--- ------------------------------------------------------------
--- Banco
--- ------------------------------------------------------------
 
 CREATE TABLE banco (
-  cod_banco SERIAL NOT NULL,
-  nome_banco VARCHAR(50) NOT NULL,
-  agencia_banco INTEGER NOT NULL,
-  conta_banco INTEGER NOT NULL,
-  gerente_banco VARCHAR(20) NULL,
-  fone_banco VARCHAR(10) NULL,
+  cod_banco CHAR(5) NOT NULL,
+  nome_banco VARCHAR(100) NOT NULL,
+  site_banco VARCHAR(100) NULL,
   PRIMARY KEY(cod_banco)
-);
-
--- ------------------------------------------------------------
--- Cheque nao compesado
--- ------------------------------------------------------------
-
-CREATE TABLE cheque_ncomp (
-  cod_cheque_ncomp SERIAL NOT NULL,
-  num_cheque_ncomp INTEGER NULL,
-  data_cheque_ncomp DATE NULL,
-  vlr_cheque_ncomp FLOAT8 NULL,
-  mes_ano_ncomp VARCHAR(7) NULL,
-  historico_ncomp VARCHAR(50) NULL,
-  PRIMARY KEY(cod_cheque_ncomp)
 );
 
 -- ------------------------------------------------------------
@@ -197,6 +189,20 @@ CREATE TABLE cliente (
 );
 
 -- ------------------------------------------------------------
+-- Cheque nao compesado
+-- ------------------------------------------------------------
+
+CREATE TABLE cheque_ncomp (
+  cod_cheque_ncomp SERIAL NOT NULL,
+  num_cheque_ncomp INTEGER NULL,
+  data_cheque_ncomp DATE NULL,
+  vlr_cheque_ncomp FLOAT8 NULL,
+  mes_ano_ncomp VARCHAR(7) NULL,
+  historico_ncomp VARCHAR(50) NULL,
+  PRIMARY KEY(cod_cheque_ncomp)
+);
+
+-- ------------------------------------------------------------
 -- Movimento Bancario
 -- ------------------------------------------------------------
 
@@ -218,17 +224,21 @@ CREATE TABLE movimento (
 );
 
 -- ------------------------------------------------------------
--- Telefone do Cliente
+-- Funcionario
 -- ------------------------------------------------------------
 
-CREATE TABLE cliente_telefone (
-  cod_telefone SERIAL NOT NULL,
-  cod_cliente INTEGER NOT NULL,
-  numero_telefone VARCHAR(10) NOT NULL,
-  tipo_telefone CHAR(1) NOT NULL,
-  PRIMARY KEY(cod_telefone),
-  FOREIGN KEY(cod_cliente)
-    REFERENCES cliente(cod_cliente)
+CREATE TABLE funcionario (
+  cod_funcionario SERIAL NOT NULL,
+  cod_departamento INTEGER NOT NULL,
+  nome_funcionario VARCHAR(50) NOT NULL,
+  funcao_funcionario VARCHAR(20) NULL,
+  login_funcionario VARCHAR(10) NOT NULL,
+  senha_funcionario VARCHAR(10) NOT NULL,
+  admissao_funcionario DATE NULL,
+  acesso_total CHAR(1) NULL,
+  PRIMARY KEY(cod_funcionario),
+  FOREIGN KEY(cod_departamento)
+    REFERENCES departamento(cod_departamento)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
@@ -258,6 +268,24 @@ CREATE TABLE cobranca (
 );
 
 -- ------------------------------------------------------------
+-- Banco
+-- ------------------------------------------------------------
+
+CREATE TABLE conta_bancaria (
+  id_conta_bancaria SERIAL NOT NULL,
+  cod_banco CHAR(5) NOT NULL,
+  agencia_banco INTEGER NOT NULL,
+  conta_banco INTEGER NOT NULL,
+  gerente_banco VARCHAR(20) NULL,
+  fone_banco VARCHAR(10) NULL,
+  PRIMARY KEY(id_conta_bancaria),
+  FOREIGN KEY(cod_banco)
+    REFERENCES banco(cod_banco)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+-- ------------------------------------------------------------
 -- Endereco do Cliente
 -- ------------------------------------------------------------
 
@@ -278,21 +306,17 @@ CREATE TABLE cliente_endereco (
 );
 
 -- ------------------------------------------------------------
--- Funcionario
+-- Telefone do Cliente
 -- ------------------------------------------------------------
 
-CREATE TABLE funcionario (
-  cod_funcionario SERIAL NOT NULL,
-  cod_departamento INTEGER NOT NULL,
-  nome_funcionario VARCHAR(50) NOT NULL,
-  funcao_funcionario VARCHAR(20) NULL,
-  login_funcionario VARCHAR(10) NOT NULL,
-  senha_funcionario VARCHAR(10) NOT NULL,
-  admissao_funcionario DATE NULL,
-  acesso_total CHAR(1) NULL,
-  PRIMARY KEY(cod_funcionario),
-  FOREIGN KEY(cod_departamento)
-    REFERENCES departamento(cod_departamento)
+CREATE TABLE cliente_telefone (
+  cod_telefone SERIAL NOT NULL,
+  cod_cliente INTEGER NOT NULL,
+  numero_telefone VARCHAR(10) NOT NULL,
+  tipo_telefone CHAR(1) NOT NULL,
+  PRIMARY KEY(cod_telefone),
+  FOREIGN KEY(cod_cliente)
+    REFERENCES cliente(cod_cliente)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
@@ -322,48 +346,6 @@ CREATE TABLE produto (
 );
 
 -- ------------------------------------------------------------
--- Cabecario de Orcamento
--- ------------------------------------------------------------
-
-CREATE TABLE orc_cab (
-  cod_orc_cab SERIAL NOT NULL,
-  cod_funcionario INTEGER NOT NULL,
-  cod_cliente INTEGER NOT NULL,
-  data_orc_cab DATE NULL,
-  vlr_orc_cab FLOAT8 NULL,
-  PRIMARY KEY(cod_orc_cab),
-  FOREIGN KEY(cod_cliente)
-    REFERENCES cliente(cod_cliente)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION,
-  FOREIGN KEY(cod_funcionario)
-    REFERENCES funcionario(cod_funcionario)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
-
--- ------------------------------------------------------------
--- Detalhe de Orcamento
--- ------------------------------------------------------------
-
-CREATE TABLE orc_det (
-  cod_orc_cab INTEGER NOT NULL,
-  cod_produto VARCHAR(13) NOT NULL,
-  qtd_orc_det INTEGER NULL,
-  vlr_unit_orc_det FLOAT8 NULL,
-  vlr_total_orc_det FLOAT8 NULL,
-  PRIMARY KEY(cod_orc_cab, cod_produto),
-  FOREIGN KEY(cod_orc_cab)
-    REFERENCES orc_cab(cod_orc_cab)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION,
-  FOREIGN KEY(cod_produto)
-    REFERENCES produto(cod_produto)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
-
--- ------------------------------------------------------------
 -- Cabecario da Nota Fical de Entrada
 -- Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui
 -- ------------------------------------------------------------
@@ -382,27 +364,6 @@ CREATE TABLE nfe_cab (
       ON UPDATE NO ACTION,
   FOREIGN KEY(cod_fornecedor)
     REFERENCES fornecedor(cod_fornecedor)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
-
--- ------------------------------------------------------------
--- Detalhe da Nota Fical de Entrada
--- ------------------------------------------------------------
-
-CREATE TABLE nfe_det (
-  cod_produto VARCHAR(13) NOT NULL,
-  numero_nfe_cab INTEGER NOT NULL,
-  qtd_nfe_det INTEGER NULL,
-  vlr_unit_nfe_det FLOAT8 NULL,
-  vlr_total_nfe_det FLOAT8 NULL,
-  PRIMARY KEY(cod_produto, numero_nfe_cab),
-  FOREIGN KEY(cod_produto)
-    REFERENCES produto(cod_produto)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION,
-  FOREIGN KEY(numero_nfe_cab)
-    REFERENCES nfe_cab(numero_nfe_cab)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
@@ -433,14 +394,35 @@ CREATE TABLE pedido_cab (
 );
 
 -- ------------------------------------------------------------
+-- Cabecario de Orcamento
+-- ------------------------------------------------------------
+
+CREATE TABLE orc_cab (
+  cod_orc_cab SERIAL NOT NULL,
+  cod_funcionario INTEGER NOT NULL,
+  cod_cliente INTEGER NOT NULL,
+  data_orc_cab DATE NULL,
+  vlr_orc_cab FLOAT8 NULL,
+  PRIMARY KEY(cod_orc_cab),
+  FOREIGN KEY(cod_cliente)
+    REFERENCES cliente(cod_cliente)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(cod_funcionario)
+    REFERENCES funcionario(cod_funcionario)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+-- ------------------------------------------------------------
 -- Recebimento
 -- ------------------------------------------------------------
 
 CREATE TABLE recebimento (
   cod_recebimento SERIAL NOT NULL,
+  id_conta_bancaria INTEGER NOT NULL,
   cod_cliente INTEGER NOT NULL,
   cod_tipo_pgto INTEGER NOT NULL,
-  cod_banco INTEGER NOT NULL,
   num_documento VARCHAR(20) NULL,
   vlr_total_recebimento FLOAT8 NULL,
   vlr_juro_recebimento FLOAT8 NULL,
@@ -452,8 +434,8 @@ CREATE TABLE recebimento (
   vencimento_recebimento DATE NULL,
   data_recebimento DATE NULL,
   PRIMARY KEY(cod_recebimento),
-  FOREIGN KEY(cod_banco)
-    REFERENCES banco(cod_banco)
+  FOREIGN KEY(id_conta_bancaria)
+    REFERENCES conta_bancaria(id_conta_bancaria)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(cod_tipo_pgto)
@@ -472,8 +454,8 @@ CREATE TABLE recebimento (
 
 CREATE TABLE pagamento (
   cod_pagamento SERIAL NOT NULL,
+  id_conta_bancaria INTEGER NOT NULL,
   cod_fornecedor INTEGER NOT NULL,
-  cod_banco INTEGER NOT NULL,
   cod_tipo_pgto INTEGER NOT NULL,
   cod_plano_conta INTEGER NOT NULL,
   num_doc_pagamento VARCHAR(20) NULL,
@@ -498,8 +480,8 @@ CREATE TABLE pagamento (
     REFERENCES tipo_pgto(cod_tipo_pgto)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
-  FOREIGN KEY(cod_banco)
-    REFERENCES banco(cod_banco)
+  FOREIGN KEY(id_conta_bancaria)
+    REFERENCES conta_bancaria(id_conta_bancaria)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(cod_fornecedor)
@@ -514,10 +496,10 @@ CREATE TABLE pagamento (
 
 CREATE TABLE venda_cab (
   cod_venda_cab SERIAL NOT NULL,
+  id_cartao_credito INTEGER NOT NULL,
   cod_cfop INTEGER NOT NULL,
   cod_tipo_pgto INTEGER NOT NULL,
   cod_funcionario INTEGER NOT NULL,
-  cod_cartao INTEGER NOT NULL,
   cod_cliente INTEGER NOT NULL,
   data_venda_cab DATE NULL,
   vlr_venda_cab FLOAT8 NULL,
@@ -531,8 +513,8 @@ CREATE TABLE venda_cab (
     REFERENCES cliente(cod_cliente)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
-  FOREIGN KEY(cod_cartao)
-    REFERENCES cartao(cod_cartao)
+  FOREIGN KEY(id_cartao_credito)
+    REFERENCES cartao_credito(id_cartao_credito)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(cod_funcionario)
@@ -560,6 +542,27 @@ CREATE TABLE req_cab (
   PRIMARY KEY(cod_req_cab),
   FOREIGN KEY(cod_funcionario)
     REFERENCES funcionario(cod_funcionario)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+-- ------------------------------------------------------------
+-- Detalhe da Nota Fical de Entrada
+-- ------------------------------------------------------------
+
+CREATE TABLE nfe_det (
+  cod_produto VARCHAR(13) NOT NULL,
+  numero_nfe_cab INTEGER NOT NULL,
+  qtd_nfe_det INTEGER NULL,
+  vlr_unit_nfe_det FLOAT8 NULL,
+  vlr_total_nfe_det FLOAT8 NULL,
+  PRIMARY KEY(cod_produto, numero_nfe_cab),
+  FOREIGN KEY(cod_produto)
+    REFERENCES produto(cod_produto)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(numero_nfe_cab)
+    REFERENCES nfe_cab(numero_nfe_cab)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
@@ -598,6 +601,27 @@ CREATE TABLE venda_det (
   PRIMARY KEY(cod_produto, cod_venda_cab),
   FOREIGN KEY(cod_venda_cab)
     REFERENCES venda_cab(cod_venda_cab)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(cod_produto)
+    REFERENCES produto(cod_produto)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+-- ------------------------------------------------------------
+-- Detalhe de Orcamento
+-- ------------------------------------------------------------
+
+CREATE TABLE orc_det (
+  cod_orc_cab INTEGER NOT NULL,
+  cod_produto VARCHAR(13) NOT NULL,
+  qtd_orc_det INTEGER NULL,
+  vlr_unit_orc_det FLOAT8 NULL,
+  vlr_total_orc_det FLOAT8 NULL,
+  PRIMARY KEY(cod_orc_cab, cod_produto),
+  FOREIGN KEY(cod_orc_cab)
+    REFERENCES orc_cab(cod_orc_cab)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(cod_produto)

@@ -27,98 +27,106 @@ import javax.persistence.Transient;
 @Table(name = "conta_bancaria", catalog = "siscom", schema = "public")
 @NamedQueries({
     @NamedQuery(name = "Banco.findAll", query = "SELECT b FROM ContaBancaria b"),
-    @NamedQuery(name = "Banco.findByCodBanco", query = "SELECT b FROM ContaBancaria b WHERE b.codBanco = :codBanco"),
-    @NamedQuery(name = "Banco.findByNomeBanco", query = "SELECT b FROM ContaBancaria b WHERE b.nomeBanco = :nomeBanco"),
-    @NamedQuery(name = "Banco.findByAgenciaBanco", query = "SELECT b FROM ContaBancaria b WHERE b.agenciaBanco = :agenciaBanco"),
-    @NamedQuery(name = "Banco.findByContaBanco", query = "SELECT b FROM ContaBancaria b WHERE b.contaBanco = :contaBanco"),
-    @NamedQuery(name = "Banco.findByGerenteBanco", query = "SELECT b FROM ContaBancaria b WHERE b.gerenteBanco = :gerenteBanco"),
+    @NamedQuery(name = "Banco.findById", query = "SELECT b FROM ContaBancaria b WHERE b.id = :id"),
+    @NamedQuery(name = "Banco.findByCodigoBanco", query = "SELECT b FROM ContaBancaria b WHERE b.codigoBanco = :codigoBanco"),
+    @NamedQuery(name = "Banco.findByNumeroAgencia", query = "SELECT b FROM ContaBancaria b WHERE b.numeroAgencia = :numeroAgencia"),
+    @NamedQuery(name = "Banco.findByNumeroConta", query = "SELECT b FROM ContaBancaria b WHERE b.numeroConta = :numeroConta"),
+    @NamedQuery(name = "Banco.findByNomeGerente", query = "SELECT b FROM ContaBancaria b WHERE b.nomeGerente = :nomeGerente"),
     @NamedQuery(name = "Banco.findByFoneBanco", query = "SELECT b FROM ContaBancaria b WHERE b.foneBanco = :foneBanco")})
 public class ContaBancaria implements Serializable {
 
     @Transient
-    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
+    private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id_conta_bancaria")
-    private Integer codBanco;
+    private Integer id;
+
     @Basic(optional = false)
     @Column(name = "cod_banco")
-    private String nomeBanco;
+    private String codigoBanco;
+
     @Basic(optional = false)
     @Column(name = "agencia_banco")
-    private int agenciaBanco;
+    private Short numeroAgencia;
+
     @Basic(optional = false)
     @Column(name = "conta_banco")
-    private int contaBanco;
+    private Integer numeroConta;
+
     @Column(name = "gerente_banco")
-    private String gerenteBanco;
+    private String nomeGerente;
+
     @Column(name = "fone_banco")
     private String foneBanco;
 
     public ContaBancaria() {
+        super();
     }
 
-    public ContaBancaria(Integer codBanco) {
-        this.codBanco = codBanco;
+    public ContaBancaria(Integer id) {
+        this.id = id;
     }
 
-    public ContaBancaria(Integer codBanco, String nomeBanco, int agenciaBanco, int contaBanco) {
-        this.codBanco = codBanco;
-        this.nomeBanco = nomeBanco;
-        this.agenciaBanco = agenciaBanco;
-        this.contaBanco = contaBanco;
+    public ContaBancaria(Integer id, String nomeBanco, Short numeroAgencia, Integer numeroConta) {
+        this(id);
+
+        this.codigoBanco = nomeBanco;
+        this.numeroAgencia = numeroAgencia;
+        this.numeroConta = numeroConta;
     }
 
-    public Integer getCodBanco() {
-        return codBanco;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodBanco(Integer codBanco) {
-        Integer oldCodBanco = this.codBanco;
-        this.codBanco = codBanco;
-        changeSupport.firePropertyChange("codBanco", oldCodBanco, codBanco);
+    public void setId(Integer id) {
+        Integer oldId = this.id;
+        this.id = id;
+        CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
-    public String getNomeBanco() {
-        return nomeBanco;
+    public String getCodigoBanco() {
+        return codigoBanco;
     }
 
-    public void setNomeBanco(String nomeBanco) {
-        String oldNomeBanco = this.nomeBanco;
-        this.nomeBanco = nomeBanco;
-        changeSupport.firePropertyChange("nomeBanco", oldNomeBanco, nomeBanco);
+    public void setCodigoBanco(String codigoBanco) {
+        String oldCodigoBanco = this.codigoBanco;
+        this.codigoBanco = codigoBanco;
+        CHANGE_SUPPORT.firePropertyChange("codigoBanco", oldCodigoBanco, codigoBanco);
     }
 
-    public int getAgenciaBanco() {
-        return agenciaBanco;
+    public Short getNumeroAgencia() {
+        return numeroAgencia;
     }
 
-    public void setAgenciaBanco(int agenciaBanco) {
-        int oldAgenciaBanco = this.agenciaBanco;
-        this.agenciaBanco = agenciaBanco;
-        changeSupport.firePropertyChange("agenciaBanco", oldAgenciaBanco, agenciaBanco);
+    public void setNumeroAgencia(Short numeroAgencia) {
+        Short oldNumeroAgencia = this.numeroAgencia;
+        this.numeroAgencia = numeroAgencia;
+        CHANGE_SUPPORT.firePropertyChange("numeroAgencia", oldNumeroAgencia, numeroAgencia);
     }
 
-    public int getContaBanco() {
-        return contaBanco;
+    public Integer getNumeroConta() {
+        return numeroConta;
     }
 
-    public void setContaBanco(int contaBanco) {
-        int oldContaBanco = this.contaBanco;
-        this.contaBanco = contaBanco;
-        changeSupport.firePropertyChange("contaBanco", oldContaBanco, contaBanco);
+    public void setNumeroConta(Integer numeroConta) {
+        Integer oldNumeroConta = this.numeroConta;
+        this.numeroConta = numeroConta;
+        CHANGE_SUPPORT.firePropertyChange("numeroConta", oldNumeroConta, numeroConta);
     }
 
-    public String getGerenteBanco() {
-        return gerenteBanco;
+    public String getNomeGerente() {
+        return nomeGerente;
     }
 
-    public void setGerenteBanco(String gerenteBanco) {
-        String oldGerenteBanco = this.gerenteBanco;
-        this.gerenteBanco = gerenteBanco;
-        changeSupport.firePropertyChange("gerenteBanco", oldGerenteBanco, gerenteBanco);
+    public void setNomeGerente(String nomeGerente) {
+        String oldNomeGerente = this.nomeGerente;
+        this.nomeGerente = nomeGerente;
+        CHANGE_SUPPORT.firePropertyChange("nomeGerente", oldNomeGerente, nomeGerente);
     }
 
     public String getFoneBanco() {
@@ -128,13 +136,13 @@ public class ContaBancaria implements Serializable {
     public void setFoneBanco(String foneBanco) {
         String oldFoneBanco = this.foneBanco;
         this.foneBanco = foneBanco;
-        changeSupport.firePropertyChange("foneBanco", oldFoneBanco, foneBanco);
+        CHANGE_SUPPORT.firePropertyChange("foneBanco", oldFoneBanco, foneBanco);
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (codBanco != null ? codBanco.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -145,23 +153,20 @@ public class ContaBancaria implements Serializable {
             return false;
         }
         ContaBancaria other = (ContaBancaria) object;
-        if ((this.codBanco == null && other.codBanco != null) || (this.codBanco != null && !this.codBanco.equals(other.codBanco))) {
-            return false;
-        }
-        return true;
+        return (this.id != null || other.id == null) && (this.id == null || this.id.equals(other.id));
     }
 
     @Override
     public String toString() {
-        return this.getClass().getName() + "[ codBanco=" + codBanco + " ]";
+        return this.getClass().getName() + "[ id=" + id + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
-        changeSupport.addPropertyChangeListener(listener);
+        CHANGE_SUPPORT.addPropertyChangeListener(listener);
     }
 
     public void removePropertyChangeListener(PropertyChangeListener listener) {
-        changeSupport.removePropertyChangeListener(listener);
+        CHANGE_SUPPORT.removePropertyChangeListener(listener);
     }
 
 }

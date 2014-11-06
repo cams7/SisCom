@@ -22,6 +22,9 @@
           <Properties>
             <Property name="label" type="java.lang.String" value="Cadastro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCadastroActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuCadastroCliente">
               <Properties>
@@ -158,8 +161,11 @@
                   <Image iconType="2" name="C:\Users\cesar\Desenv\GIT\github\cams7\T2TI\SisCom\Img\tipo_pgto_recebimento.png"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="103"/>
-                <Property name="text" type="java.lang.String" value="Tipos de Pgto Recebimento"/>
+                <Property name="text" type="java.lang.String" value="Tipos de Pagamento / Recebimento"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCadastroTipoPgtoRecebimentoActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator4">
             </MenuItem>

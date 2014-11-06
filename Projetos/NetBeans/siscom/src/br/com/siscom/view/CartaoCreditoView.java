@@ -42,131 +42,119 @@ public class CartaoCreditoView extends JPanel {
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
-        lblEmpresa = new javax.swing.JLabel();
+        lblOperadoraCartao = new javax.swing.JLabel();
         lblJurosRotativo = new javax.swing.JLabel();
         lblPagtoMinimo = new javax.swing.JLabel();
         lblJurosParcelado = new javax.swing.JLabel();
         lblMulta = new javax.swing.JLabel();
         lblMultaSemMinimoTotal = new javax.swing.JLabel();
         lblMultaCobradaDia = new javax.swing.JLabel();
-        txtEmpresa = new javax.swing.JTextField();
+        txtOperadoraCartao = new javax.swing.JTextField();
         txtJurosRotativo = new javax.swing.JTextField();
         txtPagtoMinimo = new javax.swing.JTextField();
         txtJurosParcelado = new javax.swing.JTextField();
         txtMulta = new javax.swing.JTextField();
         txtMultaSemMinimoTotal = new javax.swing.JTextField();
         txtMultaCobradaDia = new javax.swing.JTextField();
-        btnSalvarCartao = new javax.swing.JButton();
-        btnRefreshCartao = new javax.swing.JButton();
-        btnNovoCartao = new javax.swing.JButton();
+        btnInserirCartao = new javax.swing.JButton();
         btnExcluirCartao = new javax.swing.JButton();
+        btnCancelarCartao = new javax.swing.JButton();
+        btnConfirmarCartao = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         FormListener formListener = new FormListener();
 
+        masterTable.getTableHeader().setReorderingAllowed(false);
+
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${empresa}"));
-        columnBinding.setColumnName("Empresa");
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${operadoraCartao}"));
+        columnBinding.setColumnName("Operadora");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${jurosRotativo}"));
-        columnBinding.setColumnName("Juros Rotativo");
+        columnBinding.setColumnName("Juros rotativo");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${pagtoMinimo}"));
-        columnBinding.setColumnName("Pagto Minimo");
+        columnBinding.setColumnName("Pagto mínimo");
         columnBinding.setColumnClass(Double.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${jurosParcelado}"));
-        columnBinding.setColumnName("Juros Parcelado");
+        columnBinding.setColumnName("Juros parcelado");
         columnBinding.setColumnClass(Double.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${multa}"));
         columnBinding.setColumnName("Multa");
         columnBinding.setColumnClass(Double.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${multaSemMinimoTotal}"));
-        columnBinding.setColumnName("Multa Sem Minimo Total");
+        columnBinding.setColumnName("Multa sem mínimo ou total");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${multaCobradaDia}"));
-        columnBinding.setColumnName("Multa Cobrada Dia");
+        columnBinding.setColumnName("Multa cobrada a partir do dia");
         columnBinding.setColumnClass(Integer.class);
         bindingGroup.addBinding(jTableBinding);
-
+        jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
+        if (masterTable.getColumnModel().getColumnCount() > 0) {
+            masterTable.getColumnModel().getColumn(0).setResizable(false);
+            masterTable.getColumnModel().getColumn(1).setResizable(false);
+            masterTable.getColumnModel().getColumn(2).setResizable(false);
+            masterTable.getColumnModel().getColumn(3).setResizable(false);
+            masterTable.getColumnModel().getColumn(4).setResizable(false);
+            masterTable.getColumnModel().getColumn(5).setResizable(false);
+            masterTable.getColumnModel().getColumn(6).setResizable(false);
+        }
 
-        lblEmpresa.setText("Empresa:");
+        lblOperadoraCartao.setText("Operadora:");
 
-        lblJurosRotativo.setText("Juros Rotativo:");
+        lblJurosRotativo.setText("Juros rotativo:");
 
-        lblPagtoMinimo.setText("Pagto Minimo:");
+        lblPagtoMinimo.setText("Pagto mínimo:");
 
-        lblJurosParcelado.setText("Juros Parcelado:");
+        lblJurosParcelado.setText("Juros parcelado:");
 
         lblMulta.setText("Multa:");
 
-        lblMultaSemMinimoTotal.setText("Multa Sem Minimo Total:");
+        lblMultaSemMinimoTotal.setText("Multa sem mínimo ou total:");
 
-        lblMultaCobradaDia.setText("Multa Cobrada Dia:");
+        lblMultaCobradaDia.setText("Multa cobrada a partir do:");
 
-        txtEmpresa.setText("");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.empresa}"), txtEmpresa, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.operadoraCartao}"), txtOperadoraCartao, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtEmpresa, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtOperadoraCartao, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
-
-        txtJurosRotativo.setText("");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.jurosRotativo}"), txtJurosRotativo, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtJurosRotativo, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        txtPagtoMinimo.setText("");
-
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.pagtoMinimo}"), txtPagtoMinimo, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtPagtoMinimo, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        txtJurosParcelado.setText("");
-
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.jurosParcelado}"), txtJurosParcelado, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtJurosParcelado, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        txtMulta.setText("");
-
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.multa}"), txtMulta, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtMulta, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        txtMultaSemMinimoTotal.setText("");
-
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.multaSemMinimoTotal}"), txtMultaSemMinimoTotal, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtMultaSemMinimoTotal, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        txtMultaCobradaDia.setText("");
-
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.multaCobradaDia}"), txtMultaCobradaDia, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue("null");
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtMultaCobradaDia, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        btnSalvarCartao.setText("Salvar");
-        btnSalvarCartao.addActionListener(formListener);
-
-        btnRefreshCartao.setText("Refresh");
-        btnRefreshCartao.addActionListener(formListener);
-
-        btnNovoCartao.setText("Novo");
-        btnNovoCartao.addActionListener(formListener);
+        btnInserirCartao.setText("Inserir");
+        btnInserirCartao.addActionListener(formListener);
 
         btnExcluirCartao.setText("Excluir");
 
@@ -175,46 +163,68 @@ public class CartaoCreditoView extends JPanel {
 
         btnExcluirCartao.addActionListener(formListener);
 
+        btnCancelarCartao.setText("Cancelar");
+        btnCancelarCartao.addActionListener(formListener);
+
+        btnConfirmarCartao.setText("Confirmar");
+        btnConfirmarCartao.addActionListener(formListener);
+
+        jLabel1.setText(" dia");
+
+        jLabel2.setText("%");
+
+        jLabel3.setText("%");
+
+        jLabel4.setText("%");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnNovoCartao)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnInserirCartao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExcluirCartao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRefreshCartao)
+                        .addComponent(btnCancelarCartao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSalvarCartao))
+                        .addComponent(btnConfirmarCartao))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblOperadoraCartao)
+                            .addComponent(lblJurosRotativo)
+                            .addComponent(lblPagtoMinimo)
+                            .addComponent(lblJurosParcelado)
+                            .addComponent(lblMulta)
+                            .addComponent(lblMultaSemMinimoTotal)
+                            .addComponent(lblMultaCobradaDia))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtOperadoraCartao, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                            .addComponent(txtJurosRotativo, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblEmpresa)
-                                    .addComponent(lblJurosRotativo)
-                                    .addComponent(lblPagtoMinimo)
-                                    .addComponent(lblJurosParcelado)
-                                    .addComponent(lblMulta)
-                                    .addComponent(lblMultaSemMinimoTotal)
-                                    .addComponent(lblMultaCobradaDia))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtPagtoMinimo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                                    .addComponent(txtJurosParcelado, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMulta, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMultaSemMinimoTotal, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMultaCobradaDia, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtJurosRotativo, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtPagtoMinimo, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtJurosParcelado, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtMulta, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtMultaSemMinimoTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                    .addComponent(txtMultaCobradaDia, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)))
-                            .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))))
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExcluirCartao, btnNovoCartao, btnRefreshCartao, btnSalvarCartao});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarCartao, btnConfirmarCartao, btnExcluirCartao, btnInserirCartao});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,8 +233,8 @@ public class CartaoCreditoView extends JPanel {
                 .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmpresa)
-                    .addComponent(txtEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblOperadoraCartao)
+                    .addComponent(txtOperadoraCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblJurosRotativo)
@@ -232,15 +242,18 @@ public class CartaoCreditoView extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPagtoMinimo)
-                    .addComponent(txtPagtoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPagtoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblJurosParcelado)
-                    .addComponent(txtJurosParcelado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtJurosParcelado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMulta)
-                    .addComponent(txtMulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMultaSemMinimoTotal)
@@ -248,13 +261,14 @@ public class CartaoCreditoView extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMultaCobradaDia)
-                    .addComponent(txtMultaCobradaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMultaCobradaDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvarCartao)
-                    .addComponent(btnRefreshCartao)
+                    .addComponent(btnConfirmarCartao)
+                    .addComponent(btnCancelarCartao)
                     .addComponent(btnExcluirCartao)
-                    .addComponent(btnNovoCartao))
+                    .addComponent(btnInserirCartao))
                 .addContainerGap())
         );
 
@@ -266,23 +280,23 @@ public class CartaoCreditoView extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == btnSalvarCartao) {
-                CartaoCreditoView.this.btnSalvarCartaoActionPerformed(evt);
-            }
-            else if (evt.getSource() == btnRefreshCartao) {
-                CartaoCreditoView.this.btnRefreshCartaoActionPerformed(evt);
-            }
-            else if (evt.getSource() == btnNovoCartao) {
-                CartaoCreditoView.this.btnNovoCartaoActionPerformed(evt);
+            if (evt.getSource() == btnInserirCartao) {
+                CartaoCreditoView.this.btnInserirCartaoActionPerformed(evt);
             }
             else if (evt.getSource() == btnExcluirCartao) {
                 CartaoCreditoView.this.btnExcluirCartaoActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnCancelarCartao) {
+                CartaoCreditoView.this.btnCancelarCartaoActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnConfirmarCartao) {
+                CartaoCreditoView.this.btnConfirmarCartaoActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
 
     @SuppressWarnings("unchecked")
-    private void btnRefreshCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshCartaoActionPerformed
+    private void btnCancelarCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCartaoActionPerformed
         entityManager.getTransaction().rollback();
         entityManager.getTransaction().begin();
         java.util.Collection data = query.getResultList();
@@ -291,7 +305,7 @@ public class CartaoCreditoView extends JPanel {
         }
         list.clear();
         list.addAll(data);
-    }//GEN-LAST:event_btnRefreshCartaoActionPerformed
+    }//GEN-LAST:event_btnCancelarCartaoActionPerformed
 
     private void btnExcluirCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCartaoActionPerformed
         int[] selected = masterTable.getSelectedRows();
@@ -304,16 +318,16 @@ public class CartaoCreditoView extends JPanel {
         list.removeAll(toRemove);
     }//GEN-LAST:event_btnExcluirCartaoActionPerformed
 
-    private void btnNovoCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoCartaoActionPerformed
+    private void btnInserirCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirCartaoActionPerformed
         br.com.siscom.bean.CartaoCredito c = new br.com.siscom.bean.CartaoCredito();
         entityManager.persist(c);
         list.add(c);
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
-    }//GEN-LAST:event_btnNovoCartaoActionPerformed
+    }//GEN-LAST:event_btnInserirCartaoActionPerformed
 
-    private void btnSalvarCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarCartaoActionPerformed
+    private void btnConfirmarCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCartaoActionPerformed
         try {
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
@@ -326,32 +340,36 @@ public class CartaoCreditoView extends JPanel {
             list.clear();
             list.addAll(merged);
         }
-    }//GEN-LAST:event_btnSalvarCartaoActionPerformed
+    }//GEN-LAST:event_btnConfirmarCartaoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelarCartao;
+    private javax.swing.JButton btnConfirmarCartao;
     private javax.swing.JButton btnExcluirCartao;
-    private javax.swing.JButton btnNovoCartao;
-    private javax.swing.JButton btnRefreshCartao;
-    private javax.swing.JButton btnSalvarCartao;
+    private javax.swing.JButton btnInserirCartao;
     private javax.persistence.EntityManager entityManager;
-    private javax.swing.JLabel lblEmpresa;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblJurosParcelado;
     private javax.swing.JLabel lblJurosRotativo;
     private javax.swing.JLabel lblMulta;
     private javax.swing.JLabel lblMultaCobradaDia;
     private javax.swing.JLabel lblMultaSemMinimoTotal;
+    private javax.swing.JLabel lblOperadoraCartao;
     private javax.swing.JLabel lblPagtoMinimo;
     private java.util.List<br.com.siscom.bean.CartaoCredito> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
     private javax.persistence.Query query;
-    private javax.swing.JTextField txtEmpresa;
     private javax.swing.JTextField txtJurosParcelado;
     private javax.swing.JTextField txtJurosRotativo;
     private javax.swing.JTextField txtMulta;
     private javax.swing.JTextField txtMultaCobradaDia;
     private javax.swing.JTextField txtMultaSemMinimoTotal;
+    private javax.swing.JTextField txtOperadoraCartao;
     private javax.swing.JTextField txtPagtoMinimo;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables

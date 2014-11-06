@@ -1,4 +1,7 @@
-﻿insert into cartao_credito(empresa, juros_rotativo, pagto_minimo, juros_parcelado, multa, multa_sem_minimo_total, multa_cobrada_dia) values('American Express Card',                   'PayFlex 5,5%',   100, 11.9,  2,    'Total',  1);
+﻿--Tabela de Juros dos Cartões de Credito
+--http://www.anucc.org.br/servicos/index/25
+
+insert into cartao_credito(empresa, juros_rotativo, pagto_minimo, juros_parcelado, multa, multa_sem_minimo_total, multa_cobrada_dia) values('American Express Card',                   'PayFlex 5,5%',   100, 11.9,  2,    'Total',  1);
 insert into cartao_credito(empresa, juros_rotativo, pagto_minimo, juros_parcelado, multa, multa_sem_minimo_total, multa_cobrada_dia) values('American Express Credit',                 '5,95% a 10,95%', 20,  11.95, 2,    'Total',  1);
 insert into cartao_credito(empresa, juros_rotativo, pagto_minimo, juros_parcelado, multa, multa_sem_minimo_total, multa_cobrada_dia) values('American Express Platinum',               'PayFlex 5,5%',   20,  11.9,  2,    'Total',  1);
 insert into cartao_credito(empresa, juros_rotativo, pagto_minimo, juros_parcelado, multa, multa_sem_minimo_total, multa_cobrada_dia) values('Bandeirantes MasterCard',                 '10,9%',          20,  10.8,  2,    'Total',  1);

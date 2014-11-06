@@ -177,6 +177,11 @@ public class Menu extends javax.swing.JFrame {
         );
 
         menuCadastro.setLabel("Cadastro");
+        menuCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroActionPerformed(evt);
+            }
+        });
 
         menuCadastroCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         menuCadastroCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cadastro_cliente.png")); // NOI18N
@@ -258,7 +263,12 @@ public class Menu extends javax.swing.JFrame {
         menuCadastroTipoPgtoRecebimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         menuCadastroTipoPgtoRecebimento.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\tipo_pgto_recebimento.png")); // NOI18N
         menuCadastroTipoPgtoRecebimento.setMnemonic('g');
-        menuCadastroTipoPgtoRecebimento.setText("Tipos de Pgto Recebimento");
+        menuCadastroTipoPgtoRecebimento.setText("Tipos de Pagamento / Recebimento");
+        menuCadastroTipoPgtoRecebimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroTipoPgtoRecebimentoActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuCadastroTipoPgtoRecebimento);
         menuCadastro.add(jSeparator4);
 
@@ -438,6 +448,14 @@ public class Menu extends javax.swing.JFrame {
     private void menuCadastroCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroCartaoActionPerformed
         CartaoCreditoView.main(new String[]{"Cadastro de Cartões"});
     }//GEN-LAST:event_menuCadastroCartaoActionPerformed
+
+    private void menuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroActionPerformed
+        
+    }//GEN-LAST:event_menuCadastroActionPerformed
+
+    private void menuCadastroTipoPgtoRecebimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroTipoPgtoRecebimentoActionPerformed
+        TipoPgtoView.main(new String[]{"Cadastro de tipos de Pagamento / Recebimento"});
+    }//GEN-LAST:event_menuCadastroTipoPgtoRecebimentoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

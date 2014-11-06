@@ -1,4 +1,11 @@
-﻿-- ------------------------------------------------------------
+﻿--DDL – Data Definition Language ( DDL) são usadas para definir a estrutura de banco de dados ou esquema. Alguns exemplos:
+--CREATE- para criar objetos no banco de dados
+--ALTER – altera a estrutura da base de dados
+--TRUNCATE – remover todos os registros de uma tabela, incluindo todos os espaços alocados para os registros são removidos
+--COMMENT – adicionar comentários ao dicionário de dados
+--RENAME – para renomear um objeto
+
+-- ------------------------------------------------------------
 -- Plano de Conta
 -- Obs.: Toda vez que for cadastrar uma despesa, a depesa estara vinculada ao codigo do plano conta
 -- ------------------------------------------------------------

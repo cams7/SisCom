@@ -53,37 +53,34 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnNovaConta" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
+                      <Component id="btnInserirConta" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnExluirConta" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRefreshConta" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancelarConta" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSalvarConta" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnConfirmarConta" linkSize="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Component id="masterScrollPane" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="masterScrollPane" pref="0" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAgencia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblConta" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblGerente" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblFone" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNome" alignment="0" pref="321" max="32767" attributes="0"/>
-                                  <Component id="txtAgencia" alignment="0" pref="321" max="32767" attributes="0"/>
-                                  <Component id="txtConta" alignment="0" pref="321" max="32767" attributes="0"/>
-                                  <Component id="txtGerente" alignment="0" pref="321" max="32767" attributes="0"/>
-                                  <Component id="txtFone" alignment="0" pref="321" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="lblCodigoBanco" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAgencia" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblConta" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblGerente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFone" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtCodigoBanco" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtAgencia" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtConta" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtGerente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtFone" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -98,8 +95,8 @@
               <Component id="masterScrollPane" pref="156" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCodigoBanco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCodigoBanco" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -123,10 +120,10 @@
               </Group>
               <EmptySpace min="-2" max="-2" attributes="1"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnSalvarConta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnRefreshConta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnConfirmarConta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelarConta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnExluirConta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnNovaConta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnInserirConta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -142,24 +139,60 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTable" name="masterTable">
+          <Properties>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
           <BindingProperties>
             <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
-              <Subbinding sourcePath="${agenciaBanco}">
+              <Subbinding sourcePath="${codigoBanco}">
+                <BindingParameter name="NAME" value="Banco"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="${numeroAgencia}">
+                <BindingParameter name="NAME" value="Ag&#xea;ncia"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Short.class"/>
+              </Subbinding>
+              <Subbinding sourcePath="${numeroConta}">
+                <BindingParameter name="NAME" value="Conta"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
               </Subbinding>
-              <Subbinding sourcePath="${codBanco}">
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
-              </Subbinding>
-              <Subbinding sourcePath="${contaBanco}">
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
+              <Subbinding sourcePath="${nomeGerente}">
+                <BindingParameter name="NAME" value="Gerente"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
               </Subbinding>
               <Subbinding sourcePath="${foneBanco}">
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
-              </Subbinding>
-              <Subbinding sourcePath="${gerenteBanco}">
-                <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
-              </Subbinding>
-              <Subbinding sourcePath="${nomeBanco}">
+                <BindingParameter name="NAME" value="telefone do banco"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
               </Subbinding>
             </BindingProperty>
@@ -171,7 +204,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lblNome">
+    <Component class="javax.swing.JLabel" name="lblCodigoBanco">
       <Properties>
         <Property name="text" type="java.lang.String" value="C&#xf3;digo Banco:"/>
       </Properties>
@@ -196,34 +229,34 @@
         <Property name="text" type="java.lang.String" value="Telefone:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNome">
+    <Component class="javax.swing.JTextField" name="txtCodigoBanco">
       <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.nomeBanco}" target="txtNome" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.codigoBanco}" target="txtCodigoBanco" targetPath="text" updateStrategy="0" immediately="false">
+          <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
         </BindingProperty>
-        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtNome" targetPath="enabled" updateStrategy="1" immediately="false"/>
+        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCodigoBanco" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAgencia">
       <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.agenciaBanco}" target="txtAgencia" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.numeroAgencia}" target="txtAgencia" targetPath="text" updateStrategy="0" immediately="false">
+          <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtAgencia" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtConta">
       <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.contaBanco}" target="txtConta" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.numeroConta}" target="txtConta" targetPath="text" updateStrategy="0" immediately="false">
+          <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtConta" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtGerente">
       <BindingProperties>
-        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.gerenteBanco}" target="txtGerente" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+        <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.nomeGerente}" target="txtGerente" targetPath="text" updateStrategy="0" immediately="false">
+          <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtGerente" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
@@ -231,42 +264,18 @@
     <Component class="javax.swing.JTextField" name="txtFone">
       <BindingProperties>
         <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.foneBanco}" target="txtFone" targetPath="text" updateStrategy="0" immediately="false">
-          <Property name="incompletePathValue" type="java.lang.String" value="null"/>
+          <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtFone" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnSalvarConta">
+    <Component class="javax.swing.JButton" name="btnInserirConta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salvar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarContaActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnRefreshConta">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Refresh"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRefreshContaActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnNovaConta">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nova"/>
+        <Property name="text" type="java.lang.String" value="Inserir"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovaContaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirContaActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
@@ -282,6 +291,30 @@
       </BindingProperties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExluirContaActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCancelarConta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancelar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarContaActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnConfirmarConta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirmar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarContaActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>

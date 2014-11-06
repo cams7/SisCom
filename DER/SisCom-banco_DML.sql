@@ -1,4 +1,13 @@
-﻿insert into banco(cod_banco, nome_banco, site_banco) values('654', 'Banco A.J.Renner S.A.', '');
+﻿--DML – Data Manipulation Language ( DML) são utilizados para o gerenciamento de dados dentro de objetos do banco. Alguns exemplos:
+--SELECT- recuperar dados do banco de dados
+--INSERT – inserir dados em uma tabela
+--UPDATE – atualiza os dados existentes em uma tabela
+--DELETE – exclui registros de uma tabela,
+--CALL – chamar um subprograma PL / SQL
+--EXPLAIN PLAN – explicar o caminho de acesso aos dados
+--LOCK TABLE – controle de concorrência
+
+insert into banco(cod_banco, nome_banco, site_banco) values('654', 'Banco A.J.Renner S.A.', '');
 insert into banco(cod_banco, nome_banco, site_banco) values('246', 'Banco ABC Brasil S.A.', 'www.abcbrasil.com.br');
 insert into banco(cod_banco, nome_banco, site_banco) values('025', 'Banco Alfa S.A.', 'www.bancoalfa.com.br');
 insert into banco(cod_banco, nome_banco, site_banco) values('641', 'Banco Alvorada S.A.', '');

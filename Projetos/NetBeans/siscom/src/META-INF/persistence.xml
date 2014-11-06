@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.com.siscom.bean.ContaBancaria</class>
     <class>br.com.siscom.bean.CartaoCredito</class>
+    <class>br.com.siscom.bean.TipoPgto</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscom"/>
       <property name="javax.persistence.jdbc.password" value="12345"/>

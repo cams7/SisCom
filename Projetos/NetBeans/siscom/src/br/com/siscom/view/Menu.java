@@ -434,7 +434,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCadastroPlanoContaActionPerformed
 
     private void menuCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroClienteActionPerformed
-        // TODO add your handling code here:
+       ClienteView.main(new String[]{"Cadastro de Clientes"});
     }//GEN-LAST:event_menuCadastroClienteActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 public class TipoPgtoView extends JPanel {
 
     public TipoPgtoView() {
+
         initComponents();
         if (!Beans.isDesignTime()) {
             entityManager.getTransaction().begin();
@@ -40,22 +41,72 @@ public class TipoPgtoView extends JPanel {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("siscomPU").createEntityManager();
         query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT t FROM TipoPgto t");
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
+        btnNovoTipoPgto = new javax.swing.JButton();
+        btnExcluirTipoPgto = new javax.swing.JButton();
+        btnCancelarTipoPgto = new javax.swing.JButton();
+        btnConfirmarTipoPgto = new javax.swing.JButton();
+        pnlDadosTipoPgto = new javax.swing.JPanel();
+        javax.swing.JTextField txtTipoPgtoDescricao = new javax.swing.JTextField();
+        lblTipoPgtoDescricao = new javax.swing.JLabel();
+        pnlListaTiposPgto = new javax.swing.JPanel();
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
-        lblDescricao = new javax.swing.JLabel();
-        txtDescricao = new javax.swing.JTextField();
-        btnInserirTipo = new javax.swing.JButton();
-        btnExcluirTipo = new javax.swing.JButton();
-        btnCancelarTipo = new javax.swing.JButton();
-        btnConfirmarTipo = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
+
+        btnNovoTipoPgto.setText("Novo");
+        btnNovoTipoPgto.addActionListener(formListener);
+
+        btnExcluirTipoPgto.setText("Excluir");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirTipoPgto, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnExcluirTipoPgto.addActionListener(formListener);
+
+        btnCancelarTipoPgto.setText("Cancelar Allterações");
+        btnCancelarTipoPgto.addActionListener(formListener);
+
+        btnConfirmarTipoPgto.setText("Confirmar Allterações");
+        btnConfirmarTipoPgto.addActionListener(formListener);
+
+        pnlDadosTipoPgto.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados do Tipo de Pgto/Recebimento"));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.descricao}"), txtTipoPgtoDescricao, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtTipoPgtoDescricao, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        lblTipoPgtoDescricao.setText("Tipo:");
+
+        javax.swing.GroupLayout pnlDadosTipoPgtoLayout = new javax.swing.GroupLayout(pnlDadosTipoPgto);
+        pnlDadosTipoPgto.setLayout(pnlDadosTipoPgtoLayout);
+        pnlDadosTipoPgtoLayout.setHorizontalGroup(
+            pnlDadosTipoPgtoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosTipoPgtoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTipoPgtoDescricao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTipoPgtoDescricao)
+                .addContainerGap())
+        );
+        pnlDadosTipoPgtoLayout.setVerticalGroup(
+            pnlDadosTipoPgtoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosTipoPgtoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDadosTipoPgtoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipoPgtoDescricao)
+                    .addComponent(txtTipoPgtoDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        pnlListaTiposPgto.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Tipos de Pgto/Recebimento"));
 
         masterTable.getTableHeader().setReorderingAllowed(false);
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descricao}"));
-        columnBinding.setColumnName("Tipo Pgto/Recebimento");
+        columnBinding.setColumnName("Tipo");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
@@ -64,28 +115,22 @@ public class TipoPgtoView extends JPanel {
             masterTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        lblDescricao.setText("Tipo Pgto/Recebimento:");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.descricao}"), txtDescricao, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtDescricao, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        btnInserirTipo.setText("Inserir");
-        btnInserirTipo.addActionListener(formListener);
-
-        btnExcluirTipo.setText("Excluir");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirTipo, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        btnExcluirTipo.addActionListener(formListener);
-
-        btnCancelarTipo.setText("Cancelar");
-        btnCancelarTipo.addActionListener(formListener);
-
-        btnConfirmarTipo.setText("Confirmar");
-        btnConfirmarTipo.addActionListener(formListener);
+        javax.swing.GroupLayout pnlListaTiposPgtoLayout = new javax.swing.GroupLayout(pnlListaTiposPgto);
+        pnlListaTiposPgto.setLayout(pnlListaTiposPgtoLayout);
+        pnlListaTiposPgtoLayout.setHorizontalGroup(
+            pnlListaTiposPgtoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlListaTiposPgtoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(masterScrollPane)
+                .addContainerGap())
+        );
+        pnlListaTiposPgtoLayout.setVerticalGroup(
+            pnlListaTiposPgtoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlListaTiposPgtoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -95,39 +140,33 @@ public class TipoPgtoView extends JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnInserirTipo)
+                        .addComponent(btnNovoTipoPgto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExcluirTipo)
+                        .addComponent(btnExcluirTipoPgto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelarTipo)
+                        .addComponent(btnCancelarTipoPgto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConfirmarTipo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDescricao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                        .addComponent(btnConfirmarTipoPgto))
+                    .addComponent(pnlDadosTipoPgto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlListaTiposPgto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarTipo, btnConfirmarTipo, btnExcluirTipo, btnInserirTipo});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarTipoPgto, btnConfirmarTipoPgto, btnExcluirTipoPgto, btnNovoTipoPgto});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                .addComponent(pnlListaTiposPgto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlDadosTipoPgto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescricao)
-                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConfirmarTipo)
-                    .addComponent(btnCancelarTipo)
-                    .addComponent(btnExcluirTipo)
-                    .addComponent(btnInserirTipo))
+                    .addComponent(btnConfirmarTipoPgto)
+                    .addComponent(btnCancelarTipoPgto)
+                    .addComponent(btnExcluirTipoPgto)
+                    .addComponent(btnNovoTipoPgto))
                 .addContainerGap())
         );
 
@@ -139,23 +178,23 @@ public class TipoPgtoView extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == btnInserirTipo) {
-                TipoPgtoView.this.btnInserirTipoActionPerformed(evt);
+            if (evt.getSource() == btnNovoTipoPgto) {
+                TipoPgtoView.this.btnNovoTipoPgtoActionPerformed(evt);
             }
-            else if (evt.getSource() == btnExcluirTipo) {
-                TipoPgtoView.this.btnExcluirTipoActionPerformed(evt);
+            else if (evt.getSource() == btnExcluirTipoPgto) {
+                TipoPgtoView.this.btnExcluirTipoPgtoActionPerformed(evt);
             }
-            else if (evt.getSource() == btnCancelarTipo) {
-                TipoPgtoView.this.btnCancelarTipoActionPerformed(evt);
+            else if (evt.getSource() == btnCancelarTipoPgto) {
+                TipoPgtoView.this.btnCancelarTipoPgtoActionPerformed(evt);
             }
-            else if (evt.getSource() == btnConfirmarTipo) {
-                TipoPgtoView.this.btnConfirmarTipoActionPerformed(evt);
+            else if (evt.getSource() == btnConfirmarTipoPgto) {
+                TipoPgtoView.this.btnConfirmarTipoPgtoActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
 
     @SuppressWarnings("unchecked")
-    private void btnCancelarTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTipoActionPerformed
+    private void btnCancelarTipoPgtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarTipoPgtoActionPerformed
         entityManager.getTransaction().rollback();
         entityManager.getTransaction().begin();
         java.util.Collection data = query.getResultList();
@@ -164,9 +203,9 @@ public class TipoPgtoView extends JPanel {
         }
         list.clear();
         list.addAll(data);
-    }//GEN-LAST:event_btnCancelarTipoActionPerformed
+    }//GEN-LAST:event_btnCancelarTipoPgtoActionPerformed
 
-    private void btnExcluirTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirTipoActionPerformed
+    private void btnExcluirTipoPgtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirTipoPgtoActionPerformed
         int[] selected = masterTable.getSelectedRows();
         List<br.com.siscom.bean.TipoPgto> toRemove = new ArrayList<>(selected.length);
         for (int idx = 0; idx < selected.length; idx++) {
@@ -175,18 +214,18 @@ public class TipoPgtoView extends JPanel {
             entityManager.remove(t);
         }
         list.removeAll(toRemove);
-    }//GEN-LAST:event_btnExcluirTipoActionPerformed
+    }//GEN-LAST:event_btnExcluirTipoPgtoActionPerformed
 
-    private void btnInserirTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirTipoActionPerformed
+    private void btnNovoTipoPgtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoTipoPgtoActionPerformed
         br.com.siscom.bean.TipoPgto t = new br.com.siscom.bean.TipoPgto();
         entityManager.persist(t);
         list.add(t);
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
-    }//GEN-LAST:event_btnInserirTipoActionPerformed
+    }//GEN-LAST:event_btnNovoTipoPgtoActionPerformed
 
-    private void btnConfirmarTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarTipoActionPerformed
+    private void btnConfirmarTipoPgtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarTipoPgtoActionPerformed
         try {
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
@@ -199,21 +238,22 @@ public class TipoPgtoView extends JPanel {
             list.clear();
             list.addAll(merged);
         }
-    }//GEN-LAST:event_btnConfirmarTipoActionPerformed
+    }//GEN-LAST:event_btnConfirmarTipoPgtoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelarTipo;
-    private javax.swing.JButton btnConfirmarTipo;
-    private javax.swing.JButton btnExcluirTipo;
-    private javax.swing.JButton btnInserirTipo;
+    private javax.swing.JButton btnCancelarTipoPgto;
+    private javax.swing.JButton btnConfirmarTipoPgto;
+    private javax.swing.JButton btnExcluirTipoPgto;
+    private javax.swing.JButton btnNovoTipoPgto;
     private javax.persistence.EntityManager entityManager;
-    private javax.swing.JLabel lblDescricao;
+    private javax.swing.JLabel lblTipoPgtoDescricao;
     private java.util.List<br.com.siscom.bean.TipoPgto> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
+    private javax.swing.JPanel pnlDadosTipoPgto;
+    private javax.swing.JPanel pnlListaTiposPgto;
     private javax.persistence.Query query;
-    private javax.swing.JTextField txtDescricao;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
     public static void main(final String[] args) {
@@ -246,6 +286,7 @@ public class TipoPgtoView extends JPanel {
                 if (args.length > 0) {
                     frame.setTitle(args[0]);
                 }
+
             }
         });
     }

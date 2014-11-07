@@ -40,103 +40,177 @@ public class ContaBancariaView extends JPanel {
         entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("siscomPU").createEntityManager();
         query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT b FROM ContaBancaria b");
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
-        masterScrollPane = new javax.swing.JScrollPane();
-        masterTable = new javax.swing.JTable();
-        lblCodigoBanco = new javax.swing.JLabel();
-        lblAgencia = new javax.swing.JLabel();
-        lblConta = new javax.swing.JLabel();
-        lblGerente = new javax.swing.JLabel();
-        lblFone = new javax.swing.JLabel();
-        txtCodigoBanco = new javax.swing.JTextField();
-        txtAgencia = new javax.swing.JTextField();
-        txtConta = new javax.swing.JTextField();
-        txtGerente = new javax.swing.JTextField();
-        txtFone = new javax.swing.JTextField();
-        btnInserirConta = new javax.swing.JButton();
+        btnNovaConta = new javax.swing.JButton();
         btnExluirConta = new javax.swing.JButton();
         btnCancelarConta = new javax.swing.JButton();
         btnConfirmarConta = new javax.swing.JButton();
+        pnlDadosConta = new javax.swing.JPanel();
+        lblContaCodigoBanco = new javax.swing.JLabel();
+        lblContaAgencia = new javax.swing.JLabel();
+        lblContaNumero = new javax.swing.JLabel();
+        lblContaGerenteBanco = new javax.swing.JLabel();
+        lblContaTelefoneBanco = new javax.swing.JLabel();
+        txtContaCodigoBanco = new javax.swing.JTextField();
+        txtContaAgencia = new javax.swing.JTextField();
+        txtContaNumero = new javax.swing.JTextField();
+        txtContaGerenteBanco = new javax.swing.JTextField();
+        txtContaTelefoneBanco = new javax.swing.JTextField();
+        pnlListaContas = new javax.swing.JPanel();
+        masterScrollPane = new javax.swing.JScrollPane();
+        masterTable = new javax.swing.JTable();
 
         FormListener formListener = new FormListener();
 
+        btnNovaConta.setText("Nova");
+        btnNovaConta.setToolTipText("");
+        btnNovaConta.addActionListener(formListener);
+
+        btnExluirConta.setText("Excluir");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExluirConta, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnExluirConta.addActionListener(formListener);
+
+        btnCancelarConta.setText("Cancelar Allterações");
+        btnCancelarConta.addActionListener(formListener);
+
+        btnConfirmarConta.setText("Confirmar Allterações");
+        btnConfirmarConta.addActionListener(formListener);
+
+        pnlDadosConta.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados da Conta"));
+
+        lblContaCodigoBanco.setText("Código do Banco:");
+
+        lblContaAgencia.setText("Número da Agência:");
+
+        lblContaNumero.setText("Número da Conta:");
+
+        lblContaGerenteBanco.setText("Gerente do Banco:");
+
+        lblContaTelefoneBanco.setText("Telefone do Banco:");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.codigoBanco}"), txtContaCodigoBanco, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtContaCodigoBanco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.numeroAgencia}"), txtContaAgencia, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtContaAgencia, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.numeroConta}"), txtContaNumero, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtContaNumero, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nomeGerente}"), txtContaGerenteBanco, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtContaGerenteBanco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.foneBanco}"), txtContaTelefoneBanco, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtContaTelefoneBanco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        javax.swing.GroupLayout pnlDadosContaLayout = new javax.swing.GroupLayout(pnlDadosConta);
+        pnlDadosConta.setLayout(pnlDadosContaLayout);
+        pnlDadosContaLayout.setHorizontalGroup(
+            pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosContaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblContaCodigoBanco)
+                    .addComponent(lblContaAgencia)
+                    .addComponent(lblContaNumero)
+                    .addComponent(lblContaGerenteBanco)
+                    .addComponent(lblContaTelefoneBanco))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtContaCodigoBanco)
+                    .addComponent(txtContaAgencia)
+                    .addComponent(txtContaNumero)
+                    .addComponent(txtContaGerenteBanco)
+                    .addComponent(txtContaTelefoneBanco))
+                .addContainerGap())
+        );
+        pnlDadosContaLayout.setVerticalGroup(
+            pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDadosContaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaCodigoBanco)
+                    .addComponent(txtContaCodigoBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaAgencia)
+                    .addComponent(txtContaAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaNumero)
+                    .addComponent(txtContaNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaGerenteBanco)
+                    .addComponent(txtContaGerenteBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContaTelefoneBanco)
+                    .addComponent(txtContaTelefoneBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        pnlListaContas.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Contas Bancárias"));
+
+        masterTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        masterTable.getTableHeader().setReorderingAllowed(false);
+
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigoBanco}"));
-        columnBinding.setColumnName("Banco");
+        columnBinding.setColumnName("Código do Banco");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${numeroAgencia}"));
-        columnBinding.setColumnName("Agência");
+        columnBinding.setColumnName("Número da Agência");
         columnBinding.setColumnClass(Short.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${numeroConta}"));
-        columnBinding.setColumnName("Conta");
+        columnBinding.setColumnName("Número da Conta");
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeGerente}"));
-        columnBinding.setColumnName("Gerente");
+        columnBinding.setColumnName("Gerente do Banco");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneBanco}"));
-        columnBinding.setColumnName("telefone do banco");
+        columnBinding.setColumnName("Telefone do Banco");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
         if (masterTable.getColumnModel().getColumnCount() > 0) {
             masterTable.getColumnModel().getColumn(0).setResizable(false);
+            masterTable.getColumnModel().getColumn(0).setPreferredWidth(120);
             masterTable.getColumnModel().getColumn(1).setResizable(false);
+            masterTable.getColumnModel().getColumn(1).setPreferredWidth(120);
             masterTable.getColumnModel().getColumn(2).setResizable(false);
-            masterTable.getColumnModel().getColumn(3).setResizable(false);
+            masterTable.getColumnModel().getColumn(2).setPreferredWidth(120);
+            masterTable.getColumnModel().getColumn(3).setMinWidth(250);
             masterTable.getColumnModel().getColumn(4).setResizable(false);
+            masterTable.getColumnModel().getColumn(4).setPreferredWidth(120);
         }
 
-        lblCodigoBanco.setText("Código Banco:");
-
-        lblAgencia.setText("Agência:");
-
-        lblConta.setText("Conta:");
-
-        lblGerente.setText("Gerente:");
-
-        lblFone.setText("Telefone:");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.codigoBanco}"), txtCodigoBanco, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtCodigoBanco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.numeroAgencia}"), txtAgencia, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtAgencia, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.numeroConta}"), txtConta, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtConta, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nomeGerente}"), txtGerente, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtGerente, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.foneBanco}"), txtFone, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), txtFone, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        btnInserirConta.setText("Inserir");
-        btnInserirConta.setToolTipText("");
-        btnInserirConta.addActionListener(formListener);
-
-        btnExluirConta.setText("Excluir");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExluirConta, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        btnExluirConta.addActionListener(formListener);
-
-        btnCancelarConta.setText("Cancelar");
-        btnCancelarConta.addActionListener(formListener);
-
-        btnConfirmarConta.setText("Confirmar");
-        btnConfirmarConta.addActionListener(formListener);
+        javax.swing.GroupLayout pnlListaContasLayout = new javax.swing.GroupLayout(pnlListaContas);
+        pnlListaContas.setLayout(pnlListaContasLayout);
+        pnlListaContasLayout.setHorizontalGroup(
+            pnlListaContasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlListaContasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlListaContasLayout.setVerticalGroup(
+            pnlListaContasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(masterScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -146,65 +220,34 @@ public class ContaBancariaView extends JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 85, Short.MAX_VALUE)
-                        .addComponent(btnInserirConta)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnNovaConta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExluirConta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCancelarConta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnConfirmarConta))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigoBanco)
-                            .addComponent(lblAgencia)
-                            .addComponent(lblConta)
-                            .addComponent(lblGerente)
-                            .addComponent(lblFone))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigoBanco)
-                            .addComponent(txtAgencia)
-                            .addComponent(txtConta)
-                            .addComponent(txtGerente)
-                            .addComponent(txtFone))))
+                    .addComponent(pnlDadosConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlListaContas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarConta, btnConfirmarConta, btnExluirConta, btnInserirConta});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarConta, btnConfirmarConta, btnExluirConta, btnNovaConta});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                .addComponent(pnlListaContas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigoBanco)
-                    .addComponent(txtCodigoBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAgencia)
-                    .addComponent(txtAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblConta)
-                    .addComponent(txtConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGerente)
-                    .addComponent(txtGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFone)
-                    .addComponent(txtFone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(pnlDadosConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmarConta)
                     .addComponent(btnCancelarConta)
                     .addComponent(btnExluirConta)
-                    .addComponent(btnInserirConta))
+                    .addComponent(btnNovaConta))
                 .addContainerGap())
         );
 
@@ -216,8 +259,8 @@ public class ContaBancariaView extends JPanel {
     private class FormListener implements java.awt.event.ActionListener {
         FormListener() {}
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            if (evt.getSource() == btnInserirConta) {
-                ContaBancariaView.this.btnInserirContaActionPerformed(evt);
+            if (evt.getSource() == btnNovaConta) {
+                ContaBancariaView.this.btnNovaContaActionPerformed(evt);
             }
             else if (evt.getSource() == btnExluirConta) {
                 ContaBancariaView.this.btnExluirContaActionPerformed(evt);
@@ -254,14 +297,14 @@ public class ContaBancariaView extends JPanel {
         list.removeAll(toRemove);
     }//GEN-LAST:event_btnExluirContaActionPerformed
 
-    private void btnInserirContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirContaActionPerformed
+    private void btnNovaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovaContaActionPerformed
         br.com.siscom.bean.ContaBancaria b = new br.com.siscom.bean.ContaBancaria();
         entityManager.persist(b);
         list.add(b);
         int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
-    }//GEN-LAST:event_btnInserirContaActionPerformed
+    }//GEN-LAST:event_btnNovaContaActionPerformed
 
     private void btnConfirmarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarContaActionPerformed
         try {
@@ -283,22 +326,24 @@ public class ContaBancariaView extends JPanel {
     private javax.swing.JButton btnCancelarConta;
     private javax.swing.JButton btnConfirmarConta;
     private javax.swing.JButton btnExluirConta;
-    private javax.swing.JButton btnInserirConta;
+    private javax.swing.JButton btnNovaConta;
     private javax.persistence.EntityManager entityManager;
-    private javax.swing.JLabel lblAgencia;
-    private javax.swing.JLabel lblCodigoBanco;
-    private javax.swing.JLabel lblConta;
-    private javax.swing.JLabel lblFone;
-    private javax.swing.JLabel lblGerente;
+    private javax.swing.JLabel lblContaAgencia;
+    private javax.swing.JLabel lblContaCodigoBanco;
+    private javax.swing.JLabel lblContaGerenteBanco;
+    private javax.swing.JLabel lblContaNumero;
+    private javax.swing.JLabel lblContaTelefoneBanco;
     private java.util.List<br.com.siscom.bean.ContaBancaria> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
+    private javax.swing.JPanel pnlDadosConta;
+    private javax.swing.JPanel pnlListaContas;
     private javax.persistence.Query query;
-    private javax.swing.JTextField txtAgencia;
-    private javax.swing.JTextField txtCodigoBanco;
-    private javax.swing.JTextField txtConta;
-    private javax.swing.JTextField txtFone;
-    private javax.swing.JTextField txtGerente;
+    private javax.swing.JTextField txtContaAgencia;
+    private javax.swing.JTextField txtContaCodigoBanco;
+    private javax.swing.JTextField txtContaGerenteBanco;
+    private javax.swing.JTextField txtContaNumero;
+    private javax.swing.JTextField txtContaTelefoneBanco;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
     public static void main(final String[] args) {

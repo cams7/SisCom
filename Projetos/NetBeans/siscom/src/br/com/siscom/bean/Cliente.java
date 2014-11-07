@@ -8,6 +8,7 @@ package br.com.siscom.bean;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -24,6 +25,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -112,6 +114,9 @@ public class Cliente implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
     private List<Endereco> enderecos;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cliente")
+    private List<Telefone> telefones;
 
     public Cliente() {
         super();
@@ -293,6 +298,15 @@ public class Cliente implements Serializable {
 
     public void setEnderecos(List<Endereco> enderecos) {
         this.enderecos = enderecos;
+    }
+
+    @XmlTransient
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
     @Override

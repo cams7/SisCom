@@ -55,8 +55,15 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlListaClientes" max="32767" attributes="0"/>
-                  <Component id="pnlListaEnderecos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlListaTelefones" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlListaEnderecos" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlListaClientes" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -65,11 +72,18 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="pnlListaClientes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlListaClientes" max="32767" attributes="0"/>
+              <Component id="pnlListaEnderecos" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlListaEnderecos" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlListaTelefones" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnConfirmarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -107,7 +121,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="masterScrollPane" pref="85" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="276" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnExcluirCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -127,7 +141,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="masterTable">
+            <Component class="javax.swing.JTable" name="tblClientes">
               <Properties>
                 <Property name="autoResizeMode" type="int" value="0"/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -204,7 +218,7 @@
                 </Property>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
+                <BindingProperty name="elements" source="list" target="tblClientes" targetPath="elements" updateStrategy="0" immediately="true">
                   <Subbinding sourcePath="${nome}">
                     <BindingParameter name="NAME" value="Cliente"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
@@ -279,126 +293,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JScrollPane" name="masterScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTable" name="masterTable1">
-              <Properties>
-                <Property name="autoResizeMode" type="int" value="0"/>
-                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                  <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="250" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="200" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="130" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="150" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="80" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="180" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="120" resizable="false">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="200" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                  </TableColumnModel>
-                </Property>
-                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
-                </Property>
-              </Properties>
-              <BindingProperties>
-                <BindingProperty name="elements" source="list" target="masterTable1" targetPath="elements" updateStrategy="0" immediately="true">
-                  <Subbinding sourcePath="${nome}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${email}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${cpf}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${rg}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${orgaoRg}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${cnpj}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${nascimento}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${foneReferencia}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${profissao}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${renda}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${empresa}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${foneEmpresa}">
-                  </Subbinding>
-                  <Subbinding sourcePath="${referencia}">
-                  </Subbinding>
-                </BindingProperty>
-              </BindingProperties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-              </AuxValues>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JButton" name="btnNovoCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Novo Cliente"/>
@@ -416,7 +310,7 @@
             <Property name="text" type="java.lang.String" value="Excluir Cliente"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="btnExcluirCliente" targetPath="enabled" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="enabled" source="tblClientes" sourcePath="${selectedElement != null}" target="btnExcluirCliente" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirClienteActionPerformed"/>
@@ -431,7 +325,7 @@
             <Property name="text" type="java.lang.String" value="Editar Cliente"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="btnEditarCliente" targetPath="enabled" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="enabled" source="tblClientes" sourcePath="${selectedElement != null}" target="btnEditarCliente" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarClienteActionPerformed"/>
@@ -461,12 +355,8 @@
                           <Component id="btnEditarEndereco" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnExcluirEndereco" linkSize="2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnCancelarCliente" linkSize="2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnConfirmarCliente" linkSize="2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="detailScrollPane" alignment="0" max="32767" attributes="0"/>
+                      <Component id="detailScrollPane1" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -476,11 +366,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="detailScrollPane" pref="85" max="32767" attributes="0"/>
+                  <Component id="detailScrollPane1" pref="76" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnConfirmarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnExcluirEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnNovoEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEditarEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -491,14 +379,14 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="detailScrollPane">
+        <Container class="javax.swing.JScrollPane" name="detailScrollPane1">
           <AuxValues>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="detailTable">
+            <Component class="javax.swing.JTable" name="tblEnderecos">
               <Properties>
                 <Property name="autoResizeMode" type="int" value="0"/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -540,7 +428,7 @@
                 </Property>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="elements" source="masterTable" sourcePath="${selectedElement.enderecos}" target="detailTable" targetPath="elements" updateStrategy="0" immediately="true">
+                <BindingProperty name="elements" source="tblClientes" sourcePath="${selectedElement.enderecos}" target="tblEnderecos" targetPath="elements" updateStrategy="0" immediately="true">
                   <Property name="incompletePathValue" type="java.util.List" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                     <Connection code="java.util.Collections.emptyList()" type="code"/>
                   </Property>
@@ -583,36 +471,12 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnConfirmarCliente">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnCancelarCliente">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JButton" name="btnExcluirEndereco">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir Entere&#xe7;o"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="detailTable" sourcePath="${selectedElement != null}" target="btnExcluirEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="enabled" source="tblEnderecos" sourcePath="${selectedElement != null}" target="btnExcluirEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirEnderecoActionPerformed"/>
@@ -627,7 +491,7 @@
             <Property name="text" type="java.lang.String" value="Novo Endere&#xe7;o"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="btnNovoEndereco" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblClientes" sourcePath="${selectedElement != null}" target="btnNovoEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoEnderecoActionPerformed"/>
@@ -642,7 +506,7 @@
             <Property name="text" type="java.lang.String" value="Editar Endere&#xe7;o"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="detailTable" sourcePath="${selectedElement != null}" target="btnEditarEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="enabled" source="tblEnderecos" sourcePath="${selectedElement != null}" target="btnEditarEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarEnderecoActionPerformed"/>
@@ -650,5 +514,153 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JPanel" name="pnlListaTelefones">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Telefones do Cliente"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="detailScrollPane2" pref="714" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnNovoTelefone" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnEditarTelefone" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnExcluirTelefone" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="detailScrollPane2" min="-2" pref="83" max="-2" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnExcluirTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditarTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNovoTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="detailScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="tblTelefones">
+              <Properties>
+                <Property name="autoResizeMode" type="int" value="0"/>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="false">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="150" resizable="false">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+              <BindingProperties>
+                <BindingProperty name="elements" source="tblClientes" sourcePath="${selectedElement.telefones}" target="tblTelefones" targetPath="elements" updateStrategy="0" immediately="true">
+                  <Subbinding sourcePath="${numero}">
+                    <BindingParameter name="NAME" value="Numero"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
+                  </Subbinding>
+                  <Subbinding sourcePath="${tipo}">
+                    <BindingParameter name="NAME" value="Tipo"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Character.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
+                  </Subbinding>
+                </BindingProperty>
+              </BindingProperties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnExcluirTelefone">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir Telefone"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="tblTelefones" sourcePath="${selectedElement != null}" target="btnExcluirTelefone" targetPath="enabled" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirTelefoneActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarTelefone">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar Telefone"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="tblTelefones" sourcePath="${selectedElement != null}" target="btnEditarTelefone" targetPath="enabled" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarTelefoneActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnNovoTelefone">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Novo Telefone"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="tblClientes" sourcePath="${selectedElement != null}" target="btnNovoTelefone" targetPath="enabled" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoTelefoneActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnConfirmarCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCancelarCliente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+      </AuxValues>
+    </Component>
   </SubComponents>
 </Form>

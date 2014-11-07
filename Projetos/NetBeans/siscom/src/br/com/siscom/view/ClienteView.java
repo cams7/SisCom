@@ -7,6 +7,7 @@ package br.com.siscom.view;
 
 import br.com.siscom.bean.Cliente;
 import br.com.siscom.bean.Endereco;
+import br.com.siscom.bean.Telefone;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
@@ -48,29 +49,33 @@ public class ClienteView extends JPanel {
         list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         pnlListaClientes = new javax.swing.JPanel();
         masterScrollPane = new javax.swing.JScrollPane();
-        masterTable = new javax.swing.JTable();
-        masterScrollPane1 = new javax.swing.JScrollPane();
-        masterTable1 = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
         btnNovoCliente = new javax.swing.JButton();
         btnExcluirCliente = new javax.swing.JButton();
         btnEditarCliente = new javax.swing.JButton();
         pnlListaEnderecos = new javax.swing.JPanel();
-        detailScrollPane = new javax.swing.JScrollPane();
-        detailTable = new javax.swing.JTable();
-        btnConfirmarCliente = new javax.swing.JButton();
-        btnCancelarCliente = new javax.swing.JButton();
+        detailScrollPane1 = new javax.swing.JScrollPane();
+        tblEnderecos = new javax.swing.JTable();
         btnExcluirEndereco = new javax.swing.JButton();
         btnNovoEndereco = new javax.swing.JButton();
         btnEditarEndereco = new javax.swing.JButton();
+        pnlListaTelefones = new javax.swing.JPanel();
+        detailScrollPane2 = new javax.swing.JScrollPane();
+        tblTelefones = new javax.swing.JTable();
+        btnExcluirTelefone = new javax.swing.JButton();
+        btnEditarTelefone = new javax.swing.JButton();
+        btnNovoTelefone = new javax.swing.JButton();
+        btnConfirmarCliente = new javax.swing.JButton();
+        btnCancelarCliente = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
         pnlListaClientes.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Clientes"));
 
-        masterTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        masterTable.getTableHeader().setReorderingAllowed(false);
+        tblClientes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblClientes.getTableHeader().setReorderingAllowed(false);
 
-        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, tblClientes);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nome}"));
         columnBinding.setColumnName("Cliente");
         columnBinding.setColumnClass(String.class);
@@ -125,86 +130,29 @@ public class ClienteView extends JPanel {
         columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
-        masterScrollPane.setViewportView(masterTable);
-        if (masterTable.getColumnModel().getColumnCount() > 0) {
-            masterTable.getColumnModel().getColumn(0).setMinWidth(250);
-            masterTable.getColumnModel().getColumn(1).setMinWidth(200);
-            masterTable.getColumnModel().getColumn(2).setResizable(false);
-            masterTable.getColumnModel().getColumn(2).setPreferredWidth(110);
-            masterTable.getColumnModel().getColumn(3).setResizable(false);
-            masterTable.getColumnModel().getColumn(3).setPreferredWidth(110);
-            masterTable.getColumnModel().getColumn(4).setResizable(false);
-            masterTable.getColumnModel().getColumn(4).setPreferredWidth(110);
-            masterTable.getColumnModel().getColumn(5).setResizable(false);
-            masterTable.getColumnModel().getColumn(5).setPreferredWidth(110);
-            masterTable.getColumnModel().getColumn(6).setResizable(false);
-            masterTable.getColumnModel().getColumn(6).setPreferredWidth(130);
-            masterTable.getColumnModel().getColumn(7).setResizable(false);
-            masterTable.getColumnModel().getColumn(7).setPreferredWidth(100);
-            masterTable.getColumnModel().getColumn(8).setMinWidth(150);
-            masterTable.getColumnModel().getColumn(9).setResizable(false);
-            masterTable.getColumnModel().getColumn(9).setPreferredWidth(80);
-            masterTable.getColumnModel().getColumn(10).setMinWidth(180);
-            masterTable.getColumnModel().getColumn(11).setResizable(false);
-            masterTable.getColumnModel().getColumn(11).setPreferredWidth(120);
-            masterTable.getColumnModel().getColumn(12).setMinWidth(200);
-        }
-
-        masterTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        masterTable1.getTableHeader().setReorderingAllowed(false);
-
-        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable1);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nome}"));
-        columnBinding.setColumnName("Nome");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${email}"));
-        columnBinding.setColumnName("Email");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cpf}"));
-        columnBinding.setColumnName("Cpf");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${rg}"));
-        columnBinding.setColumnName("Rg");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${orgaoRg}"));
-        columnBinding.setColumnName("Orgao Rg");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cnpj}"));
-        columnBinding.setColumnName("Cnpj");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nascimento}"));
-        columnBinding.setColumnName("Nascimento");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneReferencia}"));
-        columnBinding.setColumnName("Fone Referencia");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${profissao}"));
-        columnBinding.setColumnName("Profissao");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${renda}"));
-        columnBinding.setColumnName("Renda");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${empresa}"));
-        columnBinding.setColumnName("Empresa");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${foneEmpresa}"));
-        columnBinding.setColumnName("Fone Empresa");
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${referencia}"));
-        columnBinding.setColumnName("Referencia");
-        bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
-        masterScrollPane1.setViewportView(masterTable1);
-        if (masterTable1.getColumnModel().getColumnCount() > 0) {
-            masterTable1.getColumnModel().getColumn(0).setMinWidth(250);
-            masterTable1.getColumnModel().getColumn(1).setMinWidth(200);
-            masterTable1.getColumnModel().getColumn(2).setResizable(false);
-            masterTable1.getColumnModel().getColumn(2).setPreferredWidth(110);
-            masterTable1.getColumnModel().getColumn(3).setResizable(false);
-            masterTable1.getColumnModel().getColumn(3).setPreferredWidth(110);
-            masterTable1.getColumnModel().getColumn(4).setResizable(false);
-            masterTable1.getColumnModel().getColumn(4).setPreferredWidth(110);
-            masterTable1.getColumnModel().getColumn(5).setResizable(false);
-            masterTable1.getColumnModel().getColumn(5).setPreferredWidth(110);
-            masterTable1.getColumnModel().getColumn(6).setResizable(false);
-            masterTable1.getColumnModel().getColumn(6).setPreferredWidth(130);
-            masterTable1.getColumnModel().getColumn(7).setResizable(false);
-            masterTable1.getColumnModel().getColumn(7).setPreferredWidth(100);
-            masterTable1.getColumnModel().getColumn(8).setMinWidth(150);
-            masterTable1.getColumnModel().getColumn(9).setResizable(false);
-            masterTable1.getColumnModel().getColumn(9).setPreferredWidth(80);
-            masterTable1.getColumnModel().getColumn(10).setMinWidth(180);
-            masterTable1.getColumnModel().getColumn(11).setResizable(false);
-            masterTable1.getColumnModel().getColumn(11).setPreferredWidth(120);
-            masterTable1.getColumnModel().getColumn(12).setMinWidth(200);
+        masterScrollPane.setViewportView(tblClientes);
+        if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(0).setMinWidth(250);
+            tblClientes.getColumnModel().getColumn(1).setMinWidth(200);
+            tblClientes.getColumnModel().getColumn(2).setResizable(false);
+            tblClientes.getColumnModel().getColumn(2).setPreferredWidth(110);
+            tblClientes.getColumnModel().getColumn(3).setResizable(false);
+            tblClientes.getColumnModel().getColumn(3).setPreferredWidth(110);
+            tblClientes.getColumnModel().getColumn(4).setResizable(false);
+            tblClientes.getColumnModel().getColumn(4).setPreferredWidth(110);
+            tblClientes.getColumnModel().getColumn(5).setResizable(false);
+            tblClientes.getColumnModel().getColumn(5).setPreferredWidth(110);
+            tblClientes.getColumnModel().getColumn(6).setResizable(false);
+            tblClientes.getColumnModel().getColumn(6).setPreferredWidth(130);
+            tblClientes.getColumnModel().getColumn(7).setResizable(false);
+            tblClientes.getColumnModel().getColumn(7).setPreferredWidth(100);
+            tblClientes.getColumnModel().getColumn(8).setMinWidth(150);
+            tblClientes.getColumnModel().getColumn(9).setResizable(false);
+            tblClientes.getColumnModel().getColumn(9).setPreferredWidth(80);
+            tblClientes.getColumnModel().getColumn(10).setMinWidth(180);
+            tblClientes.getColumnModel().getColumn(11).setResizable(false);
+            tblClientes.getColumnModel().getColumn(11).setPreferredWidth(120);
+            tblClientes.getColumnModel().getColumn(12).setMinWidth(200);
         }
 
         btnNovoCliente.setText("Novo Cliente");
@@ -212,14 +160,14 @@ public class ClienteView extends JPanel {
 
         btnExcluirCliente.setText("Excluir Cliente");
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirCliente, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirCliente, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnExcluirCliente.addActionListener(formListener);
 
         btnEditarCliente.setText("Editar Cliente");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarCliente, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarCliente, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnEditarCliente.addActionListener(formListener);
@@ -247,7 +195,7 @@ public class ClienteView extends JPanel {
         pnlListaClientesLayout.setVerticalGroup(
             pnlListaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlListaClientesLayout.createSequentialGroup()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                 .addGap(17, 17, 17)
                 .addGroup(pnlListaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExcluirCliente)
@@ -258,11 +206,11 @@ public class ClienteView extends JPanel {
 
         pnlListaEnderecos.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereços do Cliente"));
 
-        detailTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        detailTable.getTableHeader().setReorderingAllowed(false);
+        tblEnderecos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblEnderecos.getTableHeader().setReorderingAllowed(false);
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${selectedElement.enderecos}");
-        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, eLProperty, detailTable);
+        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, eLProperty, tblEnderecos);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${logradouro}"));
         columnBinding.setColumnName("Logradouro");
         columnBinding.setColumnClass(String.class);
@@ -290,40 +238,34 @@ public class ClienteView extends JPanel {
         jTableBinding.setSourceUnreadableValue(java.util.Collections.emptyList());
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
-        detailScrollPane.setViewportView(detailTable);
-        if (detailTable.getColumnModel().getColumnCount() > 0) {
-            detailTable.getColumnModel().getColumn(0).setMinWidth(350);
-            detailTable.getColumnModel().getColumn(1).setMinWidth(300);
-            detailTable.getColumnModel().getColumn(2).setMinWidth(200);
-            detailTable.getColumnModel().getColumn(3).setMinWidth(110);
-            detailTable.getColumnModel().getColumn(4).setMinWidth(250);
-            detailTable.getColumnModel().getColumn(5).setResizable(false);
-            detailTable.getColumnModel().getColumn(5).setPreferredWidth(30);
+        detailScrollPane1.setViewportView(tblEnderecos);
+        if (tblEnderecos.getColumnModel().getColumnCount() > 0) {
+            tblEnderecos.getColumnModel().getColumn(0).setMinWidth(350);
+            tblEnderecos.getColumnModel().getColumn(1).setMinWidth(300);
+            tblEnderecos.getColumnModel().getColumn(2).setMinWidth(200);
+            tblEnderecos.getColumnModel().getColumn(3).setMinWidth(110);
+            tblEnderecos.getColumnModel().getColumn(4).setMinWidth(250);
+            tblEnderecos.getColumnModel().getColumn(5).setResizable(false);
+            tblEnderecos.getColumnModel().getColumn(5).setPreferredWidth(30);
         }
-
-        btnConfirmarCliente.setText("Confirmar Allterações");
-        btnConfirmarCliente.addActionListener(formListener);
-
-        btnCancelarCliente.setText("Cancelar Allterações");
-        btnCancelarCliente.addActionListener(formListener);
 
         btnExcluirEndereco.setText("Excluir Entereço");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblEnderecos, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnExcluirEndereco.addActionListener(formListener);
 
         btnNovoEndereco.setText("Novo Endereço");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnNovoEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnNovoEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnNovoEndereco.addActionListener(formListener);
 
         btnEditarEndereco.setText("Editar Endereço");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblEnderecos, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnEditarEndereco.addActionListener(formListener);
@@ -341,31 +283,105 @@ public class ClienteView extends JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditarEndereco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExcluirEndereco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelarCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConfirmarCliente))
-                    .addComponent(detailScrollPane))
+                        .addComponent(btnExcluirEndereco))
+                    .addComponent(detailScrollPane1))
                 .addContainerGap())
         );
 
-        pnlListaEnderecosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCancelarCliente, btnConfirmarCliente, btnExcluirEndereco, btnNovoEndereco});
+        pnlListaEnderecosLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnExcluirEndereco, btnNovoEndereco});
 
         pnlListaEnderecosLayout.setVerticalGroup(
             pnlListaEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlListaEnderecosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(detailScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(detailScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlListaEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConfirmarCliente)
-                    .addComponent(btnCancelarCliente)
                     .addComponent(btnExcluirEndereco)
                     .addComponent(btnNovoEndereco)
                     .addComponent(btnEditarEndereco))
                 .addContainerGap())
         );
+
+        pnlListaTelefones.setBorder(javax.swing.BorderFactory.createTitledBorder("Telefones do Cliente"));
+
+        tblTelefones.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tblTelefones.getTableHeader().setReorderingAllowed(false);
+
+        eLProperty = org.jdesktop.beansbinding.ELProperty.create("${selectedElement.telefones}");
+        jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, eLProperty, tblTelefones);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${numero}"));
+        columnBinding.setColumnName("Numero");
+        columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${tipo}"));
+        columnBinding.setColumnName("Tipo");
+        columnBinding.setColumnClass(Character.class);
+        columnBinding.setEditable(false);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
+        detailScrollPane2.setViewportView(tblTelefones);
+        if (tblTelefones.getColumnModel().getColumnCount() > 0) {
+            tblTelefones.getColumnModel().getColumn(0).setResizable(false);
+            tblTelefones.getColumnModel().getColumn(0).setPreferredWidth(150);
+            tblTelefones.getColumnModel().getColumn(1).setResizable(false);
+            tblTelefones.getColumnModel().getColumn(1).setPreferredWidth(150);
+        }
+
+        btnExcluirTelefone.setText("Excluir Telefone");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblTelefones, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirTelefone, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnExcluirTelefone.addActionListener(formListener);
+
+        btnEditarTelefone.setText("Editar Telefone");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblTelefones, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarTelefone, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnEditarTelefone.addActionListener(formListener);
+
+        btnNovoTelefone.setText("Novo Telefone");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, tblClientes, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnNovoTelefone, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnNovoTelefone.addActionListener(formListener);
+
+        javax.swing.GroupLayout pnlListaTelefonesLayout = new javax.swing.GroupLayout(pnlListaTelefones);
+        pnlListaTelefones.setLayout(pnlListaTelefonesLayout);
+        pnlListaTelefonesLayout.setHorizontalGroup(
+            pnlListaTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlListaTelefonesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlListaTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(detailScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListaTelefonesLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnNovoTelefone)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditarTelefone)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluirTelefone)))
+                .addContainerGap())
+        );
+        pnlListaTelefonesLayout.setVerticalGroup(
+            pnlListaTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlListaTelefonesLayout.createSequentialGroup()
+                .addComponent(detailScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(pnlListaTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExcluirTelefone)
+                    .addComponent(btnEditarTelefone)
+                    .addComponent(btnNovoTelefone)))
+        );
+
+        btnConfirmarCliente.setText("Confirmar Allterações");
+        btnConfirmarCliente.addActionListener(formListener);
+
+        btnCancelarCliente.setText("Cancelar Allterações");
+        btnCancelarCliente.addActionListener(formListener);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -374,18 +390,30 @@ public class ClienteView extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlListaEnderecos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlListaTelefones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlListaEnderecos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlListaClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCancelarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConfirmarCliente)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlListaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlListaEnderecos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(pnlListaEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlListaTelefones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCancelarCliente)
+                    .addComponent(btnConfirmarCliente))
+                .addGap(49, 49, 49))
         );
 
         bindingGroup.bind();
@@ -402,11 +430,8 @@ public class ClienteView extends JPanel {
             else if (evt.getSource() == btnExcluirCliente) {
                 ClienteView.this.btnExcluirClienteActionPerformed(evt);
             }
-            else if (evt.getSource() == btnConfirmarCliente) {
-                ClienteView.this.btnConfirmarClienteActionPerformed(evt);
-            }
-            else if (evt.getSource() == btnCancelarCliente) {
-                ClienteView.this.btnCancelarClienteActionPerformed(evt);
+            else if (evt.getSource() == btnEditarCliente) {
+                ClienteView.this.btnEditarClienteActionPerformed(evt);
             }
             else if (evt.getSource() == btnExcluirEndereco) {
                 ClienteView.this.btnExcluirEnderecoActionPerformed(evt);
@@ -414,25 +439,37 @@ public class ClienteView extends JPanel {
             else if (evt.getSource() == btnNovoEndereco) {
                 ClienteView.this.btnNovoEnderecoActionPerformed(evt);
             }
-            else if (evt.getSource() == btnEditarCliente) {
-                ClienteView.this.btnEditarClienteActionPerformed(evt);
-            }
             else if (evt.getSource() == btnEditarEndereco) {
                 ClienteView.this.btnEditarEnderecoActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnExcluirTelefone) {
+                ClienteView.this.btnExcluirTelefoneActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnEditarTelefone) {
+                ClienteView.this.btnEditarTelefoneActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnNovoTelefone) {
+                ClienteView.this.btnNovoTelefoneActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnConfirmarCliente) {
+                ClienteView.this.btnConfirmarClienteActionPerformed(evt);
+            }
+            else if (evt.getSource() == btnCancelarCliente) {
+                ClienteView.this.btnCancelarClienteActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
 
 
     private void btnExcluirEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirEnderecoActionPerformed
-        int index = masterTable.getSelectedRow();
-        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
         Collection<Endereco> enderecos = cliente.getEnderecos();
-        int[] selected = detailTable.getSelectedRows();
+        int[] selected = tblEnderecos.getSelectedRows();
         List<Endereco> toRemove = new ArrayList<>(selected.length);
         for (int idx = 0; idx < selected.length; idx++) {
 
-            selected[idx] = detailTable.convertRowIndexToModel(selected[idx]);
+            selected[idx] = tblEnderecos.convertRowIndexToModel(selected[idx]);
 
             int count = 0;
             Iterator<Endereco> iter = enderecos.iterator();
@@ -444,13 +481,13 @@ public class ClienteView extends JPanel {
             entityManager.remove(endereco);
         }
         enderecos.removeAll(toRemove);
-        masterTable.clearSelection();
-        masterTable.setRowSelectionInterval(index, index);
+        tblClientes.clearSelection();
+        tblClientes.setRowSelectionInterval(index, index);
     }//GEN-LAST:event_btnExcluirEnderecoActionPerformed
 
     private void btnNovoEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoEnderecoActionPerformed
-        int index = masterTable.getSelectedRow();
-        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
         Collection<Endereco> enderecos = cliente.getEnderecos();
         if (enderecos == null) {
             enderecos = new LinkedList<>();
@@ -460,13 +497,13 @@ public class ClienteView extends JPanel {
         entityManager.persist(endereco);
         endereco.setCliente(cliente);
         enderecos.add(endereco);
-        masterTable.clearSelection();
-        masterTable.setRowSelectionInterval(index, index);
+        tblClientes.clearSelection();
+        tblClientes.setRowSelectionInterval(index, index);
         int row = enderecos.size() - 1;
-        detailTable.setRowSelectionInterval(row, row);
-        detailTable.scrollRectToVisible(detailTable.getCellRect(row, 0, true));
+        tblEnderecos.setRowSelectionInterval(row, row);
+        tblEnderecos.scrollRectToVisible(tblEnderecos.getCellRect(row, 0, true));
 
-        EnderecoEditView enderecoEditView = new EnderecoEditView(null, true);
+        ClienteEnderecoEditView enderecoEditView = new ClienteEnderecoEditView(null, true);
         enderecoEditView.setRegistroAtual(endereco);
         enderecoEditView.setVisible(true);
 
@@ -490,10 +527,10 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_btnCancelarClienteActionPerformed
 
     private void btnExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirClienteActionPerformed
-        int[] selected = masterTable.getSelectedRows();
+        int[] selected = tblClientes.getSelectedRows();
         List<Cliente> toRemove = new ArrayList<>(selected.length);
         for (int idx = 0; idx < selected.length; idx++) {
-            Cliente cliente = list.get(masterTable.convertRowIndexToModel(selected[idx]));
+            Cliente cliente = list.get(tblClientes.convertRowIndexToModel(selected[idx]));
             toRemove.add(cliente);
             entityManager.remove(cliente);
         }
@@ -506,8 +543,8 @@ public class ClienteView extends JPanel {
         entityManager.persist(cliente);
         list.add(cliente);
         int row = list.size() - 1;
-        masterTable.setRowSelectionInterval(row, row);
-        masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
+        tblClientes.setRowSelectionInterval(row, row);
+        tblClientes.scrollRectToVisible(tblClientes.getCellRect(row, 0, true));
 
         ClienteEditView clienteEditView = new ClienteEditView(null, true);
         clienteEditView.setRegistroAtual(cliente);
@@ -536,8 +573,8 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_btnConfirmarClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
-        int index = masterTable.getSelectedRow();
-        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
 
         ClienteEditView clienteEditView = new ClienteEditView(null, true);
         clienteEditView.setRegistroAtual(cliente);
@@ -551,10 +588,10 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void btnEditarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEnderecoActionPerformed
-        int index = masterTable.getSelectedRow();
-        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
         Collection<Endereco> enderecos = cliente.getEnderecos();
-        int selected = detailTable.getSelectedRow();
+        int selected = tblEnderecos.getSelectedRow();
 
         int count = 0;
         Iterator<Endereco> iter = enderecos.iterator();
@@ -563,7 +600,7 @@ public class ClienteView extends JPanel {
         }
         Endereco endereco = iter.next();
 
-        EnderecoEditView enderecoEditView = new EnderecoEditView(null, true);
+        ClienteEnderecoEditView enderecoEditView = new ClienteEnderecoEditView(null, true);
         enderecoEditView.setRegistroAtual(endereco);
         enderecoEditView.setVisible(true);
 
@@ -574,27 +611,108 @@ public class ClienteView extends JPanel {
         }
     }//GEN-LAST:event_btnEditarEnderecoActionPerformed
 
+    private void btnNovoTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoTelefoneActionPerformed
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
+        Collection<Telefone> telefones = cliente.getTelefones();
+        if (telefones == null) {
+            telefones = new LinkedList<>();
+            cliente.setTelefones((List) telefones);
+        }
+        Telefone telefone = new Telefone();
+        entityManager.persist(telefone);
+        telefone.setCliente(cliente);
+        telefones.add(telefone);
+        tblClientes.clearSelection();
+        tblClientes.setRowSelectionInterval(index, index);
+        int row = telefones.size() - 1;
+        tblTelefones.setRowSelectionInterval(row, row);
+        tblTelefones.scrollRectToVisible(tblTelefones.getCellRect(row, 0, true));
+
+        ClienteTelefoneEditView telefoneEditView = new ClienteTelefoneEditView(null, true);
+        telefoneEditView.setRegistroAtual(telefone);
+        telefoneEditView.setVisible(true);
+
+        if (telefoneEditView.isConfirmaTelefone()) {
+            btnConfirmarCliente.doClick();
+        } else {
+            btnCancelarCliente.doClick();
+        }
+    }//GEN-LAST:event_btnNovoTelefoneActionPerformed
+
+    private void btnEditarTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTelefoneActionPerformed
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
+        Collection<Telefone> telefones = cliente.getTelefones();
+        int selected = tblTelefones.getSelectedRow();
+
+        int count = 0;
+        Iterator<Telefone> iter = telefones.iterator();
+        while (count++ < selected) {
+            iter.next();
+        }
+        Telefone telefone = iter.next();
+
+        ClienteTelefoneEditView telefoneEditView = new ClienteTelefoneEditView(null, true);
+        telefoneEditView.setRegistroAtual(telefone);
+        telefoneEditView.setVisible(true);
+
+        if (telefoneEditView.isConfirmaTelefone()) {
+            btnConfirmarCliente.doClick();
+        } else {
+            btnCancelarCliente.doClick();
+        }
+    }//GEN-LAST:event_btnEditarTelefoneActionPerformed
+
+    private void btnExcluirTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirTelefoneActionPerformed
+        int index = tblClientes.getSelectedRow();
+        Cliente cliente = list.get(tblClientes.convertRowIndexToModel(index));
+        Collection<Telefone> telefones = cliente.getTelefones();
+        int[] selected = tblTelefones.getSelectedRows();
+        List<Telefone> toRemove = new ArrayList<>(selected.length);
+        for (int idx = 0; idx < selected.length; idx++) {
+
+            selected[idx] = tblTelefones.convertRowIndexToModel(selected[idx]);
+
+            int count = 0;
+            Iterator<Telefone> iter = telefones.iterator();
+            while (count++ < selected[idx]) {
+                iter.next();
+            }
+            Telefone telefone = iter.next();
+            toRemove.add(telefone);
+            entityManager.remove(telefone);
+        }
+        telefones.removeAll(toRemove);
+        tblClientes.clearSelection();
+        tblClientes.setRowSelectionInterval(index, index);
+    }//GEN-LAST:event_btnExcluirTelefoneActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnConfirmarCliente;
     private javax.swing.JButton btnEditarCliente;
     private javax.swing.JButton btnEditarEndereco;
+    private javax.swing.JButton btnEditarTelefone;
     private javax.swing.JButton btnExcluirCliente;
     private javax.swing.JButton btnExcluirEndereco;
+    private javax.swing.JButton btnExcluirTelefone;
     private javax.swing.JButton btnNovoCliente;
     private javax.swing.JButton btnNovoEndereco;
-    private javax.swing.JScrollPane detailScrollPane;
-    private javax.swing.JTable detailTable;
+    private javax.swing.JButton btnNovoTelefone;
+    private javax.swing.JScrollPane detailScrollPane1;
+    private javax.swing.JScrollPane detailScrollPane2;
     private javax.persistence.EntityManager entityManager;
     private java.util.List<br.com.siscom.bean.Cliente> list;
     private javax.swing.JScrollPane masterScrollPane;
-    private javax.swing.JScrollPane masterScrollPane1;
-    private javax.swing.JTable masterTable;
-    private javax.swing.JTable masterTable1;
     private javax.swing.JPanel pnlListaClientes;
     private javax.swing.JPanel pnlListaEnderecos;
+    private javax.swing.JPanel pnlListaTelefones;
     private javax.persistence.Query query;
+    private javax.swing.JTable tblClientes;
+    private javax.swing.JTable tblEnderecos;
+    private javax.swing.JTable tblTelefones;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
     public static void main(final String[] args) {

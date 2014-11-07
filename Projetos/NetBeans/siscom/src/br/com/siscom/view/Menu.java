@@ -101,6 +101,11 @@ public class Menu extends javax.swing.JFrame {
         btnCadastroCliente.setFocusable(false);
         btnCadastroCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastroCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroClienteActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnCadastroCliente);
 
         btnCadastroFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\fornecedor2.png")); // NOI18N
@@ -456,6 +461,10 @@ public class Menu extends javax.swing.JFrame {
     private void menuCadastroTipoPgtoRecebimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroTipoPgtoRecebimentoActionPerformed
         TipoPgtoView.main(new String[]{"Cadastro de tipos de Pagamento / Recebimento"});
     }//GEN-LAST:event_menuCadastroTipoPgtoRecebimentoActionPerformed
+
+    private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
+        ClienteView.main(new String[]{"Cadastro de Clientes"});
+    }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

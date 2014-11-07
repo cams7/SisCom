@@ -226,7 +226,7 @@
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${orgaoRg}">
-                    <BindingParameter name="NAME" value="&#xd3;rg&#xe3;o Expedidor"/>
+                    <BindingParameter name="NAME" value="&#xd3;rg&#xe3;o expedidor"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>

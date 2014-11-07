@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Editando Informa&#xe7;&#xf5;es do Cliente"/>
@@ -26,11 +43,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="pnlDadosCliente" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Component id="pnlDadosCliente" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -44,14 +58,13 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Component id="pnlDadosCliente" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnConfirmarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="30" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,21 +83,92 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lblClienteProfissao" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblClienteEmail" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblClienteCPF" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblClienteNome" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtClienteNome" alignment="0" pref="299" max="32767" attributes="0"/>
-                      <Component id="txtClienteCPF" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtClienteEmail" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtClienteProfissao" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblClienteNome" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteDataNascimento" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteCPF" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteProfissao" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteEmpresa" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblClienteReferencia" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="txtClienteReferencia" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtClienteCPF" max="32767" attributes="0"/>
+                                              <Component id="txtClienteDataNascimento" pref="120" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblClienteTipo" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblClienteRG" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="txtClienteRG" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="txtClienteTipo" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtClienteEmpresa" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="txtClienteProfissao" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txtClienteEmail" min="-2" pref="300" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblClienteRenda" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblClienteDesde" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblClienteOrgaoExpedidor" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblClienteCNPJ" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblClienteFoneEmpresa" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblClienteFoneReferencia" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtClienteDesde" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtClienteCNPJ" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtClienteFoneEmpresa" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtClienteFoneReferencia" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtClienteRenda" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="txtClienteOrgaoExpedidor" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="127" pref="127" max="-2" attributes="0"/>
+                          <Component id="txtClienteNome" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,22 +180,53 @@
                       <Component id="lblClienteNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtClienteNome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblClienteEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtClienteEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblClienteProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtClienteProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteRenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteRenda" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblClienteDesde" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteDesde" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteTipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteRG" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteOrgaoExpedidor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteOrgaoExpedidor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtClienteCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteCNPJ" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblClienteEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteFoneEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteFoneEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblClienteReferencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteReferencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblClienteFoneReferencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClienteFoneReferencia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -161,6 +276,141 @@
         <Component class="javax.swing.JTextField" name="txtClienteProfissao">
           <BindingProperties>
             <BindingProperty name="text" source="Form" sourcePath="${registroAtual.profissao}" target="txtClienteProfissao" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteCNPJ">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CNPJ:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteCNPJ">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.cnpj}" target="txtClienteCNPJ" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteRG">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RG:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteRG">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.rg}" target="txtClienteRG" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteOrgaoExpedidor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xd3;rg&#xe3;o expedidor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteTipo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteTipo">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.tipo}" target="txtClienteTipo" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteDesde">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Desde de:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteDesde">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.desde}" target="txtClienteDesde" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteEmpresa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Empresa:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteEmpresa">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.empresa}" target="txtClienteEmpresa" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteFoneEmpresa">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Telefone da empresa:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteFoneEmpresa">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.foneEmpresa}" target="txtClienteFoneEmpresa" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteOrgaoExpedidor">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.orgaoRg}" target="txtClienteOrgaoExpedidor" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteRenda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Renda:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteRenda">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.renda}" target="txtClienteRenda" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteReferencia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Refer&#xea;ncia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteReferencia">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.referencia}" target="txtClienteReferencia" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteFoneReferencia">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Telefone do(a) refer&#xea;ncia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteFoneReferencia">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.foneReferencia}" target="txtClienteFoneReferencia" targetPath="text" updateStrategy="0" immediately="false">
+              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
+            </BindingProperty>
+          </BindingProperties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblClienteDataNascimento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data de nascimento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtClienteDataNascimento">
+          <BindingProperties>
+            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.nascimento}" target="txtClienteDataNascimento" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
           </BindingProperties>

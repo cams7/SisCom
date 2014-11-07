@@ -87,7 +87,7 @@ public class ClienteView extends JPanel {
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${orgaoRg}"));
-        columnBinding.setColumnName("Órgão Expedidor");
+        columnBinding.setColumnName("Órgão expedidor");
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cnpj}"));

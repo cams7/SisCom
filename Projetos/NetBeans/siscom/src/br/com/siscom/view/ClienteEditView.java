@@ -221,7 +221,7 @@ public class ClienteEditView extends javax.swing.JDialog {
                             .addGroup(pnlDadosClienteLayout.createSequentialGroup()
                                 .addGroup(pnlDadosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtClienteRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtClienteOrgaoExpedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtClienteOrgaoExpedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 19, Short.MAX_VALUE)))
                         .addGap(1, 1, 1))
                     .addGroup(pnlDadosClienteLayout.createSequentialGroup()

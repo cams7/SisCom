@@ -61,6 +61,7 @@ public class ClienteView extends JPanel {
         btnCancelarCliente = new javax.swing.JButton();
         btnExcluirEndereco = new javax.swing.JButton();
         btnNovoEndereco = new javax.swing.JButton();
+        btnEditarEndereco = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -258,27 +259,34 @@ public class ClienteView extends JPanel {
         pnlListaEnderecos.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereços do Cliente"));
 
         detailTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        detailTable.getTableHeader().setReorderingAllowed(false);
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${selectedElement.enderecos}");
         jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, eLProperty, detailTable);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${logradouro}"));
         columnBinding.setColumnName("Logradouro");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${bairro}"));
         columnBinding.setColumnName("Bairro");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${complemento}"));
         columnBinding.setColumnName("Complemento");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cep}"));
         columnBinding.setColumnName("Cep");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cidade}"));
         columnBinding.setColumnName("Cidade");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${uf}"));
         columnBinding.setColumnName("Uf");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         jTableBinding.setSourceUnreadableValue(java.util.Collections.emptyList());
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
@@ -301,7 +309,7 @@ public class ClienteView extends JPanel {
 
         btnExcluirEndereco.setText("Excluir Entereço");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnExcluirEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         btnExcluirEndereco.addActionListener(formListener);
@@ -313,6 +321,13 @@ public class ClienteView extends JPanel {
 
         btnNovoEndereco.addActionListener(formListener);
 
+        btnEditarEndereco.setText("Editar Endereço");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), btnEditarEndereco, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        btnEditarEndereco.addActionListener(formListener);
+
         javax.swing.GroupLayout pnlListaEnderecosLayout = new javax.swing.GroupLayout(pnlListaEnderecos);
         pnlListaEnderecos.setLayout(pnlListaEnderecosLayout);
         pnlListaEnderecosLayout.setHorizontalGroup(
@@ -323,6 +338,8 @@ public class ClienteView extends JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListaEnderecosLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnNovoEndereco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditarEndereco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExcluirEndereco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -345,7 +362,8 @@ public class ClienteView extends JPanel {
                     .addComponent(btnConfirmarCliente)
                     .addComponent(btnCancelarCliente)
                     .addComponent(btnExcluirEndereco)
-                    .addComponent(btnNovoEndereco))
+                    .addComponent(btnNovoEndereco)
+                    .addComponent(btnEditarEndereco))
                 .addContainerGap())
         );
 
@@ -399,6 +417,9 @@ public class ClienteView extends JPanel {
             else if (evt.getSource() == btnEditarCliente) {
                 ClienteView.this.btnEditarClienteActionPerformed(evt);
             }
+            else if (evt.getSource() == btnEditarEndereco) {
+                ClienteView.this.btnEditarEnderecoActionPerformed(evt);
+            }
         }
     }// </editor-fold>//GEN-END:initComponents
 
@@ -444,6 +465,16 @@ public class ClienteView extends JPanel {
         int row = enderecos.size() - 1;
         detailTable.setRowSelectionInterval(row, row);
         detailTable.scrollRectToVisible(detailTable.getCellRect(row, 0, true));
+
+        EnderecoEditView enderecoEditView = new EnderecoEditView(null, true);
+        enderecoEditView.setRegistroAtual(endereco);
+        enderecoEditView.setVisible(true);
+
+        if (enderecoEditView.isConfirmaEndereco()) {
+            btnConfirmarCliente.doClick();
+        } else {
+            btnCancelarCliente.doClick();
+        }
     }//GEN-LAST:event_btnNovoEnderecoActionPerformed
 
     @SuppressWarnings("unchecked")
@@ -505,8 +536,11 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_btnConfirmarClienteActionPerformed
 
     private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        int index = masterTable.getSelectedRow();
+        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+
         ClienteEditView clienteEditView = new ClienteEditView(null, true);
-        clienteEditView.setRegistroAtual(list.get(masterTable.getSelectedRow()));
+        clienteEditView.setRegistroAtual(cliente);
         clienteEditView.setVisible(true);
 
         if (clienteEditView.isConfirmaCliente()) {
@@ -516,11 +550,36 @@ public class ClienteView extends JPanel {
         }
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
+    private void btnEditarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEnderecoActionPerformed
+        int index = masterTable.getSelectedRow();
+        Cliente cliente = list.get(masterTable.convertRowIndexToModel(index));
+        Collection<Endereco> enderecos = cliente.getEnderecos();
+        int selected = detailTable.getSelectedRow();
+
+        int count = 0;
+        Iterator<Endereco> iter = enderecos.iterator();
+        while (count++ < selected) {
+            iter.next();
+        }
+        Endereco endereco = iter.next();
+
+        EnderecoEditView enderecoEditView = new EnderecoEditView(null, true);
+        enderecoEditView.setRegistroAtual(endereco);
+        enderecoEditView.setVisible(true);
+
+        if (enderecoEditView.isConfirmaEndereco()) {
+            btnConfirmarCliente.doClick();
+        } else {
+            btnCancelarCliente.doClick();
+        }
+    }//GEN-LAST:event_btnEditarEnderecoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnConfirmarCliente;
     private javax.swing.JButton btnEditarCliente;
+    private javax.swing.JButton btnEditarEndereco;
     private javax.swing.JButton btnExcluirCliente;
     private javax.swing.JButton btnExcluirEndereco;
     private javax.swing.JButton btnNovoCliente;

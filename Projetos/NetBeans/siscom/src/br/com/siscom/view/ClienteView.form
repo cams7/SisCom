@@ -458,6 +458,8 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="btnNovoEndereco" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnEditarEndereco" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnExcluirEndereco" linkSize="2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnCancelarCliente" linkSize="2" min="-2" max="-2" attributes="0"/>
@@ -481,6 +483,7 @@
                       <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnExcluirEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnNovoEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditarEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -533,7 +536,7 @@
                   </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                  <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                 </Property>
               </Properties>
               <BindingProperties>
@@ -544,26 +547,32 @@
                   <Subbinding sourcePath="${logradouro}">
                     <BindingParameter name="NAME" value="Logradouro"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${bairro}">
                     <BindingParameter name="NAME" value="Bairro"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${complemento}">
                     <BindingParameter name="NAME" value="Complemento"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${cep}">
                     <BindingParameter name="NAME" value="Cep"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${cidade}">
                     <BindingParameter name="NAME" value="Cidade"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${uf}">
                     <BindingParameter name="NAME" value="Uf"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                    <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                 </BindingProperty>
               </BindingProperties>
@@ -603,7 +612,7 @@
             <Property name="text" type="java.lang.String" value="Excluir Entere&#xe7;o"/>
           </Properties>
           <BindingProperties>
-            <BindingProperty name="enabled" source="detailTable" sourcePath="${selectedElement != null}" target="btnExcluirEndereco" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="detailTable" sourcePath="${selectedElement != null}" target="btnExcluirEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirEnderecoActionPerformed"/>
@@ -627,6 +636,17 @@
             <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
           </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarEndereco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar Endere&#xe7;o"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="detailTable" sourcePath="${selectedElement != null}" target="btnEditarEndereco" targetPath="enabled" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarEnderecoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

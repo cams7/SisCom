@@ -96,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.setBackground(new java.awt.Color(102, 204, 255));
         jToolBar1.setRollover(true);
 
-        btnCadastroCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cadastro_cliente2.png")); // NOI18N
+        btnCadastroCliente.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cadastro_cliente2.png")); // NOI18N
         btnCadastroCliente.setToolTipText("Cadastro de Clientes");
         btnCadastroCliente.setFocusable(false);
         btnCadastroCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -108,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jToolBar1.add(btnCadastroCliente);
 
-        btnCadastroFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\fornecedor2.png")); // NOI18N
+        btnCadastroFornecedor.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/fornecedor2.png")); // NOI18N
         btnCadastroFornecedor.setToolTipText("Cadastro de Fornecedores");
         btnCadastroFornecedor.setFocusable(false);
         btnCadastroFornecedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -120,7 +120,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jToolBar1.add(btnCadastroFornecedor);
 
-        btnCadastroProduto.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cadastro_produto.png")); // NOI18N
+        btnCadastroProduto.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cadastro_produto.png")); // NOI18N
         btnCadastroProduto.setToolTipText("Cadatro de Produtos");
         btnCadastroProduto.setFocusable(false);
         btnCadastroProduto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -128,14 +128,14 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(btnCadastroProduto);
         jToolBar1.add(jSeparator7);
 
-        btnContasPagar.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\contas_pagar2.png")); // NOI18N
+        btnContasPagar.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/contas_pagar2.png")); // NOI18N
         btnContasPagar.setToolTipText("Contas a Pagar");
         btnContasPagar.setFocusable(false);
         btnContasPagar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnContasPagar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnContasPagar);
 
-        btnContasReceber.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\contas_receber2.png")); // NOI18N
+        btnContasReceber.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/contas_receber2.png")); // NOI18N
         btnContasReceber.setToolTipText("Contas a Receber");
         btnContasReceber.setFocusable(false);
         btnContasReceber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -143,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(btnContasReceber);
         jToolBar1.add(jSeparator8);
 
-        btnSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\sair2.png")); // NOI18N
+        btnSair.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/sair2.png")); // NOI18N
         btnSair.setToolTipText("Sair do SisCom");
         btnSair.setFocusable(false);
         btnSair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -166,7 +166,7 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\aperto_maos.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/aperto_maos.png")); // NOI18N
         jLabel1.setToolTipText("SisCom - Sistema Comercial");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -194,7 +194,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         menuCadastroCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cadastro_cliente.png")); // NOI18N
+        menuCadastroCliente.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cadastro_cliente.png")); // NOI18N
         menuCadastroCliente.setMnemonic('C');
         menuCadastroCliente.setText("Clientes");
         menuCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(menuCadastroCliente);
 
         menuCadastroFornecedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\fornecedor.png")); // NOI18N
+        menuCadastroFornecedor.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/fornecedor.png")); // NOI18N
         menuCadastroFornecedor.setMnemonic('F');
         menuCadastroFornecedor.setText("Fornecedores");
         menuCadastroFornecedor.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +216,7 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(menuCadastroFornecedor);
 
         menuCadastroContaBancaria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroContaBancaria.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\banco.png")); // NOI18N
+        menuCadastroContaBancaria.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/banco.png")); // NOI18N
         menuCadastroContaBancaria.setMnemonic('B');
         menuCadastroContaBancaria.setText("Contas Bancaria");
         menuCadastroContaBancaria.addActionListener(new java.awt.event.ActionListener() {
@@ -228,33 +228,33 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(jSeparator1);
 
         menuCadastroUnidade.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroUnidade.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\unidade.png")); // NOI18N
+        menuCadastroUnidade.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/unidade.png")); // NOI18N
         menuCadastroUnidade.setMnemonic('U');
         menuCadastroUnidade.setText("Unidades");
         menuCadastro.add(menuCadastroUnidade);
 
         menuCadastroProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroProduto.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\produto.png")); // NOI18N
+        menuCadastroProduto.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/produto.png")); // NOI18N
         menuCadastroProduto.setMnemonic('o');
         menuCadastroProduto.setText("Produtos");
         menuCadastro.add(menuCadastroProduto);
         menuCadastro.add(jSeparator2);
 
         menuCadastroDepartamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroDepartamento.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\departamento.png")); // NOI18N
+        menuCadastroDepartamento.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/departamento.png")); // NOI18N
         menuCadastroDepartamento.setMnemonic('D');
         menuCadastroDepartamento.setText("Departamentos");
         menuCadastro.add(menuCadastroDepartamento);
 
         menuCadastroFuncionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroFuncionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\funcionario.png")); // NOI18N
+        menuCadastroFuncionario.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/funcionario.png")); // NOI18N
         menuCadastroFuncionario.setMnemonic('i');
         menuCadastroFuncionario.setText("Funcionarios");
         menuCadastro.add(menuCadastroFuncionario);
         menuCadastro.add(jSeparator3);
 
         menuCadastroCartao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroCartao.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cartao.png")); // NOI18N
+        menuCadastroCartao.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cartao.png")); // NOI18N
         menuCadastroCartao.setMnemonic('a');
         menuCadastroCartao.setText("Cartões");
         menuCadastroCartao.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +265,7 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(menuCadastroCartao);
 
         menuCadastroPlanoConta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroPlanoConta.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\plano_conta.png")); // NOI18N
+        menuCadastroPlanoConta.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/plano_conta.png")); // NOI18N
         menuCadastroPlanoConta.setMnemonic('l');
         menuCadastroPlanoConta.setText("Planos de Conta");
         menuCadastroPlanoConta.addActionListener(new java.awt.event.ActionListener() {
@@ -276,7 +276,7 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(menuCadastroPlanoConta);
 
         menuCadastroTipoPgtoRecebimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        menuCadastroTipoPgtoRecebimento.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\tipo_pgto_recebimento.png")); // NOI18N
+        menuCadastroTipoPgtoRecebimento.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/tipo_pgto_recebimento.png")); // NOI18N
         menuCadastroTipoPgtoRecebimento.setMnemonic('g');
         menuCadastroTipoPgtoRecebimento.setText("Tipos de Pagamento / Recebimento");
         menuCadastroTipoPgtoRecebimento.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +288,7 @@ public class Menu extends javax.swing.JFrame {
         menuCadastro.add(jSeparator4);
 
         menuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
-        menuSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\sair.png")); // NOI18N
+        menuSair.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/sair.png")); // NOI18N
         menuSair.setLabel("Sair");
         menuCadastro.add(menuSair);
 
@@ -297,85 +297,85 @@ public class Menu extends javax.swing.JFrame {
         menuMovimento.setLabel("Movimento");
 
         menuContasPagar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        menuContasPagar.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\contas_pagar.png")); // NOI18N
+        menuContasPagar.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/contas_pagar.png")); // NOI18N
         menuContasPagar.setMnemonic('P');
         menuContasPagar.setLabel("Contas a Pagar");
         menuMovimento.add(menuContasPagar);
 
         menuContasReceber.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        menuContasReceber.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\contas_receber.png")); // NOI18N
+        menuContasReceber.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/contas_receber.png")); // NOI18N
         menuContasReceber.setMnemonic('R');
         menuContasReceber.setLabel("Contas a Receber");
         menuMovimento.add(menuContasReceber);
 
         menuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
-        menuVendas.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\venda.png")); // NOI18N
+        menuVendas.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/venda.png")); // NOI18N
         menuVendas.setMnemonic('V');
         menuVendas.setLabel("Vendas");
         menuMovimento.add(menuVendas);
 
-        menuControleEstoque.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\controle_estoque.png")); // NOI18N
+        menuControleEstoque.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/controle_estoque.png")); // NOI18N
         menuControleEstoque.setLabel("Controle de Estoque");
 
         menuEntradaNF.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        menuEntradaNF.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\nota_fiscal.png")); // NOI18N
+        menuEntradaNF.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/nota_fiscal.png")); // NOI18N
         menuEntradaNF.setMnemonic('N');
         menuEntradaNF.setLabel("Entrada de NF");
         menuControleEstoque.add(menuEntradaNF);
 
         menuAtualizacaoPreco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
-        menuAtualizacaoPreco.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\atualizacao_preco.png")); // NOI18N
+        menuAtualizacaoPreco.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/atualizacao_preco.png")); // NOI18N
         menuAtualizacaoPreco.setMnemonic('z');
         menuAtualizacaoPreco.setLabel("Atualização de Preços");
         menuControleEstoque.add(menuAtualizacaoPreco);
 
         menuMovimento.add(menuControleEstoque);
 
-        menuCompras.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\compra.png")); // NOI18N
+        menuCompras.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/compra.png")); // NOI18N
         menuCompras.setLabel("Compras");
 
         menuRequisicao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        menuRequisicao.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\requisicao.png")); // NOI18N
+        menuRequisicao.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/requisicao.png")); // NOI18N
         menuRequisicao.setMnemonic('s');
         menuRequisicao.setLabel("Requisição");
         menuCompras.add(menuRequisicao);
 
         menuCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
-        menuCotacao.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cotacao.png")); // NOI18N
+        menuCotacao.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cotacao.png")); // NOI18N
         menuCotacao.setMnemonic('t');
         menuCotacao.setLabel("Cotação");
         menuCompras.add(menuCotacao);
 
         menuConfirmacaoCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
-        menuConfirmacaoCotacao.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\confirma.png")); // NOI18N
+        menuConfirmacaoCotacao.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/confirma.png")); // NOI18N
         menuConfirmacaoCotacao.setLabel("Confirmar Cotação");
         menuCompras.add(menuConfirmacaoCotacao);
 
         menuPedido.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        menuPedido.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\pedido.png")); // NOI18N
+        menuPedido.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/pedido.png")); // NOI18N
         menuPedido.setMnemonic('e');
         menuPedido.setLabel("Pedido");
         menuCompras.add(menuPedido);
 
         menuMovimento.add(menuCompras);
 
-        menuTesourariaBanco.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\tesouraria_banco.png")); // NOI18N
+        menuTesourariaBanco.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/tesouraria_banco.png")); // NOI18N
         menuTesourariaBanco.setLabel("Tesouraria e Banco");
 
         menuEmissaoCheques.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        menuEmissaoCheques.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cheque.png")); // NOI18N
+        menuEmissaoCheques.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/cheque.png")); // NOI18N
         menuEmissaoCheques.setMnemonic('h');
         menuEmissaoCheques.setLabel("Emissão de Cheques");
         menuTesourariaBanco.add(menuEmissaoCheques);
 
         menuConciliacaoCheques.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        menuConciliacaoCheques.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\conciliacao_bancaria.png")); // NOI18N
+        menuConciliacaoCheques.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/conciliacao_bancaria.png")); // NOI18N
         menuConciliacaoCheques.setMnemonic('q');
         menuConciliacaoCheques.setLabel("Conciliação de Cheques");
         menuTesourariaBanco.add(menuConciliacaoCheques);
 
         menuMovimentoBanco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
-        menuMovimentoBanco.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\banco.png")); // NOI18N
+        menuMovimentoBanco.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/banco.png")); // NOI18N
         menuMovimentoBanco.setMnemonic('M');
         menuMovimentoBanco.setLabel("Movimento de Banco");
         menuTesourariaBanco.add(menuMovimentoBanco);
@@ -387,26 +387,26 @@ public class Menu extends javax.swing.JFrame {
         menuUltilitarios.setLabel("Ultilitarios");
 
         menuCalculadora.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
-        menuCalculadora.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\calculadora.png")); // NOI18N
+        menuCalculadora.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/calculadora.png")); // NOI18N
         menuCalculadora.setLabel("Calculadora");
         menuUltilitarios.add(menuCalculadora);
 
         menuCalendario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
-        menuCalendario.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\calendario.png")); // NOI18N
+        menuCalendario.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/calendario.png")); // NOI18N
         menuCalendario.setLabel("Calendario");
         menuUltilitarios.add(menuCalendario);
         menuUltilitarios.add(jSeparator5);
 
-        menuSeguranca.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\seguranca.png")); // NOI18N
+        menuSeguranca.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/seguranca.png")); // NOI18N
         menuSeguranca.setLabel("Sistema de Segurança");
 
         menuSenha.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F10, 0));
-        menuSenha.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\senha.png")); // NOI18N
+        menuSenha.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/senha.png")); // NOI18N
         menuSenha.setLabel("Trocar Senha Corrente");
         menuSeguranca.add(menuSenha);
 
         menuNivelAcesso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F12, 0));
-        menuNivelAcesso.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\nivel_acesso.png")); // NOI18N
+        menuNivelAcesso.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/nivel_acesso.png")); // NOI18N
         menuNivelAcesso.setLabel("Definir Nivel de Acesso");
         menuSeguranca.add(menuNivelAcesso);
 
@@ -417,7 +417,7 @@ public class Menu extends javax.swing.JFrame {
         menuAjuda.setLabel("Ajuda");
 
         menuSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        menuSobre.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\erp.png")); // NOI18N
+        menuSobre.setIcon(new javax.swing.ImageIcon("/home/cesar/desenv/git/github/SisCom/Img/erp.png")); // NOI18N
         menuSobre.setLabel("Sobre o Sistema");
         menuAjuda.add(menuSobre);
 
@@ -484,7 +484,33 @@ public class Menu extends javax.swing.JFrame {
          FornecedorView.main(new String[]{"Cadastro de Fornecedores"});
     }//GEN-LAST:event_btnCadastroFornecedorActionPerformed
 
+/**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new Menu().setVisible(true);
+        });
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastroCliente;
     private javax.swing.JButton btnCadastroFornecedor;

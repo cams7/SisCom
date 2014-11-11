@@ -13,6 +13,7 @@ import java.beans.Beans;
 import java.util.ArrayList;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -559,6 +560,7 @@ public class ClienteView extends JPanel {
     private void btnNovoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoClienteActionPerformed
 
         Cliente cliente = new Cliente();
+        cliente.setDesde(new Date());
         entityManager.persist(cliente);
         list.add(cliente);
         int row = list.size() - 1;

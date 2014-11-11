@@ -4,11 +4,20 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="Modelo de Dados" />
-  </data-source>
-  <data-source id="DS2">
    <property key="Connection Type" value="PostgreSQL" />
-   <property key="Logical" value="SisCom" />
+   <property key="Logical" value="Modelo de Dados" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/siscom" />
+   <property key="UID" value="siscom" />
+   <property key="PWD" value="siscom" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+  <data-source id="DS0">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="Modelo de Dados" />
    <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/siscom" />
    <property key="UID" value="siscom" />
    <property key="PWD" value="siscom" />
@@ -20,7 +29,7 @@
   </data-source>
  </project-data-sources>
  <source-databases>
-  <database id="DB0" populated="true" UUID="da7c46a7-6dff-4651-9ff5-07f277e36577" dbcs-ref="DS2" name="SisCom" physicalName="SisCom" >
+  <database id="DB0" populated="true" UUID="da7c46a7-6dff-4651-9ff5-07f277e36577" dbcs-ref="DS0" name="Modelo de Dados" physicalName="SisCom" >
    <catalog id="CAT1" populated="true" UUID="5c093909-2080-4c44-9867-28e543a14847" name="siscom" nativeTerm="database" physicalName="siscom" >
     <schema id="SCH2" populated="true" UUID="775be479-9c67-48ba-9bf7-8ff888dcde0b" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
     </schema>
@@ -32,13 +41,13 @@
      <table id="TAB6" populated="true" UUID="12ed0301-5829-4b78-b4b8-36d3ac0ca34a" name="banco" objectType="TABLE" physicalName="banco" >
       <remarks>Banco</remarks>
       <folder id="FOLTAB61" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL7" populated="true" UUID="5338461c-f79a-4135-bf9b-059c5e701144" autoIncrement="false" name="cod_banco" nullable="0" physicalName="cod_banco" precision="5" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL7" populated="true" UUID="5338461c-f79a-4135-bf9b-059c5e701144" autoIncrement="false" defaultValue="" name="cod_banco" nullable="0" physicalName="cod_banco" precision="5" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks>Codigo do Banco</remarks>
        </column>
-       <column id="COL8" populated="true" UUID="72811d05-9246-4721-b94e-5aca3ec15f80" autoIncrement="false" name="nome_banco" nullable="0" physicalName="nome_banco" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL8" populated="true" UUID="72811d05-9246-4721-b94e-5aca3ec15f80" autoIncrement="false" defaultValue="" name="nome_banco" nullable="0" physicalName="nome_banco" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL9" populated="true" UUID="49a66e68-99eb-48ad-9793-a33fe71a1619" autoIncrement="false" name="site_banco" nullable="1" physicalName="site_banco" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL9" populated="true" UUID="49a66e68-99eb-48ad-9793-a33fe71a1619" autoIncrement="false" defaultValue="" name="site_banco" nullable="1" physicalName="site_banco" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -58,25 +67,25 @@
        <column id="COL13" populated="true" UUID="11436a1e-6905-49bc-b184-b647ea2344b3" autoIncrement="true" defaultValue="nextval(&apos;cartao_credito_seq&apos;::regclass)" name="id_cartao_credito" nullable="0" physicalName="id_cartao_credito" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Id do Cartão de Crédito</remarks>
        </column>
-       <column id="COL14" populated="true" UUID="cfe9488c-28c4-4eb9-9932-90e9a9faefbf" autoIncrement="false" name="empresa" nullable="0" physicalName="empresa" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL14" populated="true" UUID="cfe9488c-28c4-4eb9-9932-90e9a9faefbf" autoIncrement="false" defaultValue="" name="empresa" nullable="0" physicalName="empresa" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL15" populated="true" UUID="dfe48740-56b2-441e-837b-f7fac0eac9dc" autoIncrement="false" name="juros_rotativo" nullable="0" physicalName="juros_rotativo" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL15" populated="true" UUID="dfe48740-56b2-441e-837b-f7fac0eac9dc" autoIncrement="false" defaultValue="" name="juros_rotativo" nullable="0" physicalName="juros_rotativo" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL16" populated="true" UUID="f0536f97-48ce-4593-9b85-a825df22ae5a" autoIncrement="false" name="pagto_minimo" nullable="0" physicalName="pagto_minimo" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL16" populated="true" UUID="f0536f97-48ce-4593-9b85-a825df22ae5a" autoIncrement="false" defaultValue="" name="pagto_minimo" nullable="0" physicalName="pagto_minimo" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL17" populated="true" UUID="f47f79e8-b816-4e7b-a464-e6cae88c70cc" autoIncrement="false" name="juros_parcelado" nullable="0" physicalName="juros_parcelado" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL17" populated="true" UUID="f47f79e8-b816-4e7b-a464-e6cae88c70cc" autoIncrement="false" defaultValue="" name="juros_parcelado" nullable="0" physicalName="juros_parcelado" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL18" populated="true" UUID="c4fd6c59-5698-4698-bbef-f1441f3b26f9" autoIncrement="false" name="multa" nullable="1" physicalName="multa" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL18" populated="true" UUID="c4fd6c59-5698-4698-bbef-f1441f3b26f9" autoIncrement="false" defaultValue="" name="multa" nullable="1" physicalName="multa" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL19" populated="true" UUID="f81bf966-f85e-418b-ba00-38cd26706773" autoIncrement="false" name="multa_sem_minimo_total" nullable="1" physicalName="multa_sem_minimo_total" precision="6" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL19" populated="true" UUID="f81bf966-f85e-418b-ba00-38cd26706773" autoIncrement="false" defaultValue="" name="multa_sem_minimo_total" nullable="1" physicalName="multa_sem_minimo_total" precision="6" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
-       <column id="COL20" populated="true" UUID="e74676c7-bf86-4b0e-8d6c-b9a8b3860807" autoIncrement="false" name="multa_cobrada_dia" nullable="1" physicalName="multa_cobrada_dia" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL20" populated="true" UUID="e74676c7-bf86-4b0e-8d6c-b9a8b3860807" autoIncrement="false" defaultValue="" name="multa_cobrada_dia" nullable="1" physicalName="multa_cobrada_dia" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
        </folder>
@@ -93,10 +102,10 @@
      <table id="TAB23" populated="true" UUID="c27efd5b-c3fa-44ea-8622-01026ee194c4" name="cfop" objectType="TABLE" physicalName="cfop" >
       <remarks>CFOP</remarks>
       <folder id="FOLTAB231" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL24" populated="true" UUID="a17ad816-76e1-4fdf-85ba-1cf352d4e31b" autoIncrement="false" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL24" populated="true" UUID="a17ad816-76e1-4fdf-85ba-1cf352d4e31b" autoIncrement="false" defaultValue="" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo CFOP</remarks>
        </column>
-       <column id="COL25" populated="true" UUID="75f59ad1-84d6-4dbe-9a69-a39acb98d3d9" autoIncrement="false" name="descricao_cfop" nullable="0" physicalName="descricao_cfop" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+       <column id="COL25" populated="true" UUID="75f59ad1-84d6-4dbe-9a69-a39acb98d3d9" autoIncrement="false" defaultValue="" name="descricao_cfop" nullable="0" physicalName="descricao_cfop" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -116,19 +125,19 @@
        <column id="COL29" populated="true" UUID="4a47a408-70ea-4dc8-ae26-9d315b652250" autoIncrement="true" defaultValue="nextval(&apos;cheque_ncomp_seq&apos;::regclass)" name="cod_cheque_ncomp" nullable="0" physicalName="cod_cheque_ncomp" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cheque nao compesado</remarks>
        </column>
-       <column id="COL30" populated="true" UUID="7a9ff09c-c592-42cc-9c54-8c6b321c8535" autoIncrement="false" name="num_cheque_ncomp" nullable="1" physicalName="num_cheque_ncomp" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL30" populated="true" UUID="7a9ff09c-c592-42cc-9c54-8c6b321c8535" autoIncrement="false" defaultValue="" name="num_cheque_ncomp" nullable="1" physicalName="num_cheque_ncomp" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL31" populated="true" UUID="21ce5bbd-6bf3-4bed-ab39-4c34c869db32" autoIncrement="false" name="data_cheque_ncomp" nullable="1" physicalName="data_cheque_ncomp" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL31" populated="true" UUID="21ce5bbd-6bf3-4bed-ab39-4c34c869db32" autoIncrement="false" defaultValue="" name="data_cheque_ncomp" nullable="1" physicalName="data_cheque_ncomp" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL32" populated="true" UUID="b6e06267-0352-4983-a6d6-a418aebb598e" autoIncrement="false" name="vlr_cheque_ncomp" nullable="1" physicalName="vlr_cheque_ncomp" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL32" populated="true" UUID="b6e06267-0352-4983-a6d6-a418aebb598e" autoIncrement="false" defaultValue="" name="vlr_cheque_ncomp" nullable="1" physicalName="vlr_cheque_ncomp" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL33" populated="true" UUID="fed74521-327c-4cb6-bd1c-e19832ca9e3a" autoIncrement="false" name="mes_ano_ncomp" nullable="1" physicalName="mes_ano_ncomp" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL33" populated="true" UUID="fed74521-327c-4cb6-bd1c-e19832ca9e3a" autoIncrement="false" defaultValue="" name="mes_ano_ncomp" nullable="1" physicalName="mes_ano_ncomp" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL34" populated="true" UUID="cc594e0e-5764-4f9a-8398-af0243b7962f" autoIncrement="false" name="historico_ncomp" nullable="1" physicalName="historico_ncomp" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL34" populated="true" UUID="cc594e0e-5764-4f9a-8398-af0243b7962f" autoIncrement="false" defaultValue="" name="historico_ncomp" nullable="1" physicalName="historico_ncomp" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -148,49 +157,49 @@
        <column id="COL38" populated="true" UUID="d3fff9b5-7805-4673-97d6-3a35ab313b24" autoIncrement="true" defaultValue="nextval(&apos;cliente_seq&apos;::regclass)" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cliente</remarks>
        </column>
-       <column id="COL39" populated="true" UUID="7cba0764-6538-4cc9-9ef1-35883b8fa432" autoIncrement="false" name="nome_cliente" nullable="0" physicalName="nome_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL39" populated="true" UUID="7cba0764-6538-4cc9-9ef1-35883b8fa432" autoIncrement="false" defaultValue="" name="nome_cliente" nullable="0" physicalName="nome_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL40" populated="true" UUID="417cf411-372b-4245-b997-0fd481afcd97" autoIncrement="false" name="cpf_cliente" nullable="1" physicalName="cpf_cliente" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL40" populated="true" UUID="417cf411-372b-4245-b997-0fd481afcd97" autoIncrement="false" defaultValue="" name="cpf_cliente" nullable="1" physicalName="cpf_cliente" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL41" populated="true" UUID="ef112524-4b35-4e51-b273-e67533f96da4" autoIncrement="false" name="desde_cliente" nullable="1" physicalName="desde_cliente" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL41" populated="true" UUID="ef112524-4b35-4e51-b273-e67533f96da4" autoIncrement="false" defaultValue="" name="desde_cliente" nullable="1" physicalName="desde_cliente" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL42" populated="true" UUID="2ee69f9d-7587-417c-8b63-2ffae51fc512" autoIncrement="false" name="rg_cliente" nullable="1" physicalName="rg_cliente" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL42" populated="true" UUID="2ee69f9d-7587-417c-8b63-2ffae51fc512" autoIncrement="false" defaultValue="" name="rg_cliente" nullable="1" physicalName="rg_cliente" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL43" populated="true" UUID="476d4fa7-e3b6-407f-9784-369a3cf5c798" autoIncrement="false" name="orgao_rg_cliente" nullable="1" physicalName="orgao_rg_cliente" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL43" populated="true" UUID="476d4fa7-e3b6-407f-9784-369a3cf5c798" autoIncrement="false" defaultValue="" name="orgao_rg_cliente" nullable="1" physicalName="orgao_rg_cliente" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL44" populated="true" UUID="9248b59b-c9fc-4574-be03-abb5e0119174" autoIncrement="false" name="nascimento_cliente" nullable="1" physicalName="nascimento_cliente" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL44" populated="true" UUID="9248b59b-c9fc-4574-be03-abb5e0119174" autoIncrement="false" defaultValue="" name="nascimento_cliente" nullable="1" physicalName="nascimento_cliente" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL45" populated="true" UUID="56e131fb-fb76-4c44-9d6f-43717801520a" autoIncrement="false" name="profissao_cliente" nullable="1" physicalName="profissao_cliente" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL45" populated="true" UUID="56e131fb-fb76-4c44-9d6f-43717801520a" autoIncrement="false" defaultValue="" name="profissao_cliente" nullable="1" physicalName="profissao_cliente" precision="40" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL46" populated="true" UUID="7c95b9df-ce97-4305-b9cb-37c63ad24679" autoIncrement="false" name="empresa_cliente" nullable="1" physicalName="empresa_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL46" populated="true" UUID="7c95b9df-ce97-4305-b9cb-37c63ad24679" autoIncrement="false" defaultValue="" name="empresa_cliente" nullable="1" physicalName="empresa_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL47" populated="true" UUID="4a1413e8-a595-412f-a4be-229d87408c42" autoIncrement="false" name="fone_empresa" nullable="1" physicalName="fone_empresa" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL47" populated="true" UUID="4a1413e8-a595-412f-a4be-229d87408c42" autoIncrement="false" defaultValue="" name="fone_empresa" nullable="1" physicalName="fone_empresa" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL48" populated="true" UUID="808d662e-8300-4c6b-b534-b4d4761129a2" autoIncrement="false" name="renda_cliente" nullable="1" physicalName="renda_cliente" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL48" populated="true" UUID="808d662e-8300-4c6b-b534-b4d4761129a2" autoIncrement="false" defaultValue="" name="renda_cliente" nullable="1" physicalName="renda_cliente" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL49" populated="true" UUID="830001c2-791a-440f-9cae-2dcfdd58a0e7" autoIncrement="false" name="tipo_cliente" nullable="1" physicalName="tipo_cliente" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL49" populated="true" UUID="830001c2-791a-440f-9cae-2dcfdd58a0e7" autoIncrement="false" defaultValue="" name="tipo_cliente" nullable="1" physicalName="tipo_cliente" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
-       <column id="COL50" populated="true" UUID="d480a4be-7812-4759-93f2-f20a06ea1840" autoIncrement="false" name="cnpj_cliente" nullable="1" physicalName="cnpj_cliente" precision="14" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL50" populated="true" UUID="d480a4be-7812-4759-93f2-f20a06ea1840" autoIncrement="false" defaultValue="" name="cnpj_cliente" nullable="1" physicalName="cnpj_cliente" precision="14" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL51" populated="true" UUID="1be20b17-b155-48fa-9f23-5d75adce45e3" autoIncrement="false" name="referencia_cliente" nullable="1" physicalName="referencia_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL51" populated="true" UUID="1be20b17-b155-48fa-9f23-5d75adce45e3" autoIncrement="false" defaultValue="" name="referencia_cliente" nullable="1" physicalName="referencia_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL52" populated="true" UUID="4486d4a1-d3b3-4e83-9eb7-5e788f7fc585" autoIncrement="false" name="fone_referencia_cliente" nullable="1" physicalName="fone_referencia_cliente" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL52" populated="true" UUID="4486d4a1-d3b3-4e83-9eb7-5e788f7fc585" autoIncrement="false" defaultValue="" name="fone_referencia_cliente" nullable="1" physicalName="fone_referencia_cliente" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL53" populated="true" UUID="f32efbeb-24b1-4512-b5db-609222c71312" autoIncrement="false" name="email" nullable="1" physicalName="email" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL53" populated="true" UUID="f32efbeb-24b1-4512-b5db-609222c71312" autoIncrement="false" defaultValue="" name="email" nullable="1" physicalName="email" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -210,25 +219,25 @@
        <column id="COL57" populated="true" UUID="9ec808c4-e8b4-484f-83d0-93cd452fd8e1" autoIncrement="true" defaultValue="nextval(&apos;cliente_endereco_seq&apos;::regclass)" name="cod_endereco" nullable="0" physicalName="cod_endereco" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Endereço do Cliente</remarks>
        </column>
-       <column id="COL58" populated="true" UUID="4a9c09a7-3de5-45e2-800b-778bf7156ceb" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL58" populated="true" UUID="4a9c09a7-3de5-45e2-800b-778bf7156ceb" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL59" populated="true" UUID="083f0777-4467-423e-a7f6-ac3eb61d0d19" autoIncrement="false" name="logradouro_endereco" nullable="0" physicalName="logradouro_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL59" populated="true" UUID="083f0777-4467-423e-a7f6-ac3eb61d0d19" autoIncrement="false" defaultValue="" name="logradouro_endereco" nullable="0" physicalName="logradouro_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL60" populated="true" UUID="bba895f1-2079-4293-88ee-065204f6a8a9" autoIncrement="false" name="complemento_endereco" nullable="1" physicalName="complemento_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL60" populated="true" UUID="bba895f1-2079-4293-88ee-065204f6a8a9" autoIncrement="false" defaultValue="" name="complemento_endereco" nullable="1" physicalName="complemento_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL61" populated="true" UUID="6c95dbb6-09c8-42b9-9a92-ce023816b569" autoIncrement="false" name="cep_endereco" nullable="1" physicalName="cep_endereco" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL61" populated="true" UUID="6c95dbb6-09c8-42b9-9a92-ce023816b569" autoIncrement="false" defaultValue="" name="cep_endereco" nullable="1" physicalName="cep_endereco" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL62" populated="true" UUID="c578a350-9e1c-4146-92dc-8b1f4a0e7e1a" autoIncrement="false" name="bairro_endereco" nullable="1" physicalName="bairro_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL62" populated="true" UUID="c578a350-9e1c-4146-92dc-8b1f4a0e7e1a" autoIncrement="false" defaultValue="" name="bairro_endereco" nullable="1" physicalName="bairro_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL63" populated="true" UUID="e26415bd-5d85-4251-9133-7532c6f974fb" autoIncrement="false" name="cidade_endereco" nullable="0" physicalName="cidade_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL63" populated="true" UUID="e26415bd-5d85-4251-9133-7532c6f974fb" autoIncrement="false" defaultValue="" name="cidade_endereco" nullable="0" physicalName="cidade_endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL64" populated="true" UUID="abe4a292-e6fa-4a1b-8a4d-717e3ed0d9f4" autoIncrement="false" name="uf_endereco" nullable="0" physicalName="uf_endereco" precision="2" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL64" populated="true" UUID="abe4a292-e6fa-4a1b-8a4d-717e3ed0d9f4" autoIncrement="false" defaultValue="" name="uf_endereco" nullable="0" physicalName="uf_endereco" precision="2" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
        </folder>
@@ -248,13 +257,13 @@
        <column id="COL68" populated="true" UUID="2e86ebc2-c5d3-4544-8ee9-dfa61ccddd01" autoIncrement="true" defaultValue="nextval(&apos;cliente_telefone_seq&apos;::regclass)" name="cod_telefone" nullable="0" physicalName="cod_telefone" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Telefone do Cliente</remarks>
        </column>
-       <column id="COL69" populated="true" UUID="86a303e9-0f56-4581-aa05-0d3eed90f97b" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL69" populated="true" UUID="86a303e9-0f56-4581-aa05-0d3eed90f97b" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL70" populated="true" UUID="08ee5141-8d09-45f2-afdb-94049752869a" autoIncrement="false" name="numero_telefone" nullable="0" physicalName="numero_telefone" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL70" populated="true" UUID="08ee5141-8d09-45f2-afdb-94049752869a" autoIncrement="false" defaultValue="" name="numero_telefone" nullable="0" physicalName="numero_telefone" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL71" populated="true" UUID="7aab3584-b2ad-40d8-885c-2cd6dfe10fc6" autoIncrement="false" name="tipo_telefone" nullable="0" physicalName="tipo_telefone" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL71" populated="true" UUID="7aab3584-b2ad-40d8-885c-2cd6dfe10fc6" autoIncrement="false" defaultValue="" name="tipo_telefone" nullable="0" physicalName="tipo_telefone" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
        </folder>
@@ -274,37 +283,37 @@
        <column id="COL75" populated="true" UUID="fd7ea9c1-7054-4aed-aec3-c6d5b16bcbff" autoIncrement="true" defaultValue="nextval(&apos;cobranca_seq&apos;::regclass)" name="cod_cobranca" nullable="0" physicalName="cod_cobranca" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo da Carta de Cobrança</remarks>
        </column>
-       <column id="COL76" populated="true" UUID="10782954-8ed8-44b8-977e-4d8467d0d787" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL76" populated="true" UUID="10782954-8ed8-44b8-977e-4d8467d0d787" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL77" populated="true" UUID="39df30dd-6469-4156-ac97-28ad435799ce" autoIncrement="false" name="assunto_cobranca" nullable="1" physicalName="assunto_cobranca" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL77" populated="true" UUID="39df30dd-6469-4156-ac97-28ad435799ce" autoIncrement="false" defaultValue="" name="assunto_cobranca" nullable="1" physicalName="assunto_cobranca" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL78" populated="true" UUID="76eca1da-2c04-48d5-a101-f031b3924a51" autoIncrement="false" name="texto_cobranca" nullable="1" physicalName="texto_cobranca" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
+       <column id="COL78" populated="true" UUID="76eca1da-2c04-48d5-a101-f031b3924a51" autoIncrement="false" defaultValue="" name="texto_cobranca" nullable="1" physicalName="texto_cobranca" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="text" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL79" populated="true" UUID="e813b0e3-c3f3-4312-b948-ca05a3f668f4" autoIncrement="false" name="envio1" nullable="1" physicalName="envio1" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL79" populated="true" UUID="e813b0e3-c3f3-4312-b948-ca05a3f668f4" autoIncrement="false" defaultValue="" name="envio1" nullable="1" physicalName="envio1" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL80" populated="true" UUID="91151d1e-1194-4b31-83a9-1478215cf362" autoIncrement="false" name="envio2" nullable="1" physicalName="envio2" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL80" populated="true" UUID="91151d1e-1194-4b31-83a9-1478215cf362" autoIncrement="false" defaultValue="" name="envio2" nullable="1" physicalName="envio2" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL81" populated="true" UUID="a176cb3d-e40a-410b-8dbd-32bebdb16231" autoIncrement="false" name="envio3" nullable="1" physicalName="envio3" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL81" populated="true" UUID="a176cb3d-e40a-410b-8dbd-32bebdb16231" autoIncrement="false" defaultValue="" name="envio3" nullable="1" physicalName="envio3" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL82" populated="true" UUID="c2031720-5cf6-4579-9fc2-35f095c804d4" autoIncrement="false" name="envio4" nullable="1" physicalName="envio4" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL82" populated="true" UUID="c2031720-5cf6-4579-9fc2-35f095c804d4" autoIncrement="false" defaultValue="" name="envio4" nullable="1" physicalName="envio4" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL83" populated="true" UUID="a0175278-8c70-49ee-b42d-2e170c049a9d" autoIncrement="false" name="envio5" nullable="1" physicalName="envio5" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL83" populated="true" UUID="a0175278-8c70-49ee-b42d-2e170c049a9d" autoIncrement="false" defaultValue="" name="envio5" nullable="1" physicalName="envio5" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL84" populated="true" UUID="efa1aaed-43cd-40e2-86a2-a14706883c05" autoIncrement="false" name="num_processo" nullable="1" physicalName="num_processo" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL84" populated="true" UUID="efa1aaed-43cd-40e2-86a2-a14706883c05" autoIncrement="false" defaultValue="" name="num_processo" nullable="1" physicalName="num_processo" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL85" populated="true" UUID="6c24a4a2-1b1d-481b-81c3-02cf31ddb52e" autoIncrement="false" name="data_processo" nullable="1" physicalName="data_processo" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL85" populated="true" UUID="6c24a4a2-1b1d-481b-81c3-02cf31ddb52e" autoIncrement="false" defaultValue="" name="data_processo" nullable="1" physicalName="data_processo" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL86" populated="true" UUID="c0285c43-4a17-43ff-88f2-20a2992b08fa" autoIncrement="false" name="advogado_processo" nullable="1" physicalName="advogado_processo" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL86" populated="true" UUID="c0285c43-4a17-43ff-88f2-20a2992b08fa" autoIncrement="false" defaultValue="" name="advogado_processo" nullable="1" physicalName="advogado_processo" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -324,19 +333,19 @@
        <column id="COL90" populated="true" UUID="df7cfc9c-d3b1-4dfd-ad56-cfada083b51f" autoIncrement="true" defaultValue="nextval(&apos;conciliacao_seq&apos;::regclass)" name="cod_conciliacao" nullable="0" physicalName="cod_conciliacao" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo da Conciliação Bancaria</remarks>
        </column>
-       <column id="COL91" populated="true" UUID="bb03be11-bcda-4149-810f-fc1531afe9e8" autoIncrement="false" name="num_cheque_conciliacao" nullable="1" physicalName="num_cheque_conciliacao" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL91" populated="true" UUID="bb03be11-bcda-4149-810f-fc1531afe9e8" autoIncrement="false" defaultValue="" name="num_cheque_conciliacao" nullable="1" physicalName="num_cheque_conciliacao" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL92" populated="true" UUID="a0919636-f4e4-402d-9956-51da7202f94f" autoIncrement="false" name="data_cheque_conciliacao" nullable="1" physicalName="data_cheque_conciliacao" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL92" populated="true" UUID="a0919636-f4e4-402d-9956-51da7202f94f" autoIncrement="false" defaultValue="" name="data_cheque_conciliacao" nullable="1" physicalName="data_cheque_conciliacao" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL93" populated="true" UUID="6b5f89e1-56c4-492e-8f87-3725a45c93ac" autoIncrement="false" name="vlr_cheque_conciliacao" nullable="1" physicalName="vlr_cheque_conciliacao" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL93" populated="true" UUID="6b5f89e1-56c4-492e-8f87-3725a45c93ac" autoIncrement="false" defaultValue="" name="vlr_cheque_conciliacao" nullable="1" physicalName="vlr_cheque_conciliacao" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL94" populated="true" UUID="9b6ea1ea-2dd8-4752-bff5-73ff390290a3" autoIncrement="false" name="mes_ano_conciliacao" nullable="1" physicalName="mes_ano_conciliacao" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL94" populated="true" UUID="9b6ea1ea-2dd8-4752-bff5-73ff390290a3" autoIncrement="false" defaultValue="" name="mes_ano_conciliacao" nullable="1" physicalName="mes_ano_conciliacao" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL95" populated="true" UUID="8d56acdb-2b03-4e16-8b92-688f9b98a8c6" autoIncrement="false" name="historico_conciliacao" nullable="1" physicalName="historico_conciliacao" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL95" populated="true" UUID="8d56acdb-2b03-4e16-8b92-688f9b98a8c6" autoIncrement="false" defaultValue="" name="historico_conciliacao" nullable="1" physicalName="historico_conciliacao" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -356,19 +365,19 @@
        <column id="COL99" populated="true" UUID="cbfd8c64-f4a8-4fb1-97c4-0a0ffa803300" autoIncrement="true" defaultValue="nextval(&apos;conta_bancaria_seq&apos;::regclass)" name="id_conta_bancaria" nullable="0" physicalName="id_conta_bancaria" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Id da Conta bancária</remarks>
        </column>
-       <column id="COL100" populated="true" UUID="10149528-6021-4663-a191-c3b9c7085741" autoIncrement="false" name="cod_banco" nullable="0" physicalName="cod_banco" precision="5" referenceCount="2" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL100" populated="true" UUID="10149528-6021-4663-a191-c3b9c7085741" autoIncrement="false" defaultValue="" name="cod_banco" nullable="0" physicalName="cod_banco" precision="5" referenceCount="2" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
-       <column id="COL101" populated="true" UUID="845cc65a-b3ed-41c7-90de-121a2fae2fb3" autoIncrement="false" name="agencia_banco" nullable="0" physicalName="agencia_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL101" populated="true" UUID="845cc65a-b3ed-41c7-90de-121a2fae2fb3" autoIncrement="false" defaultValue="" name="agencia_banco" nullable="0" physicalName="agencia_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL102" populated="true" UUID="4382eaca-7c40-45c4-96c4-ea8ab4c2061d" autoIncrement="false" name="conta_banco" nullable="0" physicalName="conta_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL102" populated="true" UUID="4382eaca-7c40-45c4-96c4-ea8ab4c2061d" autoIncrement="false" defaultValue="" name="conta_banco" nullable="0" physicalName="conta_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL103" populated="true" UUID="d3dae364-a6bd-47e5-9541-4bc96ee999b3" autoIncrement="false" name="gerente_banco" nullable="1" physicalName="gerente_banco" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL103" populated="true" UUID="d3dae364-a6bd-47e5-9541-4bc96ee999b3" autoIncrement="false" defaultValue="" name="gerente_banco" nullable="1" physicalName="gerente_banco" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL104" populated="true" UUID="107dbb57-5213-4a36-b4ef-eb6bf2facbac" autoIncrement="false" name="fone_banco" nullable="1" physicalName="fone_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL104" populated="true" UUID="107dbb57-5213-4a36-b4ef-eb6bf2facbac" autoIncrement="false" defaultValue="" name="fone_banco" nullable="1" physicalName="fone_banco" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -388,82 +397,82 @@
        <column id="COL108" populated="true" UUID="81f6711d-f2e6-4cca-bda0-500bf683fb84" autoIncrement="true" defaultValue="nextval(&apos;cot_cab_seq&apos;::regclass)" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cabeçario de Cotação</remarks>
        </column>
-       <column id="COL109" populated="true" UUID="14b6cadc-848b-4e27-b064-4f9476a67cc2" autoIncrement="false" name="data_cot_cab" nullable="1" physicalName="data_cot_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL109" populated="true" UUID="14b6cadc-848b-4e27-b064-4f9476a67cc2" autoIncrement="false" defaultValue="" name="data_cot_cab" nullable="1" physicalName="data_cot_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL110" populated="true" UUID="dceb114b-68a2-4217-a648-1eea475d9467" autoIncrement="false" name="forn1" nullable="1" physicalName="forn1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL110" populated="true" UUID="dceb114b-68a2-4217-a648-1eea475d9467" autoIncrement="false" defaultValue="" name="forn1" nullable="1" physicalName="forn1" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL111" populated="true" UUID="32307ad7-46a8-4d38-8f9e-465f9f14e574" autoIncrement="false" name="forn2" nullable="1" physicalName="forn2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL111" populated="true" UUID="32307ad7-46a8-4d38-8f9e-465f9f14e574" autoIncrement="false" defaultValue="" name="forn2" nullable="1" physicalName="forn2" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL112" populated="true" UUID="357d0fad-5bba-4581-8822-e6b264833e1d" autoIncrement="false" name="forn3" nullable="1" physicalName="forn3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL112" populated="true" UUID="357d0fad-5bba-4581-8822-e6b264833e1d" autoIncrement="false" defaultValue="" name="forn3" nullable="1" physicalName="forn3" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL113" populated="true" UUID="24923d35-76e3-4412-9e40-a38f57d784b5" autoIncrement="false" name="forn4" nullable="1" physicalName="forn4" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL113" populated="true" UUID="24923d35-76e3-4412-9e40-a38f57d784b5" autoIncrement="false" defaultValue="" name="forn4" nullable="1" physicalName="forn4" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL114" populated="true" UUID="72112e79-0357-4480-bc85-12c7c188fbba" autoIncrement="false" name="forn5" nullable="1" physicalName="forn5" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL114" populated="true" UUID="72112e79-0357-4480-bc85-12c7c188fbba" autoIncrement="false" defaultValue="" name="forn5" nullable="1" physicalName="forn5" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL115" populated="true" UUID="85b0e533-a361-44c8-88a6-85bb63d38819" autoIncrement="false" name="condicoes1" nullable="1" physicalName="condicoes1" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL115" populated="true" UUID="85b0e533-a361-44c8-88a6-85bb63d38819" autoIncrement="false" defaultValue="" name="condicoes1" nullable="1" physicalName="condicoes1" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL116" populated="true" UUID="09432969-518b-4ecf-aa7f-0652e9185f51" autoIncrement="false" name="condicoes2" nullable="1" physicalName="condicoes2" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL116" populated="true" UUID="09432969-518b-4ecf-aa7f-0652e9185f51" autoIncrement="false" defaultValue="" name="condicoes2" nullable="1" physicalName="condicoes2" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL117" populated="true" UUID="496594f1-5dc9-4b0a-ac04-1410744532f1" autoIncrement="false" name="condicoes3" nullable="1" physicalName="condicoes3" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL117" populated="true" UUID="496594f1-5dc9-4b0a-ac04-1410744532f1" autoIncrement="false" defaultValue="" name="condicoes3" nullable="1" physicalName="condicoes3" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL118" populated="true" UUID="fc1f7ad6-477b-4972-8c2c-f9a213695801" autoIncrement="false" name="condicoes4" nullable="1" physicalName="condicoes4" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL118" populated="true" UUID="fc1f7ad6-477b-4972-8c2c-f9a213695801" autoIncrement="false" defaultValue="" name="condicoes4" nullable="1" physicalName="condicoes4" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL119" populated="true" UUID="0156cd49-3e13-443d-8d4d-349cee685156" autoIncrement="false" name="condicoes5" nullable="1" physicalName="condicoes5" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL119" populated="true" UUID="0156cd49-3e13-443d-8d4d-349cee685156" autoIncrement="false" defaultValue="" name="condicoes5" nullable="1" physicalName="condicoes5" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL120" populated="true" UUID="7532d601-101a-4fec-acd0-a4a6cad32f73" autoIncrement="false" name="desconto1" nullable="1" physicalName="desconto1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL120" populated="true" UUID="7532d601-101a-4fec-acd0-a4a6cad32f73" autoIncrement="false" defaultValue="" name="desconto1" nullable="1" physicalName="desconto1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL121" populated="true" UUID="192bd4eb-2028-4dfd-801a-ec5a9cc1cb7d" autoIncrement="false" name="desconto2" nullable="1" physicalName="desconto2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL121" populated="true" UUID="192bd4eb-2028-4dfd-801a-ec5a9cc1cb7d" autoIncrement="false" defaultValue="" name="desconto2" nullable="1" physicalName="desconto2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL122" populated="true" UUID="1454422f-4ce5-4a2b-a6cc-067865c086ba" autoIncrement="false" name="desconto3" nullable="1" physicalName="desconto3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL122" populated="true" UUID="1454422f-4ce5-4a2b-a6cc-067865c086ba" autoIncrement="false" defaultValue="" name="desconto3" nullable="1" physicalName="desconto3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL123" populated="true" UUID="f22da8f7-a0cd-460d-a08c-ea1798097944" autoIncrement="false" name="desconto4" nullable="1" physicalName="desconto4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL123" populated="true" UUID="f22da8f7-a0cd-460d-a08c-ea1798097944" autoIncrement="false" defaultValue="" name="desconto4" nullable="1" physicalName="desconto4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL124" populated="true" UUID="d73c7df8-8851-48f0-8927-1420cfc72ac5" autoIncrement="false" name="desconto5" nullable="1" physicalName="desconto5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL124" populated="true" UUID="d73c7df8-8851-48f0-8927-1420cfc72ac5" autoIncrement="false" defaultValue="" name="desconto5" nullable="1" physicalName="desconto5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL125" populated="true" UUID="8585ff2b-57f7-43bc-aa11-5c9736617657" autoIncrement="false" name="entrega1" nullable="1" physicalName="entrega1" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL125" populated="true" UUID="8585ff2b-57f7-43bc-aa11-5c9736617657" autoIncrement="false" defaultValue="" name="entrega1" nullable="1" physicalName="entrega1" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL126" populated="true" UUID="2a5b9ec7-5049-4a3a-b2c3-0066e57290b3" autoIncrement="false" name="entrega2" nullable="1" physicalName="entrega2" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL126" populated="true" UUID="2a5b9ec7-5049-4a3a-b2c3-0066e57290b3" autoIncrement="false" defaultValue="" name="entrega2" nullable="1" physicalName="entrega2" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL127" populated="true" UUID="0eb7d769-4588-49de-b706-40cb3041eedf" autoIncrement="false" name="entrega3" nullable="1" physicalName="entrega3" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL127" populated="true" UUID="0eb7d769-4588-49de-b706-40cb3041eedf" autoIncrement="false" defaultValue="" name="entrega3" nullable="1" physicalName="entrega3" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL128" populated="true" UUID="1eeb8c0d-4ff2-4a29-b4c1-77d4758c9f9c" autoIncrement="false" name="entrega4" nullable="1" physicalName="entrega4" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL128" populated="true" UUID="1eeb8c0d-4ff2-4a29-b4c1-77d4758c9f9c" autoIncrement="false" defaultValue="" name="entrega4" nullable="1" physicalName="entrega4" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL129" populated="true" UUID="6f26339d-a870-4894-ac89-014899c9c881" autoIncrement="false" name="entrega5" nullable="1" physicalName="entrega5" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL129" populated="true" UUID="6f26339d-a870-4894-ac89-014899c9c881" autoIncrement="false" defaultValue="" name="entrega5" nullable="1" physicalName="entrega5" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL130" populated="true" UUID="dc99b9d2-2764-467b-8232-2d378329c2bc" autoIncrement="false" name="total1" nullable="1" physicalName="total1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL130" populated="true" UUID="dc99b9d2-2764-467b-8232-2d378329c2bc" autoIncrement="false" defaultValue="" name="total1" nullable="1" physicalName="total1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL131" populated="true" UUID="13bce641-96e8-4ff9-a332-eb8370673dfb" autoIncrement="false" name="total2" nullable="1" physicalName="total2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL131" populated="true" UUID="13bce641-96e8-4ff9-a332-eb8370673dfb" autoIncrement="false" defaultValue="" name="total2" nullable="1" physicalName="total2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL132" populated="true" UUID="f591996b-b06c-4d13-9b59-8261c0465158" autoIncrement="false" name="total3" nullable="1" physicalName="total3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL132" populated="true" UUID="f591996b-b06c-4d13-9b59-8261c0465158" autoIncrement="false" defaultValue="" name="total3" nullable="1" physicalName="total3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL133" populated="true" UUID="679881fb-f2e9-4162-a23b-df1538f01cb5" autoIncrement="false" name="total4" nullable="1" physicalName="total4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL133" populated="true" UUID="679881fb-f2e9-4162-a23b-df1538f01cb5" autoIncrement="false" defaultValue="" name="total4" nullable="1" physicalName="total4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL134" populated="true" UUID="0406e122-9fcc-426b-8cf7-e9970a773a4c" autoIncrement="false" name="total5" nullable="1" physicalName="total5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL134" populated="true" UUID="0406e122-9fcc-426b-8cf7-e9970a773a4c" autoIncrement="false" defaultValue="" name="total5" nullable="1" physicalName="total5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -480,46 +489,46 @@
      <table id="TAB137" populated="true" UUID="9cddeb5e-c539-440e-b90c-debf555d8895" name="cot_det" objectType="TABLE" physicalName="cot_det" >
       <remarks>Detalhe de Cotação</remarks>
       <folder id="FOLTAB1371" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL138" populated="true" UUID="430667ac-9564-4bf1-95f2-c1bb9acaceea" autoIncrement="false" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL138" populated="true" UUID="430667ac-9564-4bf1-95f2-c1bb9acaceea" autoIncrement="false" defaultValue="" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Cotação</remarks>
        </column>
-       <column id="COL139" populated="true" UUID="7255f0f8-e25a-48eb-845e-db634f2aa2a0" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL139" populated="true" UUID="7255f0f8-e25a-48eb-845e-db634f2aa2a0" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL140" populated="true" UUID="5767c7d2-8924-4be2-ac50-895bc586df9d" autoIncrement="false" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="2" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL140" populated="true" UUID="5767c7d2-8924-4be2-ac50-895bc586df9d" autoIncrement="false" defaultValue="" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="2" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Requisição</remarks>
        </column>
-       <column id="COL141" populated="true" UUID="01c688cb-166a-4a7b-8607-47d00d82b7f2" autoIncrement="false" name="qtd_cot_det" nullable="1" physicalName="qtd_cot_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL141" populated="true" UUID="01c688cb-166a-4a7b-8607-47d00d82b7f2" autoIncrement="false" defaultValue="" name="qtd_cot_det" nullable="1" physicalName="qtd_cot_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL142" populated="true" UUID="6990a336-e404-41b7-b523-0b3e1227df73" autoIncrement="false" name="unit1" nullable="1" physicalName="unit1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL142" populated="true" UUID="6990a336-e404-41b7-b523-0b3e1227df73" autoIncrement="false" defaultValue="" name="unit1" nullable="1" physicalName="unit1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL143" populated="true" UUID="955da4b1-3dcd-4a7e-ab26-dad76869f735" autoIncrement="false" name="unit2" nullable="1" physicalName="unit2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL143" populated="true" UUID="955da4b1-3dcd-4a7e-ab26-dad76869f735" autoIncrement="false" defaultValue="" name="unit2" nullable="1" physicalName="unit2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL144" populated="true" UUID="78725f34-33d5-41d9-baf5-81baee50c764" autoIncrement="false" name="unit3" nullable="1" physicalName="unit3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL144" populated="true" UUID="78725f34-33d5-41d9-baf5-81baee50c764" autoIncrement="false" defaultValue="" name="unit3" nullable="1" physicalName="unit3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL145" populated="true" UUID="b1dbaa92-66c7-43f2-bbf8-9d2ded093ac1" autoIncrement="false" name="unit4" nullable="1" physicalName="unit4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL145" populated="true" UUID="b1dbaa92-66c7-43f2-bbf8-9d2ded093ac1" autoIncrement="false" defaultValue="" name="unit4" nullable="1" physicalName="unit4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL146" populated="true" UUID="97b9f4a2-90a6-4915-b0da-e86c05e31bfa" autoIncrement="false" name="unit5" nullable="1" physicalName="unit5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL146" populated="true" UUID="97b9f4a2-90a6-4915-b0da-e86c05e31bfa" autoIncrement="false" defaultValue="" name="unit5" nullable="1" physicalName="unit5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL147" populated="true" UUID="f9aecce7-677b-4b1e-9c8a-590b254228b3" autoIncrement="false" name="total1" nullable="1" physicalName="total1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL147" populated="true" UUID="f9aecce7-677b-4b1e-9c8a-590b254228b3" autoIncrement="false" defaultValue="" name="total1" nullable="1" physicalName="total1" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL148" populated="true" UUID="58b9feab-cfe8-4c5e-8a71-260655e86a27" autoIncrement="false" name="total2" nullable="1" physicalName="total2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL148" populated="true" UUID="58b9feab-cfe8-4c5e-8a71-260655e86a27" autoIncrement="false" defaultValue="" name="total2" nullable="1" physicalName="total2" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL149" populated="true" UUID="855d0ec0-a5a4-4745-97fe-ecae44e47933" autoIncrement="false" name="total3" nullable="1" physicalName="total3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL149" populated="true" UUID="855d0ec0-a5a4-4745-97fe-ecae44e47933" autoIncrement="false" defaultValue="" name="total3" nullable="1" physicalName="total3" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL150" populated="true" UUID="3ed4ad8d-c9c2-4e6d-91f4-ddea47993a4c" autoIncrement="false" name="total4" nullable="1" physicalName="total4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL150" populated="true" UUID="3ed4ad8d-c9c2-4e6d-91f4-ddea47993a4c" autoIncrement="false" defaultValue="" name="total4" nullable="1" physicalName="total4" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL151" populated="true" UUID="405e17b6-bcdd-409f-a236-368667803a45" autoIncrement="false" name="total5" nullable="1" physicalName="total5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL151" populated="true" UUID="405e17b6-bcdd-409f-a236-368667803a45" autoIncrement="false" defaultValue="" name="total5" nullable="1" physicalName="total5" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -541,7 +550,7 @@
        <column id="COL157" populated="true" UUID="aa92fbf6-07b2-4bf0-933f-0550e4587273" autoIncrement="true" defaultValue="nextval(&apos;departamento_seq&apos;::regclass)" name="cod_departamento" nullable="0" physicalName="cod_departamento" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Departamento</remarks>
        </column>
-       <column id="COL158" populated="true" UUID="52a086cf-a866-4dc6-b3d6-d1e1d61ebe84" autoIncrement="false" name="nome_departamento" nullable="0" physicalName="nome_departamento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL158" populated="true" UUID="52a086cf-a866-4dc6-b3d6-d1e1d61ebe84" autoIncrement="false" defaultValue="" name="nome_departamento" nullable="0" physicalName="nome_departamento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -561,25 +570,25 @@
        <column id="COL162" populated="true" UUID="fa6f1656-215b-46dd-8438-61c0fcd7d898" autoIncrement="true" defaultValue="nextval(&apos;fechamento_seq&apos;::regclass)" name="cod_fechamento" nullable="0" physicalName="cod_fechamento" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Fechamento</remarks>
        </column>
-       <column id="COL163" populated="true" UUID="975bfb4d-2b13-4503-81e3-9a448516b3da" autoIncrement="false" name="mes_ano_fechamento" nullable="1" physicalName="mes_ano_fechamento" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL163" populated="true" UUID="975bfb4d-2b13-4503-81e3-9a448516b3da" autoIncrement="false" defaultValue="" name="mes_ano_fechamento" nullable="1" physicalName="mes_ano_fechamento" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL164" populated="true" UUID="4d8bec98-bd1a-4622-99a2-3d62b22ba48c" autoIncrement="false" name="saldo_anterior" nullable="1" physicalName="saldo_anterior" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL164" populated="true" UUID="4d8bec98-bd1a-4622-99a2-3d62b22ba48c" autoIncrement="false" defaultValue="" name="saldo_anterior" nullable="1" physicalName="saldo_anterior" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL165" populated="true" UUID="59a9ca79-95ca-4a36-a883-0a87dddd3e07" autoIncrement="false" name="vlr_recebimentos" nullable="1" physicalName="vlr_recebimentos" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL165" populated="true" UUID="59a9ca79-95ca-4a36-a883-0a87dddd3e07" autoIncrement="false" defaultValue="" name="vlr_recebimentos" nullable="1" physicalName="vlr_recebimentos" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL166" populated="true" UUID="349c65a1-9f25-45d8-bd9a-0a2761249543" autoIncrement="false" name="vlr_pagamentos" nullable="1" physicalName="vlr_pagamentos" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL166" populated="true" UUID="349c65a1-9f25-45d8-bd9a-0a2761249543" autoIncrement="false" defaultValue="" name="vlr_pagamentos" nullable="1" physicalName="vlr_pagamentos" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL167" populated="true" UUID="20a174da-a276-43ed-9570-46b9d3a40da3" autoIncrement="false" name="vlr_cheque_ncomp" nullable="1" physicalName="vlr_cheque_ncomp" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL167" populated="true" UUID="20a174da-a276-43ed-9570-46b9d3a40da3" autoIncrement="false" defaultValue="" name="vlr_cheque_ncomp" nullable="1" physicalName="vlr_cheque_ncomp" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL168" populated="true" UUID="718a140c-5e51-4214-9ea0-67ac71be60e5" autoIncrement="false" name="vlr_saldo_conta" nullable="1" physicalName="vlr_saldo_conta" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL168" populated="true" UUID="718a140c-5e51-4214-9ea0-67ac71be60e5" autoIncrement="false" defaultValue="" name="vlr_saldo_conta" nullable="1" physicalName="vlr_saldo_conta" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL169" populated="true" UUID="f9458e7b-3dd3-4809-b8bd-4266c63f72d5" autoIncrement="false" name="vlr_saldo_real" nullable="1" physicalName="vlr_saldo_real" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL169" populated="true" UUID="f9458e7b-3dd3-4809-b8bd-4266c63f72d5" autoIncrement="false" defaultValue="" name="vlr_saldo_real" nullable="1" physicalName="vlr_saldo_real" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -599,55 +608,55 @@
        <column id="COL173" populated="true" UUID="f3e98149-d8b9-4752-aab7-fa93e2b6bffa" autoIncrement="true" defaultValue="nextval(&apos;fornecedor_seq&apos;::regclass)" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Fornecedor</remarks>
        </column>
-       <column id="COL174" populated="true" UUID="9fde08f3-bbbb-47a2-a190-5cf30ab20a97" autoIncrement="false" name="nome_fornecedor" nullable="0" physicalName="nome_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL174" populated="true" UUID="9fde08f3-bbbb-47a2-a190-5cf30ab20a97" autoIncrement="false" defaultValue="" name="nome_fornecedor" nullable="0" physicalName="nome_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL175" populated="true" UUID="57a942e4-b887-4bb6-b285-782c9c29fac3" autoIncrement="false" name="cpf_fornecedor" nullable="1" physicalName="cpf_fornecedor" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL175" populated="true" UUID="57a942e4-b887-4bb6-b285-782c9c29fac3" autoIncrement="false" defaultValue="" name="cpf_fornecedor" nullable="1" physicalName="cpf_fornecedor" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL176" populated="true" UUID="1b3ccdee-e884-44ff-82eb-dd2fa7993199" autoIncrement="false" name="rg_fornecedor" nullable="1" physicalName="rg_fornecedor" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL176" populated="true" UUID="1b3ccdee-e884-44ff-82eb-dd2fa7993199" autoIncrement="false" defaultValue="" name="rg_fornecedor" nullable="1" physicalName="rg_fornecedor" precision="25" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL177" populated="true" UUID="59aa6b36-b296-41c5-83a5-59c2329c2bd3" autoIncrement="false" name="orgao_rg_fornecedor" nullable="1" physicalName="orgao_rg_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL177" populated="true" UUID="59aa6b36-b296-41c5-83a5-59c2329c2bd3" autoIncrement="false" defaultValue="" name="orgao_rg_fornecedor" nullable="1" physicalName="orgao_rg_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL178" populated="true" UUID="32e75c7f-9f1e-445d-bb46-96ec3bb18a54" autoIncrement="false" name="cnpj_fornecedor" nullable="1" physicalName="cnpj_fornecedor" precision="14" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL178" populated="true" UUID="32e75c7f-9f1e-445d-bb46-96ec3bb18a54" autoIncrement="false" defaultValue="" name="cnpj_fornecedor" nullable="1" physicalName="cnpj_fornecedor" precision="14" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL179" populated="true" UUID="1b892c9d-9dd4-4169-b799-22d67879c939" autoIncrement="false" name="tipo_fornecedor" nullable="1" physicalName="tipo_fornecedor" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL179" populated="true" UUID="1b892c9d-9dd4-4169-b799-22d67879c939" autoIncrement="false" defaultValue="" name="tipo_fornecedor" nullable="1" physicalName="tipo_fornecedor" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
-       <column id="COL180" populated="true" UUID="e08c44c7-b8c7-4fe8-b136-a9754fc1071e" autoIncrement="false" name="endereco_fornecedor" nullable="1" physicalName="endereco_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL180" populated="true" UUID="e08c44c7-b8c7-4fe8-b136-a9754fc1071e" autoIncrement="false" defaultValue="" name="endereco_fornecedor" nullable="1" physicalName="endereco_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL181" populated="true" UUID="24d820b3-0d99-437f-b209-514780335268" autoIncrement="false" name="bairro_fornecedor" nullable="1" physicalName="bairro_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL181" populated="true" UUID="24d820b3-0d99-437f-b209-514780335268" autoIncrement="false" defaultValue="" name="bairro_fornecedor" nullable="1" physicalName="bairro_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL182" populated="true" UUID="4d099a67-1901-48cd-b885-fd63dabad5de" autoIncrement="false" name="cidade_fornecedor" nullable="1" physicalName="cidade_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL182" populated="true" UUID="4d099a67-1901-48cd-b885-fd63dabad5de" autoIncrement="false" defaultValue="" name="cidade_fornecedor" nullable="1" physicalName="cidade_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL183" populated="true" UUID="78db9712-e4f8-447c-bcc6-34af242f9f92" autoIncrement="false" name="uf_fornecedor" nullable="1" physicalName="uf_fornecedor" precision="2" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL183" populated="true" UUID="78db9712-e4f8-447c-bcc6-34af242f9f92" autoIncrement="false" defaultValue="" name="uf_fornecedor" nullable="1" physicalName="uf_fornecedor" precision="2" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
-       <column id="COL184" populated="true" UUID="fc76b1c3-3761-4db1-a551-64c28e45c7d1" autoIncrement="false" name="cep_fornecedor" nullable="1" physicalName="cep_fornecedor" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL184" populated="true" UUID="fc76b1c3-3761-4db1-a551-64c28e45c7d1" autoIncrement="false" defaultValue="" name="cep_fornecedor" nullable="1" physicalName="cep_fornecedor" precision="8" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL185" populated="true" UUID="65eb6729-daae-4506-830e-e41abeecc578" autoIncrement="false" name="email_fornecedor" nullable="1" physicalName="email_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL185" populated="true" UUID="65eb6729-daae-4506-830e-e41abeecc578" autoIncrement="false" defaultValue="" name="email_fornecedor" nullable="1" physicalName="email_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL186" populated="true" UUID="dc7c8970-fe29-4722-b466-695cc4579fc8" autoIncrement="false" name="site_fornecedor" nullable="1" physicalName="site_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL186" populated="true" UUID="dc7c8970-fe29-4722-b466-695cc4579fc8" autoIncrement="false" defaultValue="" name="site_fornecedor" nullable="1" physicalName="site_fornecedor" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL187" populated="true" UUID="3228d608-210d-4512-85fa-339cc168552e" autoIncrement="false" name="fone_fornecedor" nullable="1" physicalName="fone_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL187" populated="true" UUID="3228d608-210d-4512-85fa-339cc168552e" autoIncrement="false" defaultValue="" name="fone_fornecedor" nullable="1" physicalName="fone_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL188" populated="true" UUID="27ddd272-8c74-4c9f-b4a0-e1029cfd506a" autoIncrement="false" name="celular_fornecedor" nullable="1" physicalName="celular_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL188" populated="true" UUID="27ddd272-8c74-4c9f-b4a0-e1029cfd506a" autoIncrement="false" defaultValue="" name="celular_fornecedor" nullable="1" physicalName="celular_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL189" populated="true" UUID="bb6974e7-fb12-4ba2-b2ca-9ffa309ab6f2" autoIncrement="false" name="fax_fornecedor" nullable="1" physicalName="fax_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL189" populated="true" UUID="bb6974e7-fb12-4ba2-b2ca-9ffa309ab6f2" autoIncrement="false" defaultValue="" name="fax_fornecedor" nullable="1" physicalName="fax_fornecedor" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL190" populated="true" UUID="a4545b44-de0a-4e93-bd4d-bb44b41523cd" autoIncrement="false" name="contato_fornecedor" nullable="1" physicalName="contato_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL190" populated="true" UUID="a4545b44-de0a-4e93-bd4d-bb44b41523cd" autoIncrement="false" defaultValue="" name="contato_fornecedor" nullable="1" physicalName="contato_fornecedor" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -667,25 +676,25 @@
        <column id="COL194" populated="true" UUID="74739a91-a12d-441d-af72-18a6e5ca7d0c" autoIncrement="true" defaultValue="nextval(&apos;funcionario_seq&apos;::regclass)" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Funcionario</remarks>
        </column>
-       <column id="COL195" populated="true" UUID="0a171cc9-82bd-4cbe-bd4c-e16bbe6b9caa" autoIncrement="false" name="cod_departamento" nullable="0" physicalName="cod_departamento" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL195" populated="true" UUID="0a171cc9-82bd-4cbe-bd4c-e16bbe6b9caa" autoIncrement="false" defaultValue="" name="cod_departamento" nullable="0" physicalName="cod_departamento" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL196" populated="true" UUID="14bf0f45-98af-4a90-97b4-2854b6a5735f" autoIncrement="false" name="nome_funcionario" nullable="0" physicalName="nome_funcionario" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL196" populated="true" UUID="14bf0f45-98af-4a90-97b4-2854b6a5735f" autoIncrement="false" defaultValue="" name="nome_funcionario" nullable="0" physicalName="nome_funcionario" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL197" populated="true" UUID="0a281b7c-fc50-4ccf-8b1b-ddf2554fb2b8" autoIncrement="false" name="funcao_funcionario" nullable="1" physicalName="funcao_funcionario" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL197" populated="true" UUID="0a281b7c-fc50-4ccf-8b1b-ddf2554fb2b8" autoIncrement="false" defaultValue="" name="funcao_funcionario" nullable="1" physicalName="funcao_funcionario" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL198" populated="true" UUID="a4b39b85-90bc-449f-bf70-811f73508fcc" autoIncrement="false" name="login_funcionario" nullable="0" physicalName="login_funcionario" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL198" populated="true" UUID="a4b39b85-90bc-449f-bf70-811f73508fcc" autoIncrement="false" defaultValue="" name="login_funcionario" nullable="0" physicalName="login_funcionario" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL199" populated="true" UUID="ef4efa9c-c777-4976-94f6-488121a8b84d" autoIncrement="false" name="senha_funcionario" nullable="0" physicalName="senha_funcionario" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL199" populated="true" UUID="ef4efa9c-c777-4976-94f6-488121a8b84d" autoIncrement="false" defaultValue="" name="senha_funcionario" nullable="0" physicalName="senha_funcionario" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL200" populated="true" UUID="a1c14446-4ce7-4e8d-ac4d-80c7d9df606a" autoIncrement="false" name="admissao_funcionario" nullable="1" physicalName="admissao_funcionario" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL200" populated="true" UUID="a1c14446-4ce7-4e8d-ac4d-80c7d9df606a" autoIncrement="false" defaultValue="" name="admissao_funcionario" nullable="1" physicalName="admissao_funcionario" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL201" populated="true" UUID="16e898ca-f7e6-4362-a2e2-bb8a3dff13ad" autoIncrement="false" name="acesso_total" nullable="1" physicalName="acesso_total" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL201" populated="true" UUID="16e898ca-f7e6-4362-a2e2-bb8a3dff13ad" autoIncrement="false" defaultValue="" name="acesso_total" nullable="1" physicalName="acesso_total" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
        </folder>
@@ -705,28 +714,28 @@
        <column id="COL205" populated="true" UUID="c3368fa7-79a0-48ef-9838-cc7db97b16c0" autoIncrement="true" defaultValue="nextval(&apos;movimento_seq&apos;::regclass)" name="cod_movimento" nullable="0" physicalName="cod_movimento" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Movimento Bancario</remarks>
        </column>
-       <column id="COL206" populated="true" UUID="1140f8f4-bd47-46fa-a471-d656e4c81074" autoIncrement="false" name="cod_plano_conta" nullable="0" physicalName="cod_plano_conta" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL206" populated="true" UUID="1140f8f4-bd47-46fa-a471-d656e4c81074" autoIncrement="false" defaultValue="" name="cod_plano_conta" nullable="0" physicalName="cod_plano_conta" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL207" populated="true" UUID="29906cb9-a2df-46e3-8ec7-de053c9a8f8b" autoIncrement="false" name="mes_ano_movimento" nullable="1" physicalName="mes_ano_movimento" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL207" populated="true" UUID="29906cb9-a2df-46e3-8ec7-de053c9a8f8b" autoIncrement="false" defaultValue="" name="mes_ano_movimento" nullable="1" physicalName="mes_ano_movimento" precision="7" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL208" populated="true" UUID="897ba1a9-ad98-4cce-a263-68df63984257" autoIncrement="false" name="num_cheque_movimento" nullable="1" physicalName="num_cheque_movimento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL208" populated="true" UUID="897ba1a9-ad98-4cce-a263-68df63984257" autoIncrement="false" defaultValue="" name="num_cheque_movimento" nullable="1" physicalName="num_cheque_movimento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL209" populated="true" UUID="5aa2bc9a-1377-4678-9aec-7e9d06c75974" autoIncrement="false" name="num_documento_movimento" nullable="1" physicalName="num_documento_movimento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL209" populated="true" UUID="5aa2bc9a-1377-4678-9aec-7e9d06c75974" autoIncrement="false" defaultValue="" name="num_documento_movimento" nullable="1" physicalName="num_documento_movimento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL210" populated="true" UUID="be1667a2-3f30-4a8f-8c05-aac37b68cb3a" autoIncrement="false" name="data_cheque" nullable="1" physicalName="data_cheque" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL210" populated="true" UUID="be1667a2-3f30-4a8f-8c05-aac37b68cb3a" autoIncrement="false" defaultValue="" name="data_cheque" nullable="1" physicalName="data_cheque" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL211" populated="true" UUID="c8ef590b-5d69-4228-9726-65d5601b6820" autoIncrement="false" name="data_lancamento_movimento" nullable="1" physicalName="data_lancamento_movimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL211" populated="true" UUID="c8ef590b-5d69-4228-9726-65d5601b6820" autoIncrement="false" defaultValue="" name="data_lancamento_movimento" nullable="1" physicalName="data_lancamento_movimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL212" populated="true" UUID="caa7f452-f14d-4b37-abed-ff481598ab31" autoIncrement="false" name="historico_movimento" nullable="1" physicalName="historico_movimento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL212" populated="true" UUID="caa7f452-f14d-4b37-abed-ff481598ab31" autoIncrement="false" defaultValue="" name="historico_movimento" nullable="1" physicalName="historico_movimento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL213" populated="true" UUID="4489506f-8bff-4645-91c8-75791f8ef338" autoIncrement="false" name="vlr_documento" nullable="1" physicalName="vlr_documento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL213" populated="true" UUID="4489506f-8bff-4645-91c8-75791f8ef338" autoIncrement="false" defaultValue="" name="vlr_documento" nullable="1" physicalName="vlr_documento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -744,22 +753,22 @@
       <remarks>Cabecario da Nota Fical de Entrada
 Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remarks>
       <folder id="FOLTAB2161" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL217" populated="true" UUID="df840160-b986-40a7-85b2-583a60339ac1" autoIncrement="false" name="numero_nfe_cab" nullable="0" physicalName="numero_nfe_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL217" populated="true" UUID="df840160-b986-40a7-85b2-583a60339ac1" autoIncrement="false" defaultValue="" name="numero_nfe_cab" nullable="0" physicalName="numero_nfe_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Numero da Nota Fical de Entrada</remarks>
        </column>
-       <column id="COL218" populated="true" UUID="23edb81d-0e19-412b-a480-cbf4bcb6248b" autoIncrement="false" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL218" populated="true" UUID="23edb81d-0e19-412b-a480-cbf4bcb6248b" autoIncrement="false" defaultValue="" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL219" populated="true" UUID="ca6ecadf-0018-4786-a5cc-d0e9de8de4c2" autoIncrement="false" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL219" populated="true" UUID="ca6ecadf-0018-4786-a5cc-d0e9de8de4c2" autoIncrement="false" defaultValue="" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL220" populated="true" UUID="1082f134-b243-40a3-b6d5-a6552efd3977" autoIncrement="false" name="emissao_nfe_cab" nullable="1" physicalName="emissao_nfe_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL220" populated="true" UUID="1082f134-b243-40a3-b6d5-a6552efd3977" autoIncrement="false" defaultValue="" name="emissao_nfe_cab" nullable="1" physicalName="emissao_nfe_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL221" populated="true" UUID="f7ea6dd2-ef6e-44bd-acb9-86f96add8d6d" autoIncrement="false" name="entrada_nfe_cab" nullable="1" physicalName="entrada_nfe_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL221" populated="true" UUID="f7ea6dd2-ef6e-44bd-acb9-86f96add8d6d" autoIncrement="false" defaultValue="" name="entrada_nfe_cab" nullable="1" physicalName="entrada_nfe_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL222" populated="true" UUID="86db1ed5-bc09-4034-b8e5-20f49763ed9a" autoIncrement="false" name="total_nfe_cab" nullable="1" physicalName="total_nfe_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL222" populated="true" UUID="86db1ed5-bc09-4034-b8e5-20f49763ed9a" autoIncrement="false" defaultValue="" name="total_nfe_cab" nullable="1" physicalName="total_nfe_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -776,19 +785,19 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB225" populated="true" UUID="a5bc690c-1124-4c73-b59a-f8f0d84c599f" name="nfe_det" objectType="TABLE" physicalName="nfe_det" >
       <remarks>Detalhe da Nota Fical de Entrada</remarks>
       <folder id="FOLTAB2251" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL226" populated="true" UUID="3cdcb016-a914-4837-9440-aec977672ee9" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL226" populated="true" UUID="3cdcb016-a914-4837-9440-aec977672ee9" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL227" populated="true" UUID="c97d91ec-e755-4c59-a5f3-2edbce39fe70" autoIncrement="false" name="numero_nfe_cab" nullable="0" physicalName="numero_nfe_cab" precision="10" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL227" populated="true" UUID="c97d91ec-e755-4c59-a5f3-2edbce39fe70" autoIncrement="false" defaultValue="" name="numero_nfe_cab" nullable="0" physicalName="numero_nfe_cab" precision="10" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Numero da Nota Fical de Entrada</remarks>
        </column>
-       <column id="COL228" populated="true" UUID="db35fdc5-98c9-49fc-bdd7-e3776617044c" autoIncrement="false" name="qtd_nfe_det" nullable="1" physicalName="qtd_nfe_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL228" populated="true" UUID="db35fdc5-98c9-49fc-bdd7-e3776617044c" autoIncrement="false" defaultValue="" name="qtd_nfe_det" nullable="1" physicalName="qtd_nfe_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL229" populated="true" UUID="6a255088-744d-4eec-b24e-8c85e87f7118" autoIncrement="false" name="vlr_unit_nfe_det" nullable="1" physicalName="vlr_unit_nfe_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL229" populated="true" UUID="6a255088-744d-4eec-b24e-8c85e87f7118" autoIncrement="false" defaultValue="" name="vlr_unit_nfe_det" nullable="1" physicalName="vlr_unit_nfe_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL230" populated="true" UUID="b6e1cb81-e38b-4d04-9a7a-27e0b80d894c" autoIncrement="false" name="vlr_total_nfe_det" nullable="1" physicalName="vlr_total_nfe_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL230" populated="true" UUID="b6e1cb81-e38b-4d04-9a7a-27e0b80d894c" autoIncrement="false" defaultValue="" name="vlr_total_nfe_det" nullable="1" physicalName="vlr_total_nfe_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -809,16 +818,16 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL235" populated="true" UUID="67f1bf77-96e8-4b55-9f7f-a4aca3460528" autoIncrement="true" defaultValue="nextval(&apos;orc_cab_seq&apos;::regclass)" name="cod_orc_cab" nullable="0" physicalName="cod_orc_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cabeçario de Orçamento</remarks>
        </column>
-       <column id="COL236" populated="true" UUID="5d3e2148-e76a-4160-b042-b065745fb34e" autoIncrement="false" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL236" populated="true" UUID="5d3e2148-e76a-4160-b042-b065745fb34e" autoIncrement="false" defaultValue="" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL237" populated="true" UUID="e061c522-9d0f-4627-9bb5-0724db258384" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL237" populated="true" UUID="e061c522-9d0f-4627-9bb5-0724db258384" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL238" populated="true" UUID="f9ee98ed-1f56-4864-89ef-cf7c2aa85195" autoIncrement="false" name="data_orc_cab" nullable="1" physicalName="data_orc_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL238" populated="true" UUID="f9ee98ed-1f56-4864-89ef-cf7c2aa85195" autoIncrement="false" defaultValue="" name="data_orc_cab" nullable="1" physicalName="data_orc_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL239" populated="true" UUID="c4bb0751-0dcb-4d77-9031-0a78d1303d65" autoIncrement="false" name="vlr_orc_cab" nullable="1" physicalName="vlr_orc_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL239" populated="true" UUID="c4bb0751-0dcb-4d77-9031-0a78d1303d65" autoIncrement="false" defaultValue="" name="vlr_orc_cab" nullable="1" physicalName="vlr_orc_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -835,19 +844,19 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB242" populated="true" UUID="c310a128-5132-4dbc-b4a5-7698ca15d3f3" name="orc_det" objectType="TABLE" physicalName="orc_det" >
       <remarks>Detalhe de Orçamento</remarks>
       <folder id="FOLTAB2421" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL243" populated="true" UUID="549c2d42-8b97-460f-901e-b758779c6532" autoIncrement="false" name="cod_orc_cab" nullable="0" physicalName="cod_orc_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL243" populated="true" UUID="549c2d42-8b97-460f-901e-b758779c6532" autoIncrement="false" defaultValue="" name="cod_orc_cab" nullable="0" physicalName="cod_orc_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Orçamento</remarks>
        </column>
-       <column id="COL244" populated="true" UUID="becba43e-1565-438e-9992-139c2da26897" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL244" populated="true" UUID="becba43e-1565-438e-9992-139c2da26897" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL245" populated="true" UUID="4d9ad661-d797-435e-b6c9-20c7e4eb4605" autoIncrement="false" name="qtd_orc_det" nullable="1" physicalName="qtd_orc_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL245" populated="true" UUID="4d9ad661-d797-435e-b6c9-20c7e4eb4605" autoIncrement="false" defaultValue="" name="qtd_orc_det" nullable="1" physicalName="qtd_orc_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL246" populated="true" UUID="828a83a5-fb8c-41b5-ac06-f633db41a975" autoIncrement="false" name="vlr_unit_orc_det" nullable="1" physicalName="vlr_unit_orc_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL246" populated="true" UUID="828a83a5-fb8c-41b5-ac06-f633db41a975" autoIncrement="false" defaultValue="" name="vlr_unit_orc_det" nullable="1" physicalName="vlr_unit_orc_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL247" populated="true" UUID="0dd4d357-37d2-45c9-9769-5b0afd7aa1e3" autoIncrement="false" name="vlr_total_orc_det" nullable="1" physicalName="vlr_total_orc_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL247" populated="true" UUID="0dd4d357-37d2-45c9-9769-5b0afd7aa1e3" autoIncrement="false" defaultValue="" name="vlr_total_orc_det" nullable="1" physicalName="vlr_total_orc_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -868,55 +877,55 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL252" populated="true" UUID="44025909-3498-4016-a635-716c1afd903e" autoIncrement="true" defaultValue="nextval(&apos;pagamento_seq&apos;::regclass)" name="cod_pagamento" nullable="0" physicalName="cod_pagamento" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Pagamento</remarks>
        </column>
-       <column id="COL253" populated="true" UUID="b1b847d2-ec2e-451c-bb60-659c19042993" autoIncrement="false" name="id_conta_bancaria" nullable="0" physicalName="id_conta_bancaria" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL253" populated="true" UUID="b1b847d2-ec2e-451c-bb60-659c19042993" autoIncrement="false" defaultValue="" name="id_conta_bancaria" nullable="0" physicalName="id_conta_bancaria" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL254" populated="true" UUID="5765ea4c-b1b1-4d10-885f-9a0548dc84ba" autoIncrement="false" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL254" populated="true" UUID="5765ea4c-b1b1-4d10-885f-9a0548dc84ba" autoIncrement="false" defaultValue="" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL255" populated="true" UUID="4ab9dff4-8da2-4360-8848-b1bbc6b75aa7" autoIncrement="false" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL255" populated="true" UUID="4ab9dff4-8da2-4360-8848-b1bbc6b75aa7" autoIncrement="false" defaultValue="" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL256" populated="true" UUID="71ff2eed-ee3a-4340-9e6a-986afe96f2da" autoIncrement="false" name="cod_plano_conta" nullable="0" physicalName="cod_plano_conta" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL256" populated="true" UUID="71ff2eed-ee3a-4340-9e6a-986afe96f2da" autoIncrement="false" defaultValue="" name="cod_plano_conta" nullable="0" physicalName="cod_plano_conta" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL257" populated="true" UUID="175a8d37-2bdf-41cd-9f8e-5a9045fb6aff" autoIncrement="false" name="num_doc_pagamento" nullable="1" physicalName="num_doc_pagamento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL257" populated="true" UUID="175a8d37-2bdf-41cd-9f8e-5a9045fb6aff" autoIncrement="false" defaultValue="" name="num_doc_pagamento" nullable="1" physicalName="num_doc_pagamento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL258" populated="true" UUID="88874dc2-9a7f-4bd8-81c8-43b77467a97c" autoIncrement="false" name="vlr_total_pagamento" nullable="1" physicalName="vlr_total_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL258" populated="true" UUID="88874dc2-9a7f-4bd8-81c8-43b77467a97c" autoIncrement="false" defaultValue="" name="vlr_total_pagamento" nullable="1" physicalName="vlr_total_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL259" populated="true" UUID="97986225-9a9e-45b9-a1d5-688c12cea999" autoIncrement="false" name="vlr_juro_pagamento" nullable="1" physicalName="vlr_juro_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL259" populated="true" UUID="97986225-9a9e-45b9-a1d5-688c12cea999" autoIncrement="false" defaultValue="" name="vlr_juro_pagamento" nullable="1" physicalName="vlr_juro_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL260" populated="true" UUID="32d4592d-fe01-497b-a9a5-5bfb0cca0a2d" autoIncrement="false" name="vlr_multa_pagamento" nullable="1" physicalName="vlr_multa_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL260" populated="true" UUID="32d4592d-fe01-497b-a9a5-5bfb0cca0a2d" autoIncrement="false" defaultValue="" name="vlr_multa_pagamento" nullable="1" physicalName="vlr_multa_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL261" populated="true" UUID="cfd455c6-1829-45d1-858d-85bf8a1a6534" autoIncrement="false" name="vlr_desconto_pagamento" nullable="1" physicalName="vlr_desconto_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL261" populated="true" UUID="cfd455c6-1829-45d1-858d-85bf8a1a6534" autoIncrement="false" defaultValue="" name="vlr_desconto_pagamento" nullable="1" physicalName="vlr_desconto_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL262" populated="true" UUID="db192a9a-0c75-42c3-a4f5-97c021547995" autoIncrement="false" name="vlr_pago_pagamento" nullable="1" physicalName="vlr_pago_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL262" populated="true" UUID="db192a9a-0c75-42c3-a4f5-97c021547995" autoIncrement="false" defaultValue="" name="vlr_pago_pagamento" nullable="1" physicalName="vlr_pago_pagamento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL263" populated="true" UUID="165cb041-f620-46c9-bfb1-b38bb8c00db5" autoIncrement="false" name="num_cheque_pagamento" nullable="1" physicalName="num_cheque_pagamento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL263" populated="true" UUID="165cb041-f620-46c9-bfb1-b38bb8c00db5" autoIncrement="false" defaultValue="" name="num_cheque_pagamento" nullable="1" physicalName="num_cheque_pagamento" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL264" populated="true" UUID="0c97caa8-14d1-49ce-8c1c-bc20e34eb6d8" autoIncrement="false" name="nominal_pagamento" nullable="1" physicalName="nominal_pagamento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL264" populated="true" UUID="0c97caa8-14d1-49ce-8c1c-bc20e34eb6d8" autoIncrement="false" defaultValue="" name="nominal_pagamento" nullable="1" physicalName="nominal_pagamento" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL265" populated="true" UUID="9eddd610-885c-463c-919f-ba736bf6c27e" autoIncrement="false" name="emissao_pagamento" nullable="1" physicalName="emissao_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL265" populated="true" UUID="9eddd610-885c-463c-919f-ba736bf6c27e" autoIncrement="false" defaultValue="" name="emissao_pagamento" nullable="1" physicalName="emissao_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL266" populated="true" UUID="e4e1790f-e433-4412-8adc-5979752f16c9" autoIncrement="false" name="lancamento_pagamento" nullable="1" physicalName="lancamento_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL266" populated="true" UUID="e4e1790f-e433-4412-8adc-5979752f16c9" autoIncrement="false" defaultValue="" name="lancamento_pagamento" nullable="1" physicalName="lancamento_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL267" populated="true" UUID="be8f2da9-8fbb-4f0e-8b37-52db0d213587" autoIncrement="false" name="vencimento_pagamento" nullable="1" physicalName="vencimento_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL267" populated="true" UUID="be8f2da9-8fbb-4f0e-8b37-52db0d213587" autoIncrement="false" defaultValue="" name="vencimento_pagamento" nullable="1" physicalName="vencimento_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL268" populated="true" UUID="e87d12a7-eec5-4f55-8ff3-d4e0066bb4c4" autoIncrement="false" name="data_pagamento" nullable="1" physicalName="data_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL268" populated="true" UUID="e87d12a7-eec5-4f55-8ff3-d4e0066bb4c4" autoIncrement="false" defaultValue="" name="data_pagamento" nullable="1" physicalName="data_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL269" populated="true" UUID="ebcf2123-d448-47bb-bf83-ad5b624d527e" autoIncrement="false" name="data_cheque_pagamento" nullable="1" physicalName="data_cheque_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL269" populated="true" UUID="ebcf2123-d448-47bb-bf83-ad5b624d527e" autoIncrement="false" defaultValue="" name="data_cheque_pagamento" nullable="1" physicalName="data_cheque_pagamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
        </folder>
@@ -936,28 +945,28 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL273" populated="true" UUID="7c822a0e-1dd1-460c-aefb-b274b068807a" autoIncrement="true" defaultValue="nextval(&apos;pedido_cab_seq&apos;::regclass)" name="cod_pedido_cab" nullable="0" physicalName="cod_pedido_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cabeçario de Pedido</remarks>
        </column>
-       <column id="COL274" populated="true" UUID="3b7a20ba-9733-4b33-a8b4-126129f1852e" autoIncrement="false" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL274" populated="true" UUID="3b7a20ba-9733-4b33-a8b4-126129f1852e" autoIncrement="false" defaultValue="" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL275" populated="true" UUID="b247024c-d316-4578-b003-b19640310be7" autoIncrement="false" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL275" populated="true" UUID="b247024c-d316-4578-b003-b19640310be7" autoIncrement="false" defaultValue="" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL276" populated="true" UUID="c74aa155-e267-4b12-83a3-97eb09d1449f" autoIncrement="false" name="data_pedido" nullable="1" physicalName="data_pedido" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL276" populated="true" UUID="c74aa155-e267-4b12-83a3-97eb09d1449f" autoIncrement="false" defaultValue="" name="data_pedido" nullable="1" physicalName="data_pedido" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL277" populated="true" UUID="9656328d-577f-48fc-985a-88fddd444e16" autoIncrement="false" name="endereco_entrega" nullable="1" physicalName="endereco_entrega" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL277" populated="true" UUID="9656328d-577f-48fc-985a-88fddd444e16" autoIncrement="false" defaultValue="" name="endereco_entrega" nullable="1" physicalName="endereco_entrega" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL278" populated="true" UUID="51c830fa-5a6a-470f-876d-9387a377a028" autoIncrement="false" name="endereco_cobranca" nullable="1" physicalName="endereco_cobranca" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL278" populated="true" UUID="51c830fa-5a6a-470f-876d-9387a377a028" autoIncrement="false" defaultValue="" name="endereco_cobranca" nullable="1" physicalName="endereco_cobranca" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL279" populated="true" UUID="59c38027-b77b-4ddb-a5d6-6c01ffb25ab2" autoIncrement="false" name="vlr_pedido_cab" nullable="1" physicalName="vlr_pedido_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL279" populated="true" UUID="59c38027-b77b-4ddb-a5d6-6c01ffb25ab2" autoIncrement="false" defaultValue="" name="vlr_pedido_cab" nullable="1" physicalName="vlr_pedido_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL280" populated="true" UUID="7f48678d-7786-4b91-83ab-90952bc9e193" autoIncrement="false" name="desconto_pedido_cab" nullable="1" physicalName="desconto_pedido_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL280" populated="true" UUID="7f48678d-7786-4b91-83ab-90952bc9e193" autoIncrement="false" defaultValue="" name="desconto_pedido_cab" nullable="1" physicalName="desconto_pedido_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL281" populated="true" UUID="cc8ef207-4d0b-4dbe-a2dd-cd0a624e01cf" autoIncrement="false" name="total_pedodo_cab" nullable="1" physicalName="total_pedodo_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL281" populated="true" UUID="cc8ef207-4d0b-4dbe-a2dd-cd0a624e01cf" autoIncrement="false" defaultValue="" name="total_pedodo_cab" nullable="1" physicalName="total_pedodo_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -974,25 +983,25 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB284" populated="true" UUID="2820176a-54d5-4f10-b296-d02fcf957cda" name="pedido_det" objectType="TABLE" physicalName="pedido_det" >
       <remarks>Detalhe de Pedido</remarks>
       <folder id="FOLTAB2841" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL285" populated="true" UUID="6acc7126-7c00-4fbd-a591-20892a140cec" autoIncrement="false" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL285" populated="true" UUID="6acc7126-7c00-4fbd-a591-20892a140cec" autoIncrement="false" defaultValue="" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Requisição</remarks>
        </column>
-       <column id="COL286" populated="true" UUID="aa3ef47b-1e0a-41c4-bc5a-e25e699bca1a" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL286" populated="true" UUID="aa3ef47b-1e0a-41c4-bc5a-e25e699bca1a" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL287" populated="true" UUID="8b51291c-de5a-401e-bd5d-c49dd0c99ebc" autoIncrement="false" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" primaryKeySeq="2" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL287" populated="true" UUID="8b51291c-de5a-401e-bd5d-c49dd0c99ebc" autoIncrement="false" defaultValue="" name="cod_cot_cab" nullable="0" physicalName="cod_cot_cab" precision="10" primaryKeySeq="2" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Cotação</remarks>
        </column>
-       <column id="COL288" populated="true" UUID="5b058cf2-64b0-4b45-9383-874a73f5fd4e" autoIncrement="false" name="cod_pedido_cab" nullable="0" physicalName="cod_pedido_cab" precision="10" primaryKeySeq="3" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL288" populated="true" UUID="5b058cf2-64b0-4b45-9383-874a73f5fd4e" autoIncrement="false" defaultValue="" name="cod_pedido_cab" nullable="0" physicalName="cod_pedido_cab" precision="10" primaryKeySeq="3" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Pedido</remarks>
        </column>
-       <column id="COL289" populated="true" UUID="62168b6b-49b7-457f-bb56-2a5a6dd0ea3a" autoIncrement="false" name="qtde_pedido_det" nullable="1" physicalName="qtde_pedido_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL289" populated="true" UUID="62168b6b-49b7-457f-bb56-2a5a6dd0ea3a" autoIncrement="false" defaultValue="" name="qtde_pedido_det" nullable="1" physicalName="qtde_pedido_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL290" populated="true" UUID="9f8f3f7a-5a17-4194-91e0-2c753cd87066" autoIncrement="false" name="vlr_unit_pedido_det" nullable="1" physicalName="vlr_unit_pedido_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL290" populated="true" UUID="9f8f3f7a-5a17-4194-91e0-2c753cd87066" autoIncrement="false" defaultValue="" name="vlr_unit_pedido_det" nullable="1" physicalName="vlr_unit_pedido_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL291" populated="true" UUID="0b17b616-bfe8-4360-ae8c-3836f4b79b46" autoIncrement="false" name="vlr_total_pedido_det" nullable="1" physicalName="vlr_total_pedido_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL291" populated="true" UUID="0b17b616-bfe8-4360-ae8c-3836f4b79b46" autoIncrement="false" defaultValue="" name="vlr_total_pedido_det" nullable="1" physicalName="vlr_total_pedido_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1015,7 +1024,7 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL298" populated="true" UUID="9c1f509b-2165-4eca-87f2-c94c5d9e5c0b" autoIncrement="true" defaultValue="nextval(&apos;plano_conta_seq&apos;::regclass)" name="cod_plano_conta" nullable="0" physicalName="cod_plano_conta" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Plano de Conta</remarks>
        </column>
-       <column id="COL299" populated="true" UUID="6017da85-29f1-4521-a118-2d1a60d63947" autoIncrement="false" name="descricao_plano_conta" nullable="0" physicalName="descricao_plano_conta" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL299" populated="true" UUID="6017da85-29f1-4521-a118-2d1a60d63947" autoIncrement="false" defaultValue="" name="descricao_plano_conta" nullable="0" physicalName="descricao_plano_conta" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1032,28 +1041,28 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB302" populated="true" UUID="a04c6228-076f-4ccd-935c-c9e771b86e21" name="produto" objectType="TABLE" physicalName="produto" >
       <remarks>Produto</remarks>
       <folder id="FOLTAB3021" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL303" populated="true" UUID="d25a899e-8fc5-458b-8879-d3a6fe377675" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL303" populated="true" UUID="d25a899e-8fc5-458b-8879-d3a6fe377675" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL304" populated="true" UUID="ca82f837-4b43-463d-90d5-d76ee1fb4be2" autoIncrement="false" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL304" populated="true" UUID="ca82f837-4b43-463d-90d5-d76ee1fb4be2" autoIncrement="false" defaultValue="" name="cod_fornecedor" nullable="0" physicalName="cod_fornecedor" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL305" populated="true" UUID="ad1b8c0e-9092-4192-a1a4-28f152b3fc7c" autoIncrement="false" name="cod_unidade" nullable="0" physicalName="cod_unidade" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL305" populated="true" UUID="ad1b8c0e-9092-4192-a1a4-28f152b3fc7c" autoIncrement="false" defaultValue="" name="cod_unidade" nullable="0" physicalName="cod_unidade" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL306" populated="true" UUID="e3f1720a-97d8-4081-be43-359fc65438f9" autoIncrement="false" name="descricao_produto" nullable="1" physicalName="descricao_produto" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL306" populated="true" UUID="e3f1720a-97d8-4081-be43-359fc65438f9" autoIncrement="false" defaultValue="" name="descricao_produto" nullable="1" physicalName="descricao_produto" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL307" populated="true" UUID="66963e37-d5f1-41cb-8f01-8f728a47b172" autoIncrement="false" name="vlr_compra_produto" nullable="1" physicalName="vlr_compra_produto" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL307" populated="true" UUID="66963e37-d5f1-41cb-8f01-8f728a47b172" autoIncrement="false" defaultValue="" name="vlr_compra_produto" nullable="1" physicalName="vlr_compra_produto" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL308" populated="true" UUID="3638b585-5341-4bea-be26-3b4caea23aff" autoIncrement="false" name="vlr_venda_produto" nullable="1" physicalName="vlr_venda_produto" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL308" populated="true" UUID="3638b585-5341-4bea-be26-3b4caea23aff" autoIncrement="false" defaultValue="" name="vlr_venda_produto" nullable="1" physicalName="vlr_venda_produto" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL309" populated="true" UUID="e996e589-db99-4c0d-bfe0-32ec77c05173" autoIncrement="false" name="estoque_produto" nullable="1" physicalName="estoque_produto" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL309" populated="true" UUID="e996e589-db99-4c0d-bfe0-32ec77c05173" autoIncrement="false" defaultValue="" name="estoque_produto" nullable="1" physicalName="estoque_produto" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL310" populated="true" UUID="4281192b-06c9-4c66-99fe-78ba7c1fcf4f" autoIncrement="false" name="critico_produto" nullable="1" physicalName="critico_produto" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL310" populated="true" UUID="4281192b-06c9-4c66-99fe-78ba7c1fcf4f" autoIncrement="false" defaultValue="" name="critico_produto" nullable="1" physicalName="critico_produto" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1073,43 +1082,43 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL314" populated="true" UUID="f7fc0650-e541-4790-9cfe-dfff1111ce29" autoIncrement="true" defaultValue="nextval(&apos;recebimento_seq&apos;::regclass)" name="cod_recebimento" nullable="0" physicalName="cod_recebimento" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Recebimento</remarks>
        </column>
-       <column id="COL315" populated="true" UUID="f3699969-5c8e-422e-a29b-d8cae3a5986b" autoIncrement="false" name="id_conta_bancaria" nullable="0" physicalName="id_conta_bancaria" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL315" populated="true" UUID="f3699969-5c8e-422e-a29b-d8cae3a5986b" autoIncrement="false" defaultValue="" name="id_conta_bancaria" nullable="0" physicalName="id_conta_bancaria" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL316" populated="true" UUID="70bdcde0-da47-4e5f-83e4-23c7a7d5d3ce" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL316" populated="true" UUID="70bdcde0-da47-4e5f-83e4-23c7a7d5d3ce" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL317" populated="true" UUID="baf13a23-e982-4551-b0b7-e564724f5034" autoIncrement="false" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL317" populated="true" UUID="baf13a23-e982-4551-b0b7-e564724f5034" autoIncrement="false" defaultValue="" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL318" populated="true" UUID="2bf2baaa-cd1f-41d5-8647-0626b5777cbd" autoIncrement="false" name="num_documento" nullable="1" physicalName="num_documento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL318" populated="true" UUID="2bf2baaa-cd1f-41d5-8647-0626b5777cbd" autoIncrement="false" defaultValue="" name="num_documento" nullable="1" physicalName="num_documento" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL319" populated="true" UUID="65383e5f-65fe-426a-b83a-deb228848b84" autoIncrement="false" name="vlr_total_recebimento" nullable="1" physicalName="vlr_total_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL319" populated="true" UUID="65383e5f-65fe-426a-b83a-deb228848b84" autoIncrement="false" defaultValue="" name="vlr_total_recebimento" nullable="1" physicalName="vlr_total_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL320" populated="true" UUID="a72548af-d541-427e-a46a-69db757b27b1" autoIncrement="false" name="vlr_juro_recebimento" nullable="1" physicalName="vlr_juro_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL320" populated="true" UUID="a72548af-d541-427e-a46a-69db757b27b1" autoIncrement="false" defaultValue="" name="vlr_juro_recebimento" nullable="1" physicalName="vlr_juro_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL321" populated="true" UUID="438b88a4-7fbb-432b-8121-fe1a33c25d94" autoIncrement="false" name="vlr_multa_recebimento" nullable="1" physicalName="vlr_multa_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL321" populated="true" UUID="438b88a4-7fbb-432b-8121-fe1a33c25d94" autoIncrement="false" defaultValue="" name="vlr_multa_recebimento" nullable="1" physicalName="vlr_multa_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL322" populated="true" UUID="3fb35eb3-0278-4db4-8617-8158a9b87048" autoIncrement="false" name="vlr_desconto_recebimento" nullable="1" physicalName="vlr_desconto_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL322" populated="true" UUID="3fb35eb3-0278-4db4-8617-8158a9b87048" autoIncrement="false" defaultValue="" name="vlr_desconto_recebimento" nullable="1" physicalName="vlr_desconto_recebimento" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL323" populated="true" UUID="baa51cd8-82ac-46af-940c-34d691dd7ccd" autoIncrement="false" name="vlr_recebido" nullable="1" physicalName="vlr_recebido" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL323" populated="true" UUID="baa51cd8-82ac-46af-940c-34d691dd7ccd" autoIncrement="false" defaultValue="" name="vlr_recebido" nullable="1" physicalName="vlr_recebido" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL324" populated="true" UUID="52bb2c15-21b2-44ad-8615-dcdd2fb3f5c3" autoIncrement="false" name="emissao_recebimento" nullable="1" physicalName="emissao_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL324" populated="true" UUID="52bb2c15-21b2-44ad-8615-dcdd2fb3f5c3" autoIncrement="false" defaultValue="" name="emissao_recebimento" nullable="1" physicalName="emissao_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL325" populated="true" UUID="0d64be80-4ef4-46da-bd04-bc7729387b1c" autoIncrement="false" name="lancamento_recebimento" nullable="1" physicalName="lancamento_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL325" populated="true" UUID="0d64be80-4ef4-46da-bd04-bc7729387b1c" autoIncrement="false" defaultValue="" name="lancamento_recebimento" nullable="1" physicalName="lancamento_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL326" populated="true" UUID="0a59513c-468e-41a1-8c38-aa25a5be0343" autoIncrement="false" name="vencimento_recebimento" nullable="1" physicalName="vencimento_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL326" populated="true" UUID="0a59513c-468e-41a1-8c38-aa25a5be0343" autoIncrement="false" defaultValue="" name="vencimento_recebimento" nullable="1" physicalName="vencimento_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL327" populated="true" UUID="652181fa-890e-45c6-a0c0-3b635495933c" autoIncrement="false" name="data_recebimento" nullable="1" physicalName="data_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL327" populated="true" UUID="652181fa-890e-45c6-a0c0-3b635495933c" autoIncrement="false" defaultValue="" name="data_recebimento" nullable="1" physicalName="data_recebimento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1129,10 +1138,10 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL331" populated="true" UUID="a9f06256-43e8-4134-af96-49004a7aa630" autoIncrement="true" defaultValue="nextval(&apos;req_cab_seq&apos;::regclass)" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cabeçario de Requisição</remarks>
        </column>
-       <column id="COL332" populated="true" UUID="43a865f3-1f7b-4201-ba91-1f7217963d18" autoIncrement="false" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL332" populated="true" UUID="43a865f3-1f7b-4201-ba91-1f7217963d18" autoIncrement="false" defaultValue="" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL333" populated="true" UUID="73e52854-cd33-4b03-9cf5-cfdb7635c5b1" autoIncrement="false" name="data_req_cab" nullable="0" physicalName="data_req_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL333" populated="true" UUID="73e52854-cd33-4b03-9cf5-cfdb7635c5b1" autoIncrement="false" defaultValue="" name="data_req_cab" nullable="0" physicalName="data_req_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1149,19 +1158,19 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB336" populated="true" UUID="2b465481-0f6d-49ee-b8ed-24277d827a78" name="req_det" objectType="TABLE" physicalName="req_det" >
       <remarks>Detalhe de Requisição</remarks>
       <folder id="FOLTAB3361" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL337" populated="true" UUID="7671f4b3-7c25-482b-be77-d8ea92646e3f" autoIncrement="false" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL337" populated="true" UUID="7671f4b3-7c25-482b-be77-d8ea92646e3f" autoIncrement="false" defaultValue="" name="cod_req_cab" nullable="0" physicalName="cod_req_cab" precision="10" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Requisição</remarks>
        </column>
-       <column id="COL338" populated="true" UUID="43c908d1-d723-4ade-a89e-6ffbd3fe82da" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL338" populated="true" UUID="43c908d1-d723-4ade-a89e-6ffbd3fe82da" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL339" populated="true" UUID="6958cc88-6994-4836-83d9-6e0ab7a933b2" autoIncrement="false" name="qtde_req_det" nullable="1" physicalName="qtde_req_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL339" populated="true" UUID="6958cc88-6994-4836-83d9-6e0ab7a933b2" autoIncrement="false" defaultValue="" name="qtde_req_det" nullable="1" physicalName="qtde_req_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL340" populated="true" UUID="f3c8bce5-b0d1-4109-b0d6-29b2b9492604" autoIncrement="false" name="vlr_unit_req_det" nullable="1" physicalName="vlr_unit_req_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL340" populated="true" UUID="f3c8bce5-b0d1-4109-b0d6-29b2b9492604" autoIncrement="false" defaultValue="" name="vlr_unit_req_det" nullable="1" physicalName="vlr_unit_req_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL341" populated="true" UUID="ba879a40-368f-4560-b607-e9eaf94d24c5" autoIncrement="false" name="vlr_total_req_det" nullable="1" physicalName="vlr_total_req_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL341" populated="true" UUID="ba879a40-368f-4560-b607-e9eaf94d24c5" autoIncrement="false" defaultValue="" name="vlr_total_req_det" nullable="1" physicalName="vlr_total_req_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1182,7 +1191,7 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL346" populated="true" UUID="39425a5b-c1e6-4979-a009-d1580dd090bd" autoIncrement="true" defaultValue="nextval(&apos;tipo_pgto_seq&apos;::regclass)" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Tipo de Pagamento/Recebimento</remarks>
        </column>
-       <column id="COL347" populated="true" UUID="f7268d08-6277-4412-8f9d-4dcfda2cbe4d" autoIncrement="false" name="descricao_tipo_pgto" nullable="0" physicalName="descricao_tipo_pgto" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL347" populated="true" UUID="f7268d08-6277-4412-8f9d-4dcfda2cbe4d" autoIncrement="false" defaultValue="" name="descricao_tipo_pgto" nullable="0" physicalName="descricao_tipo_pgto" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1202,7 +1211,7 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL351" populated="true" UUID="35f7ee4d-9ad0-4461-9fb1-00e404fb4232" autoIncrement="true" defaultValue="nextval(&apos;unidade_seq&apos;::regclass)" name="cod_unidade" nullable="0" physicalName="cod_unidade" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo da Unidade</remarks>
        </column>
-       <column id="COL352" populated="true" UUID="1c7c31e5-b0e9-4a06-af5f-a07f1dde61e9" autoIncrement="false" name="descricao_unidade" nullable="0" physicalName="descricao_unidade" precision="5" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
+       <column id="COL352" populated="true" UUID="1c7c31e5-b0e9-4a06-af5f-a07f1dde61e9" autoIncrement="false" defaultValue="" name="descricao_unidade" nullable="0" physicalName="descricao_unidade" precision="5" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1222,40 +1231,40 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
        <column id="COL356" populated="true" UUID="0b3db093-94bf-4fea-ae77-dfe777f301aa" autoIncrement="true" defaultValue="nextval(&apos;venda_cab_seq&apos;::regclass)" name="cod_venda_cab" nullable="0" physicalName="cod_venda_cab" precision="10" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="serial" type="4" >
         <remarks>Codigo do Cabeçario de Venda</remarks>
        </column>
-       <column id="COL357" populated="true" UUID="52b4b507-823d-4afe-9111-e3566daf12a2" autoIncrement="false" name="id_cartao_credito" nullable="0" physicalName="id_cartao_credito" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL357" populated="true" UUID="52b4b507-823d-4afe-9111-e3566daf12a2" autoIncrement="false" defaultValue="" name="id_cartao_credito" nullable="0" physicalName="id_cartao_credito" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL358" populated="true" UUID="6adad52f-c1f8-4e24-a3f1-6eea2f7baa52" autoIncrement="false" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL358" populated="true" UUID="6adad52f-c1f8-4e24-a3f1-6eea2f7baa52" autoIncrement="false" defaultValue="" name="cod_cfop" nullable="0" physicalName="cod_cfop" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL359" populated="true" UUID="890eed97-7c27-4aa0-863c-859497766fda" autoIncrement="false" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL359" populated="true" UUID="890eed97-7c27-4aa0-863c-859497766fda" autoIncrement="false" defaultValue="" name="cod_tipo_pgto" nullable="0" physicalName="cod_tipo_pgto" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL360" populated="true" UUID="bb3b12be-a605-4865-8005-7002d59c94c8" autoIncrement="false" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL360" populated="true" UUID="bb3b12be-a605-4865-8005-7002d59c94c8" autoIncrement="false" defaultValue="" name="cod_funcionario" nullable="0" physicalName="cod_funcionario" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL361" populated="true" UUID="324cd7e4-f2e3-40c2-bd1a-70697aa833b2" autoIncrement="false" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL361" populated="true" UUID="324cd7e4-f2e3-40c2-bd1a-70697aa833b2" autoIncrement="false" defaultValue="" name="cod_cliente" nullable="0" physicalName="cod_cliente" precision="10" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL362" populated="true" UUID="1957debe-f4fe-49c8-8328-1a9703f50bb1" autoIncrement="false" name="data_venda_cab" nullable="1" physicalName="data_venda_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL362" populated="true" UUID="1957debe-f4fe-49c8-8328-1a9703f50bb1" autoIncrement="false" defaultValue="" name="data_venda_cab" nullable="1" physicalName="data_venda_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL363" populated="true" UUID="079e2cc1-deda-4cef-a2dd-9e22cd344d86" autoIncrement="false" name="vlr_venda_cab" nullable="1" physicalName="vlr_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL363" populated="true" UUID="079e2cc1-deda-4cef-a2dd-9e22cd344d86" autoIncrement="false" defaultValue="" name="vlr_venda_cab" nullable="1" physicalName="vlr_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL364" populated="true" UUID="f348962b-3747-49c2-8a60-e6aa3a5a90ea" autoIncrement="false" name="desconto_venda_cab" nullable="1" physicalName="desconto_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL364" populated="true" UUID="f348962b-3747-49c2-8a60-e6aa3a5a90ea" autoIncrement="false" defaultValue="" name="desconto_venda_cab" nullable="1" physicalName="desconto_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL365" populated="true" UUID="29872d21-7371-43be-a6c6-58c48a6592e7" autoIncrement="false" name="total_venda_cab" nullable="1" physicalName="total_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL365" populated="true" UUID="29872d21-7371-43be-a6c6-58c48a6592e7" autoIncrement="false" defaultValue="" name="total_venda_cab" nullable="1" physicalName="total_venda_cab" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL366" populated="true" UUID="05d73e54-a1f8-4126-bff2-4f2d7cc0ce75" autoIncrement="false" name="num_parcelas_venda_cab" nullable="1" physicalName="num_parcelas_venda_cab" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL366" populated="true" UUID="05d73e54-a1f8-4126-bff2-4f2d7cc0ce75" autoIncrement="false" defaultValue="" name="num_parcelas_venda_cab" nullable="1" physicalName="num_parcelas_venda_cab" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL367" populated="true" UUID="8dc151b0-c78e-4f48-80d4-6a48ebf96e40" autoIncrement="false" name="pri_venci_venda_cab" nullable="1" physicalName="pri_venci_venda_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL367" populated="true" UUID="8dc151b0-c78e-4f48-80d4-6a48ebf96e40" autoIncrement="false" defaultValue="" name="pri_venci_venda_cab" nullable="1" physicalName="pri_venci_venda_cab" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
-       <column id="COL368" populated="true" UUID="99290a9d-9774-431d-8a9c-0dbb6565c87b" autoIncrement="false" name="num_nf_venda_cab" nullable="1" physicalName="num_nf_venda_cab" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL368" populated="true" UUID="99290a9d-9774-431d-8a9c-0dbb6565c87b" autoIncrement="false" defaultValue="" name="num_nf_venda_cab" nullable="1" physicalName="num_nf_venda_cab" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1272,19 +1281,19 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
      <table id="TAB371" populated="true" UUID="2590a1fb-052c-4845-a97f-2581645a8513" name="venda_det" objectType="TABLE" physicalName="venda_det" >
       <remarks>Detalhe de Venda</remarks>
       <folder id="FOLTAB3711" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL372" populated="true" UUID="efca975a-616a-4113-ade2-e3bcd3ca6145" autoIncrement="false" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL372" populated="true" UUID="efca975a-616a-4113-ade2-e3bcd3ca6145" autoIncrement="false" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="13" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks>Codigo do Produto</remarks>
        </column>
-       <column id="COL373" populated="true" UUID="d3e36e7c-cb3d-4ebd-9964-6ad0dd675a6f" autoIncrement="false" name="cod_venda_cab" nullable="0" physicalName="cod_venda_cab" precision="10" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL373" populated="true" UUID="d3e36e7c-cb3d-4ebd-9964-6ad0dd675a6f" autoIncrement="false" defaultValue="" name="cod_venda_cab" nullable="0" physicalName="cod_venda_cab" precision="10" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks>Codigo do Cabeçario de Venda</remarks>
        </column>
-       <column id="COL374" populated="true" UUID="9a866551-3451-4d96-ae40-de0b4bf9eb03" autoIncrement="false" name="qtd_venda_det" nullable="1" physicalName="qtd_venda_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
+       <column id="COL374" populated="true" UUID="9a866551-3451-4d96-ae40-de0b4bf9eb03" autoIncrement="false" defaultValue="" name="qtd_venda_det" nullable="1" physicalName="qtd_venda_det" precision="10" referenceCount="1" scale="0" sourceDataTypeName="int4" type="4" >
         <remarks></remarks>
        </column>
-       <column id="COL375" populated="true" UUID="d5c71f53-3165-4736-862f-0b0d2a318c9f" autoIncrement="false" name="vlr_unit_venda_det" nullable="1" physicalName="vlr_unit_venda_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL375" populated="true" UUID="d5c71f53-3165-4736-862f-0b0d2a318c9f" autoIncrement="false" defaultValue="" name="vlr_unit_venda_det" nullable="1" physicalName="vlr_unit_venda_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
-       <column id="COL376" populated="true" UUID="0f0a3714-c3b1-42eb-a96c-0f96f1ca32e6" autoIncrement="false" name="vlr_total_venda_det" nullable="1" physicalName="vlr_total_venda_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
+       <column id="COL376" populated="true" UUID="0f0a3714-c3b1-42eb-a96c-0f96f1ca32e6" autoIncrement="false" defaultValue="" name="vlr_total_venda_det" nullable="1" physicalName="vlr_total_venda_det" precision="308" referenceCount="1" scale="17" sourceDataTypeName="float8" type="8" >
         <remarks></remarks>
        </column>
        </folder>
@@ -1548,8 +1557,8 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
     <column id="COL495" populated="true" UUID="0e37fdfa-1bf9-45fd-aeab-ab874ea5e9c3" autoIncrement="false" defaultValue="" name="nome_cliente" nullable="0" physicalName="nome_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL496" populated="true" UUID="74161354-0581-41f9-9f4d-a3dab346b531" autoIncrement="false" defaultValue="" name="cpf_cliente" nullable="1" physicalName="cpf_cliente" precision="11" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+    <column id="COL496" populated="true" UUID="74161354-0581-41f9-9f4d-a3dab346b531" autoIncrement="false" defaultValue="" name="cpf_cliente" nullable="1" physicalName="cpf_cliente" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>CPF do Cliente</remarks>
     </column>
     <column id="COL497" populated="true" UUID="ab30646f-9e31-4d59-95cf-903542dd5e58" autoIncrement="false" defaultValue="" name="desde_cliente" nullable="1" physicalName="desde_cliente" precision="0" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
@@ -1569,8 +1578,8 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
     <column id="COL502" populated="true" UUID="bd588a6b-791a-4bfa-bf29-2e5e8d3ac6ea" autoIncrement="false" defaultValue="" name="empresa_cliente" nullable="1" physicalName="empresa_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL503" populated="true" UUID="a2dc99ac-34c6-426d-ac95-58a20aa4502e" autoIncrement="false" defaultValue="" name="fone_empresa" nullable="1" physicalName="fone_empresa" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+    <column id="COL503" populated="true" UUID="a2dc99ac-34c6-426d-ac95-58a20aa4502e" autoIncrement="false" defaultValue="" name="fone_empresa" nullable="1" physicalName="fone_empresa" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Telefone da Empresa onde o Cliente trabalha</remarks>
     </column>
     <column id="COL504" populated="true" UUID="e1a00552-8ab9-46ac-9fae-c5f7fd5fed6b" autoIncrement="false" defaultValue="" name="renda_cliente" nullable="1" physicalName="renda_cliente" precision="0" referenceCount="1" scale="0" sourceDataTypeName="float8" type="8" userDefinedTypeUUID="4fc90970-b2e5-41dd-911c-cc605d87e7a8" >
      <remarks></remarks>
@@ -1578,14 +1587,14 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
     <column id="COL505" populated="true" UUID="41242cc2-c0ba-4188-a4a8-894f15f90589" autoIncrement="false" defaultValue="" name="tipo_cliente" nullable="1" physicalName="tipo_cliente" precision="1" referenceCount="1" scale="0" sourceDataTypeName="bpchar" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks></remarks>
     </column>
-    <column id="COL506" populated="true" UUID="3fe7e347-6657-4512-b12f-af12b845982d" autoIncrement="false" defaultValue="" name="cnpj_cliente" nullable="1" physicalName="cnpj_cliente" precision="14" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+    <column id="COL506" populated="true" UUID="3fe7e347-6657-4512-b12f-af12b845982d" autoIncrement="false" defaultValue="" name="cnpj_cliente" nullable="1" physicalName="cnpj_cliente" precision="20" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>CNJP do Cliente</remarks>
     </column>
     <column id="COL507" populated="true" UUID="ab9862fa-ceaa-4ded-974a-a80a67fb00c3" autoIncrement="false" defaultValue="" name="referencia_cliente" nullable="1" physicalName="referencia_cliente" precision="50" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL508" populated="true" UUID="a8d3b25f-a585-4925-a662-18494846b669" autoIncrement="false" defaultValue="" name="fone_referencia_cliente" nullable="1" physicalName="fone_referencia_cliente" precision="10" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+    <column id="COL508" populated="true" UUID="a8d3b25f-a585-4925-a662-18494846b669" autoIncrement="false" defaultValue="" name="fone_referencia_cliente" nullable="1" physicalName="fone_referencia_cliente" precision="15" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Telefone da Referencia do Cliente</remarks>
     </column>
     <column id="COL509" populated="true" UUID="771c76c8-a950-406b-9e67-96f516fd5f48" autoIncrement="false" defaultValue="" name="email" nullable="1" physicalName="email" precision="100" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
@@ -2819,10 +2828,10 @@ Obs.: Todas as Notas Ficais que entrarem na empresas serao armazenas aqui</remar
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="132" viewportY="1569" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB462" x="342" y="749" bgColor="0xf0f0f0" fgColor="0x000000" rounded="true" dashed="false"/>
   <table-pane table-ref="TAB468" x="1498" y="952" bgColor="0xf0f0f0" fgColor="0x000000" rounded="true" dashed="false"/>
   <table-pane table-ref="TAB479" x="1027" y="1572" bgColor="0xc8dccc" fgColor="0x206cff" rounded="true" dashed="false"/>

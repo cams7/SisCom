@@ -16,8 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -25,6 +25,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "cartao_credito", catalog = "siscom", schema = "public")
+@SequenceGenerator(name = "cartao_credito_seq", initialValue = 1, allocationSize = 1)
 @NamedQueries({
     @NamedQuery(name = "CartaoCredito.findAll", query = "SELECT c FROM CartaoCredito c"),
     @NamedQuery(name = "CartaoCredito.findById", query = "SELECT c FROM CartaoCredito c WHERE c.id = :id"),
@@ -37,40 +38,24 @@ import javax.persistence.Transient;
     @NamedQuery(name = "CartaoCredito.findByMultaCobradaDia", query = "SELECT c FROM CartaoCredito c WHERE c.multaCobradaDia = :multaCobradaDia")})
 public class CartaoCredito implements Serializable {
 
-    @Transient
     private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_cartao_credito")
+
     private Short id;
 
-    @Basic(optional = false)
-    @Column(name = "empresa")
     private String operadoraCartao;
 
-    @Basic(optional = false)
-    @Column(name = "juros_rotativo")
     private String jurosRotativo;
 
-    @Basic(optional = false)
-    @Column(name = "pagto_minimo")
     private Double pagtoMinimo;
 
-    @Basic(optional = false)
-    @Column(name = "juros_parcelado")
     private Double jurosParcelado;
 
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @Column(name = "multa")
     private Double multa;
 
-    @Column(name = "multa_sem_minimo_total")
     private String multaSemMinimoTotal;
 
-    @Column(name = "multa_cobrada_dia")
     private Integer multaCobradaDia;
 
     public CartaoCredito() {
@@ -82,15 +67,10 @@ public class CartaoCredito implements Serializable {
         this.id = id;
     }
 
-    public CartaoCredito(Short id, String operadoraCartao, String jurosRotativo, Double pagtoMinimo, Double jurosParcelado) {
-        this(id);
-
-        this.operadoraCartao = operadoraCartao;
-        this.jurosRotativo = jurosRotativo;
-        this.pagtoMinimo = pagtoMinimo;
-        this.jurosParcelado = jurosParcelado;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cartao_credito_seq")
+    @Basic(optional = false)
+    @Column(name = "id_cartao_credito")
     public Short getId() {
         return id;
     }
@@ -101,6 +81,8 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
+    @Basic(optional = false)
+    @Column(name = "empresa")
     public String getOperadoraCartao() {
         return operadoraCartao;
     }
@@ -111,6 +93,8 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("operadoraCartao", oldOperadoraCartao, operadoraCartao);
     }
 
+    @Basic(optional = false)
+    @Column(name = "juros_rotativo")
     public String getJurosRotativo() {
         return jurosRotativo;
     }
@@ -121,6 +105,8 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("jurosRotativo", oldJurosRotativo, jurosRotativo);
     }
 
+    @Basic(optional = false)
+    @Column(name = "pagto_minimo")
     public Double getPagtoMinimo() {
         return pagtoMinimo;
     }
@@ -131,6 +117,8 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("pagtoMinimo", oldPagtoMinimo, pagtoMinimo);
     }
 
+    @Basic(optional = false)
+    @Column(name = "juros_parcelado")
     public Double getJurosParcelado() {
         return jurosParcelado;
     }
@@ -141,6 +129,8 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("jurosParcelado", oldJurosParcelado, jurosParcelado);
     }
 
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "multa")
     public Double getMulta() {
         return multa;
     }
@@ -151,6 +141,7 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("multa", oldMulta, multa);
     }
 
+    @Column(name = "multa_sem_minimo_total")
     public String getMultaSemMinimoTotal() {
         return multaSemMinimoTotal;
     }
@@ -161,6 +152,7 @@ public class CartaoCredito implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("multaSemMinimoTotal", oldMultaSemMinimoTotal, multaSemMinimoTotal);
     }
 
+    @Column(name = "multa_cobrada_dia")
     public Integer getMultaCobradaDia() {
         return multaCobradaDia;
     }

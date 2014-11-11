@@ -16,8 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -25,6 +25,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "conta_bancaria", catalog = "siscom", schema = "public")
+@SequenceGenerator(name = "conta_bancaria_seq", initialValue = 1, allocationSize = 1)
 @NamedQueries({
     @NamedQuery(name = "Banco.findAll", query = "SELECT b FROM ContaBancaria b"),
     @NamedQuery(name = "Banco.findById", query = "SELECT b FROM ContaBancaria b WHERE b.id = :id"),
@@ -35,32 +36,21 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Banco.findByFoneBanco", query = "SELECT b FROM ContaBancaria b WHERE b.foneBanco = :foneBanco")})
 public class ContaBancaria implements Serializable {
 
-    @Transient
+//    @Transient
     private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
+
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id_conta_bancaria")
     private Integer id;
 
-    @Basic(optional = false)
-    @Column(name = "cod_banco")
     private String codigoBanco;
 
-    @Basic(optional = false)
-    @Column(name = "agencia_banco")
     private Short numeroAgencia;
 
-    @Basic(optional = false)
-    @Column(name = "conta_banco")
     private Integer numeroConta;
 
-    @Column(name = "gerente_banco")
     private String nomeGerente;
 
-    @Column(name = "fone_banco")
     private String foneBanco;
 
     public ContaBancaria() {
@@ -71,14 +61,10 @@ public class ContaBancaria implements Serializable {
         this.id = id;
     }
 
-    public ContaBancaria(Integer id, String nomeBanco, Short numeroAgencia, Integer numeroConta) {
-        this(id);
-
-        this.codigoBanco = nomeBanco;
-        this.numeroAgencia = numeroAgencia;
-        this.numeroConta = numeroConta;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "conta_bancaria_seq")
+    @Basic(optional = false)
+    @Column(name = "id_conta_bancaria")
     public Integer getId() {
         return id;
     }
@@ -89,6 +75,8 @@ public class ContaBancaria implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
+    @Basic(optional = false)
+    @Column(name = "cod_banco")
     public String getCodigoBanco() {
         return codigoBanco;
     }
@@ -99,6 +87,8 @@ public class ContaBancaria implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("codigoBanco", oldCodigoBanco, codigoBanco);
     }
 
+    @Basic(optional = false)
+    @Column(name = "agencia_banco")
     public Short getNumeroAgencia() {
         return numeroAgencia;
     }
@@ -109,6 +99,8 @@ public class ContaBancaria implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("numeroAgencia", oldNumeroAgencia, numeroAgencia);
     }
 
+    @Basic(optional = false)
+    @Column(name = "conta_banco")
     public Integer getNumeroConta() {
         return numeroConta;
     }
@@ -119,6 +111,7 @@ public class ContaBancaria implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("numeroConta", oldNumeroConta, numeroConta);
     }
 
+    @Column(name = "gerente_banco")
     public String getNomeGerente() {
         return nomeGerente;
     }
@@ -129,6 +122,7 @@ public class ContaBancaria implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("nomeGerente", oldNomeGerente, nomeGerente);
     }
 
+    @Column(name = "fone_banco")
     public String getFoneBanco() {
         return foneBanco;
     }

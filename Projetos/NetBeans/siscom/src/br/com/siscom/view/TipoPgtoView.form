@@ -55,17 +55,12 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnNovoTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnExcluirTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCancelarTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnConfirmarTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Component id="pnlDadosTipoPgto" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnlListaTiposPgto" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -75,73 +70,17 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlListaTiposPgto" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlListaTiposPgto" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="pnlDadosTipoPgto" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnConfirmarTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancelarTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnExcluirTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnNovoTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnNovoTipoPgto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Novo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoTipoPgtoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnExcluirTipoPgto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir"/>
-      </Properties>
-      <BindingProperties>
-        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="btnExcluirTipoPgto" targetPath="enabled" updateStrategy="1" immediately="false"/>
-      </BindingProperties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirTipoPgtoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCancelarTipoPgto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarTipoPgtoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnConfirmarTipoPgto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarTipoPgtoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
     <Container class="javax.swing.JPanel" name="pnlDadosTipoPgto">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -179,10 +118,10 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtTipoPgtoDescricao">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.descricao}" target="txtTipoPgtoDescricao" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblTiposPgto" sourcePath="${selectedElement.descricao}" target="txtTipoPgtoDescricao" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtTipoPgtoDescricao" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblTiposPgto" sourcePath="${selectedElement != null}" target="txtTipoPgtoDescricao" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
@@ -210,7 +149,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="648" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -219,7 +158,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" pref="40" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="105" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -233,7 +172,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="masterTable">
+            <Component class="javax.swing.JTable" name="tblTiposPgto">
               <Properties>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
@@ -249,7 +188,7 @@
                 </Property>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
+                <BindingProperty name="elements" source="list" target="tblTiposPgto" targetPath="elements" updateStrategy="0" immediately="true">
                   <Subbinding sourcePath="${descricao}">
                     <BindingParameter name="NAME" value="Tipo"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
@@ -263,6 +202,93 @@
             </Component>
           </SubComponents>
         </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnNovoTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnExcluirTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnCancelarTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnConfirmarTipoPgto" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnConfirmarTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancelarTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExcluirTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNovoTipoPgto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnNovoTipoPgto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Novo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoTipoPgtoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnExcluirTipoPgto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="tblTiposPgto" sourcePath="${selectedElement != null}" target="btnExcluirTipoPgto" targetPath="enabled" updateStrategy="1" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirTipoPgtoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCancelarTipoPgto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarTipoPgtoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnConfirmarTipoPgto">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarTipoPgtoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

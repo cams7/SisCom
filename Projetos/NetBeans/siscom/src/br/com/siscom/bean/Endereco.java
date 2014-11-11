@@ -18,8 +18,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -27,6 +27,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "cliente_endereco", catalog = "siscom", schema = "public")
+@SequenceGenerator(name = "cliente_endereco_seq", initialValue = 1, allocationSize = 1)
 @NamedQueries({
     @NamedQuery(name = "Endereco.findAll", query = "SELECT c FROM Endereco c"),
     @NamedQuery(name = "Endereco.findById", query = "SELECT c FROM Endereco c WHERE c.id = :id"),
@@ -38,58 +39,39 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Endereco.findByUf", query = "SELECT c FROM Endereco c WHERE c.uf = :uf")})
 public class Endereco implements Serializable {
 
-    @Transient
     private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
-    
+
     private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "cod_endereco")
+
     private Integer id;
 
-    @Basic(optional = false)
-    @Column(name = "logradouro_endereco")
     private String logradouro;
 
-    @Column(name = "complemento_endereco")
     private String complemento;
 
-    @Column(name = "cep_endereco")
     private String cep;
 
-    @Column(name = "bairro_endereco")
     private String bairro;
 
-    @Basic(optional = false)
-    @Column(name = "cidade_endereco")
     private String cidade;
 
-    @Basic(optional = false)
-    @Column(name = "uf_endereco")
     private String uf;
 
-    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente")
-    @ManyToOne(optional = false)
     private Cliente cliente;
 
     public Endereco() {
         super();
     }
 
-    public Endereco(Integer codEndereco) {
+    public Endereco(Integer id) {
         this();
-        this.id = codEndereco;
+        this.id = id;
     }
 
-    public Endereco(Integer id, String logradouro, String cidade, String uf) {
-        this(id);
-        this.logradouro = logradouro;
-        this.cidade = cidade;
-        this.uf = uf;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_endereco_seq")
+    @Basic(optional = false)
+    @Column(name = "cod_endereco")
     public Integer getId() {
         return id;
     }
@@ -100,6 +82,8 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
+    @Basic(optional = false)
+    @Column(name = "logradouro_endereco")
     public String getLogradouro() {
         return logradouro;
     }
@@ -110,6 +94,7 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("logradouro", oldLogradouro, logradouro);
     }
 
+    @Column(name = "complemento_endereco")
     public String getComplemento() {
         return complemento;
     }
@@ -120,6 +105,7 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("complemento", oldComplemento, complemento);
     }
 
+    @Column(name = "cep_endereco")
     public String getCep() {
         return cep;
     }
@@ -130,6 +116,7 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("cep", oldCep, cep);
     }
 
+    @Column(name = "bairro_endereco")
     public String getBairro() {
         return bairro;
     }
@@ -140,6 +127,8 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("bairro", oldBairro, bairro);
     }
 
+    @Basic(optional = false)
+    @Column(name = "cidade_endereco")
     public String getCidade() {
         return cidade;
     }
@@ -150,6 +139,8 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("cidade", oldCidade, cidade);
     }
 
+    @Basic(optional = false)
+    @Column(name = "uf_endereco")
     public String getUf() {
         return uf;
     }
@@ -160,6 +151,8 @@ public class Endereco implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("uf", oldUf, uf);
     }
 
+    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente")
+    @ManyToOne(optional = false)
     public Cliente getCliente() {
         return cliente;
     }

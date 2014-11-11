@@ -18,17 +18,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author cesar
  */
 @Entity
-@Table(name = "cliente_telefone")
-@XmlRootElement
+@Table(name = "cliente_telefone", catalog = "siscom", schema = "public")
+@SequenceGenerator(name = "cliente_telefone_seq", initialValue = 1, allocationSize = 1)
+//@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Telefone.findAll", query = "SELECT t FROM Telefone t"),
     @NamedQuery(name = "Telefone.findById", query = "SELECT t FROM Telefone t WHERE t.id = :id"),
@@ -36,27 +36,17 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Telefone.findByTipo", query = "SELECT t FROM Telefone t WHERE t.tipo = :tipo")})
 public class Telefone implements Serializable {
 
-    @Transient
+//    @Transient
     private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "cod_telefone")
     private Integer id;
 
-    @Basic(optional = false)
-    @Column(name = "numero_telefone")
     private String numero;
 
-    @Basic(optional = false)
-    @Column(name = "tipo_telefone")
-    private char tipo;
+    private Character tipo;
 
-    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente")
-    @ManyToOne(optional = false)
     private Cliente cliente;
 
     public Telefone() {
@@ -68,12 +58,10 @@ public class Telefone implements Serializable {
         this.id = id;
     }
 
-    public Telefone(Integer id, String numero, char tipo) {
-        this(id);
-        this.numero = numero;
-        this.tipo = tipo;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_telefone_seq")
+    @Basic(optional = false)
+    @Column(name = "cod_telefone")
     public Integer getId() {
         return id;
     }
@@ -84,6 +72,8 @@ public class Telefone implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
+    @Basic(optional = false)
+    @Column(name = "numero_telefone")
     public String getNumero() {
         return numero;
     }
@@ -94,16 +84,20 @@ public class Telefone implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("numero", oldNumero, numero);
     }
 
-    public char getTipo() {
+    @Basic(optional = false)
+    @Column(name = "tipo_telefone")
+    public Character getTipo() {
         return tipo;
     }
 
-    public void setTipo(char tipo) {
-        char oldTipo = this.tipo;
+    public void setTipo(Character tipo) {
+        Character oldTipo = this.tipo;
         this.tipo = tipo;
         CHANGE_SUPPORT.firePropertyChange("tipo", oldTipo, tipo);
     }
 
+    @JoinColumn(name = "cod_cliente", referencedColumnName = "cod_cliente")
+    @ManyToOne(optional = false)
     public Cliente getCliente() {
         return cliente;
     }

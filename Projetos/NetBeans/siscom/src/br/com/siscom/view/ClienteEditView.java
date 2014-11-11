@@ -55,7 +55,6 @@ public class ClienteEditView extends javax.swing.JDialog {
         lblClienteTipo = new javax.swing.JLabel();
         txtClienteTipo = new javax.swing.JTextField();
         lblClienteDesde = new javax.swing.JLabel();
-        txtClienteDesde = new javax.swing.JTextField();
         lblClienteEmpresa = new javax.swing.JLabel();
         txtClienteEmpresa = new javax.swing.JTextField();
         lblClienteFoneEmpresa = new javax.swing.JLabel();
@@ -68,7 +67,7 @@ public class ClienteEditView extends javax.swing.JDialog {
         lblClienteFoneReferencia = new javax.swing.JLabel();
         txtClienteFoneReferencia = new javax.swing.JTextField();
         lblClienteDataNascimento = new javax.swing.JLabel();
-        txtClienteDataNascimento = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         btnCancelarCliente = new javax.swing.JButton();
         btnConfirmarCliente = new javax.swing.JButton();
 
@@ -120,11 +119,6 @@ public class ClienteEditView extends javax.swing.JDialog {
 
         lblClienteDesde.setText("Desde de:");
 
-        txtClienteDesde.setEditable(false);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${registroAtual.desde}"), txtClienteDesde, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
         lblClienteEmpresa.setText("Empresa:");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${registroAtual.empresa}"), txtClienteEmpresa, org.jdesktop.beansbinding.BeanProperty.create("text"));
@@ -155,9 +149,6 @@ public class ClienteEditView extends javax.swing.JDialog {
 
         lblClienteDataNascimento.setText("Data de nascimento:");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${registroAtual.nascimento}"), txtClienteDataNascimento, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
         javax.swing.GroupLayout pnlDadosClienteLayout = new javax.swing.GroupLayout(pnlDadosCliente);
         pnlDadosCliente.setLayout(pnlDadosClienteLayout);
         pnlDadosClienteLayout.setHorizontalGroup(
@@ -182,9 +173,7 @@ public class ClienteEditView extends javax.swing.JDialog {
                                         .addComponent(txtClienteReferencia)
                                         .addGap(18, 18, 18))
                                     .addGroup(pnlDadosClienteLayout.createSequentialGroup()
-                                        .addGroup(pnlDadosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtClienteCPF)
-                                            .addComponent(txtClienteDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                                        .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(4, 4, 4)
                                         .addGroup(pnlDadosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblClienteTipo, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -214,7 +203,6 @@ public class ClienteEditView extends javax.swing.JDialog {
                             .addComponent(lblClienteFoneReferencia, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnlDadosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtClienteDesde)
                             .addComponent(txtClienteCNPJ)
                             .addComponent(txtClienteFoneEmpresa)
                             .addComponent(txtClienteFoneReferencia)
@@ -245,9 +233,7 @@ public class ClienteEditView extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDadosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblClienteDesde)
-                    .addComponent(txtClienteDesde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblClienteDataNascimento)
-                    .addComponent(txtClienteDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblClienteTipo)
                     .addComponent(txtClienteTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -293,6 +279,27 @@ public class ClienteEditView extends javax.swing.JDialog {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnConfirmarCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCancelarCliente)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelarCliente)
+                    .addComponent(btnConfirmarCliente))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -300,11 +307,9 @@ public class ClienteEditView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlDadosCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnConfirmarCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelarCliente)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -312,9 +317,7 @@ public class ClienteEditView extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlDadosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelarCliente)
-                    .addComponent(btnConfirmarCliente))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -437,6 +440,7 @@ public class ClienteEditView extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCliente;
     private javax.swing.JButton btnConfirmarCliente;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblClienteCNPJ;
@@ -457,8 +461,6 @@ public class ClienteEditView extends javax.swing.JDialog {
     private javax.swing.JPanel pnlDadosCliente;
     private javax.swing.JTextField txtClienteCNPJ;
     private javax.swing.JTextField txtClienteCPF;
-    private javax.swing.JTextField txtClienteDataNascimento;
-    private javax.swing.JTextField txtClienteDesde;
     private javax.swing.JTextField txtClienteEmail;
     private javax.swing.JTextField txtClienteEmpresa;
     private javax.swing.JTextField txtClienteFoneEmpresa;

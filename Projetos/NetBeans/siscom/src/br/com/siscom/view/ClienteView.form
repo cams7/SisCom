@@ -52,19 +52,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlListaTelefones" alignment="1" max="32767" attributes="0"/>
-                  <Component id="pnlListaEnderecos" alignment="1" max="32767" attributes="0"/>
-                  <Component id="pnlListaClientes" alignment="1" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="pnlListaTelefones" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlListaEnderecos" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnlListaClientes" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -78,12 +77,9 @@
               <Component id="pnlListaEnderecos" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlListaTelefones" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnConfirmarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -121,7 +117,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="masterScrollPane" pref="276" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="221" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnExcluirCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -366,7 +362,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="detailScrollPane1" pref="76" max="32767" attributes="0"/>
+                  <Component id="detailScrollPane1" pref="126" max="32767" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnExcluirEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -448,7 +444,7 @@
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${cep}">
-                    <BindingParameter name="NAME" value="Cep"/>
+                    <BindingParameter name="NAME" value="CEP"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
@@ -458,7 +454,7 @@
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
                   <Subbinding sourcePath="${uf}">
-                    <BindingParameter name="NAME" value="Uf"/>
+                    <BindingParameter name="NAME" value="UF"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
                   </Subbinding>
@@ -529,7 +525,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="detailScrollPane2" pref="714" max="32767" attributes="0"/>
+                      <Component id="detailScrollPane2" pref="667" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="btnNovoTelefone" min="-2" max="-2" attributes="0"/>
@@ -546,8 +542,8 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="detailScrollPane2" min="-2" pref="83" max="-2" attributes="0"/>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <Component id="detailScrollPane2" pref="148" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnExcluirTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEditarTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -638,29 +634,59 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnConfirmarCliente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCancelarCliente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnConfirmarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnConfirmarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCancelarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

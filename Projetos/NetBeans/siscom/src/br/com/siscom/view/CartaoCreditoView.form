@@ -55,17 +55,11 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="pnlDadosCartao" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnNovoCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnExcluirCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCancelarCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnConfirmarCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="pnlDadosCartao" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnlListaCartoes" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -76,73 +70,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlListaCartoes" max="32767" attributes="0"/>
+              <Component id="pnlListaCartoes" min="-2" pref="199" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlDadosCartao" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnConfirmarCartao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancelarCartao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnExcluirCartao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnNovoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnNovoCartao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Novo"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoCartaoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnExcluirCartao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir"/>
-      </Properties>
-      <BindingProperties>
-        <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="btnExcluirCartao" targetPath="enabled" updateStrategy="1" immediately="false"/>
-      </BindingProperties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCartaoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCancelarCartao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarCartaoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnConfirmarCartao">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarCartaoActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
-      </AuxValues>
-    </Component>
     <Container class="javax.swing.JPanel" name="pnlDadosCartao">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -185,7 +122,7 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="424" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -247,10 +184,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoMultaSemMinimoTotal">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.multaSemMinimoTotal}" target="txtCartaoMultaSemMinimoTotal" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.multaSemMinimoTotal}" target="txtCartaoMultaSemMinimoTotal" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoMultaSemMinimoTotal" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoMultaSemMinimoTotal" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCartaoMultaSemMinimoTotal">
@@ -260,10 +197,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoPgtoMinimo">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.pagtoMinimo}" target="txtCartaoPgtoMinimo" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.pagtoMinimo}" target="txtCartaoPgtoMinimo" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoPgtoMinimo" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoPgtoMinimo" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -273,10 +210,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoMultaCobradaDia">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.multaCobradaDia}" target="txtCartaoMultaCobradaDia" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.multaCobradaDia}" target="txtCartaoMultaCobradaDia" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoMultaCobradaDia" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoMultaCobradaDia" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCartaoMulta">
@@ -291,18 +228,18 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoMulta">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.multa}" target="txtCartaoMulta" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.multa}" target="txtCartaoMulta" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoMulta" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoMulta" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoOperadora">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.operadoraCartao}" target="txtCartaoOperadora" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.operadoraCartao}" target="txtCartaoOperadora" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoOperadora" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoOperadora" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -317,10 +254,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoJurosParcelado">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.jurosParcelado}" target="txtCartaoJurosParcelado" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.jurosParcelado}" target="txtCartaoJurosParcelado" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoJurosParcelado" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoJurosParcelado" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCartaoJurosParceladoActionPerformed"/>
@@ -348,10 +285,10 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCartaoJurosRotativo">
           <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.jurosRotativo}" target="txtCartaoJurosRotativo" targetPath="text" updateStrategy="0" immediately="false">
+            <BindingProperty name="text" source="tblCartoes" sourcePath="${selectedElement.jurosRotativo}" target="txtCartaoJurosRotativo" targetPath="text" updateStrategy="0" immediately="false">
               <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
             </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="txtCartaoJurosRotativo" targetPath="enabled" updateStrategy="1" immediately="false"/>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="txtCartaoJurosRotativo" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
       </SubComponents>
@@ -368,19 +305,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
+              <Component id="masterScrollPane" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" pref="40" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" min="-2" pref="165" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -393,7 +326,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="masterTable">
+            <Component class="javax.swing.JTable" name="tblCartoes">
               <Properties>
                 <Property name="autoResizeMode" type="int" value="0"/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -440,7 +373,7 @@
                 </Property>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
+                <BindingProperty name="elements" source="list" target="tblCartoes" targetPath="elements" updateStrategy="0" immediately="true">
                   <Subbinding sourcePath="${operadoraCartao}">
                     <BindingParameter name="NAME" value="Operadora"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
@@ -478,6 +411,93 @@
             </Component>
           </SubComponents>
         </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnNovoCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnExcluirCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnCancelarCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnConfirmarCartao" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnConfirmarCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCancelarCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExcluirCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnNovoCartao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnNovoCartao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Novo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNovoCartaoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnExcluirCartao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir"/>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="enabled" source="tblCartoes" sourcePath="${selectedElement != null}" target="btnExcluirCartao" targetPath="enabled" updateStrategy="1" immediately="false"/>
+          </BindingProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCartaoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCancelarCartao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarCartaoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnConfirmarCartao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarCartaoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="false"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="2"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

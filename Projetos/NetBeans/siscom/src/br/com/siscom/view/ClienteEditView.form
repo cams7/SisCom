@@ -43,12 +43,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlDadosCliente" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlDadosCliente" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -60,10 +58,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="pnlDadosCliente" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnConfirmarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -104,10 +99,7 @@
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtClienteCPF" max="32767" attributes="0"/>
-                                              <Component id="txtClienteDataNascimento" pref="120" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="txtClienteCPF" min="-2" pref="120" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblClienteTipo" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -149,7 +141,6 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtClienteDesde" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtClienteCNPJ" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtClienteFoneEmpresa" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtClienteFoneReferencia" alignment="0" max="32767" attributes="0"/>
@@ -190,9 +181,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblClienteDesde" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtClienteDesde" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblClienteDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtClienteDataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblClienteTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtClienteTipo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -326,16 +315,6 @@
             <Property name="text" type="java.lang.String" value="Desde de:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtClienteDesde">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
-          <BindingProperties>
-            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.desde}" target="txtClienteDesde" targetPath="text" updateStrategy="0" immediately="false">
-              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-            </BindingProperty>
-          </BindingProperties>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblClienteEmpresa">
           <Properties>
             <Property name="text" type="java.lang.String" value="Empresa:"/>
@@ -408,30 +387,53 @@
             <Property name="text" type="java.lang.String" value="Data de nascimento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtClienteDataNascimento">
-          <BindingProperties>
-            <BindingProperty name="text" source="Form" sourcePath="${registroAtual.nascimento}" target="txtClienteDataNascimento" targetPath="text" updateStrategy="0" immediately="false">
-              <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-            </BindingProperty>
-          </BindingProperties>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnConfirmarCliente" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnCancelarCliente" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnCancelarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnConfirmarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btnCancelarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnConfirmarCliente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btnCancelarCliente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancelar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarClienteActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnConfirmarCliente">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirmar Alltera&#xe7;&#xf5;es"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarClienteActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

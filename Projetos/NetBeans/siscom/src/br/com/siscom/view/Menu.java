@@ -113,6 +113,11 @@ public class Menu extends javax.swing.JFrame {
         btnCadastroFornecedor.setFocusable(false);
         btnCadastroFornecedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastroFornecedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCadastroFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroFornecedorActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnCadastroFornecedor);
 
         btnCadastroProduto.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\cadastro_produto.png")); // NOI18N
@@ -203,6 +208,11 @@ public class Menu extends javax.swing.JFrame {
         menuCadastroFornecedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\cesar\\Desenv\\GIT\\github\\cams7\\T2TI\\SisCom\\Img\\fornecedor.png")); // NOI18N
         menuCadastroFornecedor.setMnemonic('F');
         menuCadastroFornecedor.setText("Fornecedores");
+        menuCadastroFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroFornecedorActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuCadastroFornecedor);
 
         menuCadastroContaBancaria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
@@ -465,6 +475,14 @@ public class Menu extends javax.swing.JFrame {
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
         ClienteView.main(new String[]{"Cadastro de Clientes"});
     }//GEN-LAST:event_btnCadastroClienteActionPerformed
+
+    private void menuCadastroFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroFornecedorActionPerformed
+        FornecedorView.main(new String[]{"Cadastro de Fornecedores"});
+    }//GEN-LAST:event_menuCadastroFornecedorActionPerformed
+
+    private void btnCadastroFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroFornecedorActionPerformed
+         FornecedorView.main(new String[]{"Cadastro de Fornecedores"});
+    }//GEN-LAST:event_btnCadastroFornecedorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

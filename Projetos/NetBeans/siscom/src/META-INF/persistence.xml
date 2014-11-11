@@ -8,12 +8,31 @@
     <class>br.com.siscom.bean.Cliente</class>
     <class>br.com.siscom.bean.Endereco</class>
     <class>br.com.siscom.bean.Telefone</class>
+    <class>br.com.siscom.bean.Fornecedor</class>
     <properties>
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscom"/>
       <property name="javax.persistence.jdbc.password" value="12345"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.user" value="siscom"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="siscomPU_hibernate" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>br.com.siscom.bean.CartaoCredito</class>
+    <class>br.com.siscom.bean.Cliente</class>
+    <class>br.com.siscom.bean.ContaBancaria</class>
+    <class>br.com.siscom.bean.Endereco</class>
+    <class>br.com.siscom.bean.Fornecedor</class>
+    <class>br.com.siscom.bean.Telefone</class>
+    <class>br.com.siscom.bean.TipoPgto</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/siscom"/>
+      <property name="javax.persistence.jdbc.password" value="12345"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="siscom"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.show_sql" value="true"/>
     </properties>
   </persistence-unit>
 </persistence>

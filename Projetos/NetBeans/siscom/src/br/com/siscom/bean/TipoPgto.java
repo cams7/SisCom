@@ -16,8 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -25,24 +25,20 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "tipo_pgto", catalog = "siscom", schema = "public")
+@SequenceGenerator(name = "tipo_pgto_seq", initialValue = 1, allocationSize = 1)
 @NamedQueries({
     @NamedQuery(name = "TipoPgto.findAll", query = "SELECT t FROM TipoPgto t"),
     @NamedQuery(name = "TipoPgto.findById", query = "SELECT t FROM TipoPgto t WHERE t.id = :id"),
     @NamedQuery(name = "TipoPgto.findByDescricao", query = "SELECT t FROM TipoPgto t WHERE t.descricao = :descricao")})
 public class TipoPgto implements Serializable {
 
-    @Transient
+//    @Transient
     private final PropertyChangeSupport CHANGE_SUPPORT = new PropertyChangeSupport(this);
+
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "cod_tipo_pgto")
     private Short id;
 
-    @Basic(optional = false)
-    @Column(name = "descricao_tipo_pgto")
     private String descricao;
 
     public TipoPgto() {
@@ -51,15 +47,13 @@ public class TipoPgto implements Serializable {
 
     public TipoPgto(Short id) {
         this();
-
         this.id = id;
     }
 
-    public TipoPgto(Short id, String descricao) {
-        this(id);
-        this.descricao = descricao;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tipo_pgto_seq")
+    @Basic(optional = false)
+    @Column(name = "cod_tipo_pgto")
     public Short getId() {
         return id;
     }
@@ -70,6 +64,8 @@ public class TipoPgto implements Serializable {
         CHANGE_SUPPORT.firePropertyChange("id", oldId, id);
     }
 
+    @Basic(optional = false)
+    @Column(name = "descricao_tipo_pgto")
     public String getDescricao() {
         return descricao;
     }
@@ -99,7 +95,7 @@ public class TipoPgto implements Serializable {
 
     @Override
     public String toString() {
-        return this.getClass().getName() + "[ codTipoPgto=" + id + " ]";
+        return this.getClass().getName() + "[ id=" + id + " ]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
